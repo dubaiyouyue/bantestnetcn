@@ -1,0 +1,231 @@
+
+
+
+<div class="bj">
+
+<!-------------------------------banner 开始--------------------------------->
+<div class="ding">
+	
+	<div class="banner">
+		<div class="bd">
+			<img src="{$blist.img_path}"/>
+		</div>
+	</div>
+	
+	
+	
+		<div class="title">
+			<div class="jz">
+
+				<div class="zuo">
+					<!--<div class="tp"><img src="images/services_r2_c2.jpg"/></div>-->
+					<div class="biaoyu" style="    background: #272C3F url(/images/services_r2_c2.jpg); background-repeat: no-repeat;background-position: left top;padding-left: 64px;box-sizing: border-box;">
+						{$config_info.gz_footother}
+					</div>
+				</div>
+
+
+				<div class="you">
+					<h4>{$getinfolamu.name}</h4>
+					<p>{$getinfolamu.enname}</p>
+					<div class="xian"></div>
+					<img src="{$getinfolamu.columnimg}"/>
+				</div>
+				<!-------------------------搜索框 开始------------------------------->
+
+						<!--下拉框美化 20180110-->
+
+						<link type="text/css" href="/css/selectpick.css" rel="stylesheet" />
+						<script type="text/javascript" src="/js/selectpick.js?1"></script>
+						<script type="text/javascript">
+							$(function() {
+								$("#syou1").selectpick({
+									container: '.test_1',//模拟select生成的DIV存放的父容器
+									disabled: false, // 是否禁用,默认false不禁用
+									onSelect: function(value,text){
+										location.href = '/index.php/Home/Trends/index/cid/'+value+'.html';
+										//alert("这是回调函数，选中的值："+value+" \n选中的下拉框文本："+text);
+									},
+									height: 38, // 下拉框的高度
+									width:240, // 下拉框的宽度
+									//margin:'19px'
+									borderRight:'10px solid #fff'
+								});
+								$("#syou2").selectpick({
+									container: '.test_2',//模拟select生成的DIV存放的父容器
+									disabled: false, // 是否禁用,默认false不禁用
+									onSelect: function(value,text){
+										//alert("这是回调函数，选中的值："+value+" \n选中的下拉框文本："+text);
+									},
+									height: 38, // 下拉框的高度
+									width:240, // 下拉框的宽度
+									borderRight:'10px solid #fff'
+								});
+							});
+						</script>
+						<!--end-->
+						<?php
+							$snid=$cid;
+							$snname=$lan['name'];
+							if($snid==140) $snname='所有分类';
+						?>
+					<div class="ssk">
+						<form>
+							<div class="test_1" style="float:left;width:240px;">
+								<select class="syou" id="syou1">
+									<option value="{$snid}">{$snname}<img src="/images/case.fw.png"/></option>
+									<foreach name="lanmu" item="r" key="k" >
+									<?php
+									if($snid!=140 && !$k) echo '<option value="140">所有分类</option>';
+									if($r['id']!=$snid) echo '<option value="'.$r['id'].'">'.$r['name'].'</option>';
+									?>
+									</foreach>
+								</select>
+							</div>
+
+
+							<div class="ss">
+								<input type="text" name="k" value="{$kwww}" placeholder="站内搜索">
+								<button><img src="/images/news1.fw.png"/></button>
+							</div>
+
+
+
+						</form>
+					</div>
+			<!-------------------------搜索框 结束------------------------------->
+			
+			</div>
+		</div>
+	
+		
+		
+</div>
+
+
+<div style="    height: 183px;
+    width: 1px;
+    background:#313131;
+    position: absolute;
+    left: 50%;
+    top: 541px;
+    margin-left: -566px;"></div>
+<div style="height:183px;
+    width: 1px;
+    background:#313131;
+    position: absolute;
+    left: 50%;
+    top: 541px;
+    margin-left: -182px;"></div>
+    
+    <div style="height:183px;
+    width: 1px;
+    background:#313131;
+    position: absolute;
+    left: 50%;
+    top: 541px;
+    margin-left:198px;"></div>
+    
+    <div style="height:183px;
+    width: 1px;
+    background:#313131;
+    position: absolute;
+    left: 50%;
+    top: 541px;
+    margin-left: 580px;"></div>
+<!-------------------------------banner 结束--------------------------------->
+
+
+
+
+<!-------------------------内容 开始----------------------------->
+<div class="news_bj">
+<?php
+//dump($list);exit;
+?>
+	<ul id="ctneetaasjsxjj"><foreach name="list" item="r" key="k" >
+		<li>
+			<a href="/index.php/Home/Newsshow/index/cid/{$cid}/id/{$r.id}.html">
+				<div class="shang"></div>
+				<img src="/images/news12.fw.png"/>
+				<h3>{$r.title}</h3>
+				<span><?php
+						echo date('Y.m.d', strtotime($r['addtime']));
+					?></span>
+				<div class="tp"><img class="dq" src="{$r.imgurl}" width="351" height="110" /><img class="jg" src="{$r.imgurl}" width="351" height="110" /></div>
+				<p style="
+    height: 120px;
+    overflow: hidden;
+    line-height: 23px;
+">{$r.description}</p>
+				<div class="more"><p>- MORE -</p></div>
+				<div class="xia"></div>
+			</a>	
+		</li>
+		</foreach>
+		
+		
+		
+	</ul>
+	
+</div>
+
+<script>
+function getssajax(p){
+	location.href = '/index.php/Home/Trends/index/cid/{$cid}/p/'+p+'.html';
+	return false;
+	$.ajax( {
+		url: '/index.php/Home/Trends/ajax/cid/{$cid}/p/{$p}.html', //这里是静态页的地址
+		type: "GET", //静态页用get方法，否则服务器会抛出405错误
+		//dataType: "json",
+		//cache: false,
+		//async: false,
+		beforeSend: function(){
+		 // Handle the beforeSend event
+		},
+		success: function(data){
+			$('#ctneetaasjsxjj').html(data);
+			//var result = $(data).find("另一个html页面的指定的一部分").html();
+		}
+	});
+}
+</script>
+
+<!-------------------------内容 结束----------------------------->
+<style>
+.shouxinggg{cursor: pointer;}
+</style>
+<?php
+	if($p<1) $p=1;
+	$pf=$p%5;
+	for($i=5;$i>1;$i--){
+		if(!($pf%$i)){
+			break;
+		}
+	}
+	//echo $i;
+?>
+
+<div class="anniu" <?php
+	if($allpage<2) echo 'style="display:none;"';
+?>>
+	<div class="zz shouxinggg" onclick="getssajax('{$sp}');"><div class="zuo"></div></div>
+	<div class="zjian">
+		<div class="dian <?php 
+			if($i==1) echo 'dq';
+		?>"></div>
+		<div class="dian <?php 
+			if($i==2) echo 'dq';
+		?>"></div>
+		<div class="dian <?php 
+			if($i==3) echo 'dq';
+		?>"></div>
+		<div class="dian <?php 
+			if($i==4) echo 'dq';
+		?>"></div>
+		<div class="dian <?php 
+			if($i==5) echo 'dq';
+		?>"></div>
+	</div>
+	<div class="yy shouxinggg" onclick="getssajax('{$np}');"><div class="you"></div></div>
+</div>

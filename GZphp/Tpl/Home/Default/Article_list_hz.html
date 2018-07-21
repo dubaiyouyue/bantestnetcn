@@ -1,0 +1,280 @@
+
+<!--+++主体内容+++-->
+
+<div class="zhuti clearfloat">
+
+	<div class="zhuti_con clearfloat">
+	
+		<!--+++新闻部分+++--->
+	
+		<div class="znss_con_l clearfloat">
+		
+			<div class="znss_con_l_l">
+			
+				<div class="focusBox">
+				
+					<include file="N:l"/>
+					
+				</div>
+
+			
+			</div>
+			
+			
+<script type="text/javascript">
+
+	/*SuperSlide图片切换*/
+	
+	jQuery(".focusBox").slide({ 
+		mainCell:".pic",
+		effect:"left", 
+		autoPlay:true, 
+		delayTime:600, 
+		trigger:"click",
+		interTime:3000,
+	});
+		
+</script>
+			
+			
+			
+			<div class="znss_con_l_r">
+			
+				<GZ:list sql="select * from gz_slide_data where id = '77' ">
+			
+			<img src="{$r.pic}">
+		</GZ:list>
+			
+			</div>
+		
+		</div>
+	
+		<!--+++新闻部分结束+++--->
+	
+		<!--+++新闻下面的内容板块+++-->
+	
+		<div class="content clearfloat">
+		
+		<!--+++内容左边+++-->
+		
+			<div class="content_l">
+			
+			
+			<!--+++选项导航+++-->
+			
+				<div class="content_l_t">
+				
+					<div class="content_l_t_t"><span>{$Categorys.$parentid.keywords}</span> {$Categorys.$parentid.catname}</div>
+					
+					<div class="content_l_t_b">
+					
+						<ul>
+							<include file="A:l"/>
+							
+							
+						</ul>
+					
+					</div>
+				
+				</div>
+				
+				
+				<!--+++选项导航结束+++-->
+				
+				<!--+++联系我们+++-->
+				
+				<include file="C:u"/>
+				
+				<!--+++联系我们结束+++-->
+				
+				<!--+++友情链接+++-->
+				
+				<div class="content_l_b">
+				
+					<div class="content_l_b_t">
+					
+					<p>友情链接</p>
+					
+					<p><span>LINK</span></p>
+					
+					</div>
+					
+					
+					<div class="content_l_b_b">
+					
+						<ul>
+						
+							<include file="Y:l"/>
+						
+						</ul>
+					
+					</div>
+				
+				</div>
+				
+				<!--+++友情链接结束+++-->
+			
+			</div>
+		
+		<!--+++内容左边结束+++-->
+		
+		<!--+++内容右边+++-->
+			
+			<div class="content_r">
+			
+			<!--+++产品推荐+++-->
+			
+			<div class="picScroll" id="picScroll_new">
+		
+		<ul>
+		
+			<include file="P:l"/>
+			
+			
+		</ul>
+
+		<a class="prev" href="javascript:void(0)"></a>
+		<a class="next" href="javascript:void(0)"></a>
+	</div>
+
+<script type="text/javascript">
+
+	jQuery(".picScroll").slide({ 
+		mainCell:"ul", 
+		effect:"leftLoop", 
+		vis:4, 
+		scroll:2,  
+		autoPage:true, 
+		autoPlay:true,
+		interTime:5000,
+	});
+	
+	//子元素加class
+	
+	$('#picScroll_new').children().addClass('tempWrap_new');
+	
+	$('#picScroll_new li').hover(
+			
+		(function(){
+            // $(this).find('.showDetail').css('display','inline-block');
+			
+            $(this).find('.tjcp_title').stop().animate({top:'76px'},'fast');
+			
+            }),
+			
+			(function(){
+			
+                $(this).find('.tjcp_title').stop().animate({top:'106px'},'fast',function(){
+				
+                    $(this).find('.tjcp_title').css("display","none");
+					
+                }
+				
+				);
+
+            })
+			
+			);
+	
+	
+</script>
+			
+			<!--+++产品推荐结束+++-->
+			
+			<!--+++内页主体部分+++-->
+			
+			<div class="nyzhuti clearfloat">
+				
+				<!--+++内页主体头部+++-->
+			
+				<div class="nyzhuti_top clearfloat">
+				
+					<div class="nyzhuti_top_l">{$catname}</div>
+					
+					<div class="nyzhuti_top_r">
+					
+					 <include file="Home:catpos"/>
+					
+					</div>
+				
+				</div>
+				
+				<!--+++内页主体头部结束+++-->
+				
+				<!--+++内页主体内容+++-->
+				
+				<div class="nrzhuti_con clearfloat">
+				
+					<ul class="hzkh_ul">
+						<volist name="list" id="r" empty="$em" key="i">
+						<li <?php 
+							$ik++;
+							if($ik==1 || $ik==5){
+								echo 'class="hzkh_ul_li_ml"';
+								if($ik==5) $ik=1;
+							} 
+							
+							
+							
+							?>>
+						
+						<a href="{$r.url}">
+						
+						<div class="hzkh_t">
+						
+						<img src="{$r.thumb|thumb=###,180,100,1}">
+						
+						</div>
+						
+						<div class="hzkh_b">
+						
+						{$r.title|str_cut=###,15}
+						
+						</div>
+						
+						</a>
+						
+						</li>
+						
+						</volist>  
+						
+						
+					</ul>
+					
+					
+				</div>
+				
+				<!--+++内页主体内容结束+++-->
+				
+				<!--+++翻页+++-->
+				
+				<div class="fanye">{$pages}</div>
+					
+				<!--+++翻页结束+++-->
+				
+			
+			</div>
+			
+			<!--+++内页主体部分结束+++-->
+			
+			</div>
+			
+		<!--+++内容右边结束+++-->
+		
+		</div>
+	
+	<!--+++新闻下面的内容板块结束+++-->
+	
+	</div>
+
+</div>
+
+<!--+++主体内容结束+++-->
+
+
+
+
+
+</div>
+
+<!--+++banner下来部分结束+++-->

@@ -1,0 +1,165 @@
+
+<div class="banner1"> 
+  
+  <!---------------------------------- container开始 ----------------------------------> 
+  <!--幻灯片--> 
+  <script type="text/javascript" src="js/prefixfree.min.js"></script> 
+  <script type="text/javascript" src="js/flipsnap.min.js"></script> 
+  <script>
+  var ww=$(window).width();
+  //banner
+  var w=430;
+  var h=230;
+  var b=1;
+  var newsssheigtg=(ww*b*h)/w;
+new_widht_baifenbi_kuandu=1;
+var xiaoxunews=ww-(182/360)*ww;
+document.write("<style>.index-h-l-wenzi{width:"+xiaoxunews+"px;top: 50%;margin-top: -28px;}</style>");
+
+</script> 
+  <script type="text/javascript" src="js/mobile_module.js"></script> 
+  <script type="text/javascript" src="js/admin_common.js"></script>
+  <div class="container" style="padding-top:55px;">
+    <section class="banner">
+      <ul>
+        <foreach name="blist" item="rb" key="kb" >
+        <li><a href="#"><img src="{$rb.img_path}"></a></li>
+        </foreach>
+        <!-- <li><a href="#"><img src="images/sybanner2.jpg"></a></li>
+        <li><a href="#"><img src="images/sybanner3.jpg"></a></li> -->
+      </ul>
+      <span class="identify"> <em class="cur"></em> <em ></em> <em ></em> </span> </section>
+  </div>
+  <script type="text/javascript">
+    $(function(){
+        $.WeiPHP.initBanner(true,5000);
+        $.WeiPHP.setRandomColor('.random_color');
+    })
+</script> 
+  <!--幻灯片--> 
+  <!---------------------------------- container结束 ----------------------------------> 
+  
+  <!--关于我们 开始--> 
+</div>
+<div class="nov"> <a href="/index.php/Home/About/index/cid/318.html">
+  <div class="gywm"> {$introduce.keywords} [ <span style="color:#5DA708;">详细 </span>]</div>
+  </a>
+  <div class="pic1"><img src="{$introduce.columnimg}" width="100%" height="" /></div>
+</div>
+
+<!--关于我们 结束--> 
+
+<!--公司新闻01 开始-->
+<div class="nov-1">
+
+  <div class="news-top"><img src="images/1.jpg"/></div>
+
+  <volist name="newss" id="v">
+
+     <?php
+                  $new_kkk++;
+                  $news1='height:5.75rem; margin:0 auto; margin-top:1rem; margin-left:0.5rem; margin-right:0.5rem;';
+                  if(!($new_kkk%2)) $news1='height:5.75rem; margin:0 auto; margin-top:1rem;';// 若($new_kkk%3)为0或者为空执行if后面的语句
+                  $newsleft="width:50%; height:5.75rem; display:block; float:left;";
+                  if(!($new_kkk%2)) $newsleft=' width:50%; height:7rem; display:block; float:right; margin-right:0.1rem;';// 若($new_kkk%3)为0或者为空执行if后面的语句
+                    $newsright=" width:45%; height:6.5rem; display:block; float:left; margin-left:0.5rem;";
+                  if(!($new_kkk%2)) $newsright=' width:38%; height:7rem; display:block; float:left; margin-left:0.5rem;';// 若($new_kkk%3)
+
+                   $newsright1=" color:#E67817; font-size:16px; font-weight: bold; margin-top:0.25rem; 
+display: block;
+overflow: hidden;
+text-overflow: ellipsis;
+display: -webkit-box;
+line-clamp: 1;
+-webkit-line-clamp: 1;
+-webkit-box-orient: vertical;";
+                  if(!($new_kkk%2)) $newsright1=' color:#E67817; font-size:16px; font-weight: bold; margin-top:0.25rem; 
+display: block;
+overflow: hidden;
+text-overflow: ellipsis;
+display: -webkit-box;
+line-clamp: 1;
+-webkit-line-clamp: 1;
+-webkit-box-orient: vertical;';// 若($new_kkk%3)
+
+$newswenzi=' margin-top:0.5rem; color:#656565; line-height:25px;display: block;
+overflow: hidden;
+text-overflow: ellipsis;
+display: -webkit-box;
+line-clamp: 2;
+-webkit-line-clamp: 2;
+-webkit-box-orient: vertical;';
+                  if(!($new_kkk%2)) $newswenzi=' margin-top:0.5rem; color:#656565; line-height:25px;display: block;
+overflow: hidden;
+text-overflow: ellipsis;
+display: -webkit-box;
+line-clamp: 2;
+-webkit-line-clamp: 2;
+-webkit-box-orient: vertical;';// 若($new_kkk%3)为0或者为空执行if后面的语句
+
+$newsan='width:3.5rem; height:1.2rem; display:block; background-color:#E67817; line-height:1.2rem; text-align:center; color:#FFF; margin-top:0.5rem;';
+                  if(!($new_kkk%2)) $newsan=' width:3.5rem; height:1.2rem; display:block; background-color:#E67817; line-height:1.2rem; text-align:center; color:#FFF; margin-top:0.5rem;';// 若($new_kkk%3)为0或者为空执行if后面的语句
+              ?>  
+ 
+  <div  style="{$news1};"> <a href="/index.php/Home/Newsshow/index/new/zx/cid/192/id/{$v.id}.html">
+    <div  style="{$newsleft};"><img src="{$v.imgurl}" style="width:7.6rem;height:5.5rem" /></div>
+    </a>
+    <div  style="{$newsright};"> <a href="/index.php/Home/Newsshow/index/new/zx/cid/192/id/{$v.id}.html">
+      <div  style="{$newsright1};">{$v.title}</div>
+      </a> <a href="/index.php/Home/Newsshow/index/new/zx/cid/192/id/{$v.id}.html">
+      <div  style="{$newswenzi};">{$v.keywords}</div>
+      </a> <a href="/index.php/Home/Newsshow/index/new/zx/cid/192/id/{$v.id}.html">
+      <div style="{$newsan};">MORE</div>
+      </a> </div>
+  </div>
+  
+  <!--公司新闻01 结束--> 
+  <!--公司新闻02 开始-->
+  
+  <!--公司新闻02 结束--> 
+  </volist>
+  
+</div>
+
+<!--公司新闻 结束--> 
+
+<!--产品展示 开始-->
+<div class="nov-2 clearfix" >
+  <div class="cpzs-top"><img src="images/2.jpg"/></div>
+
+<volist name="product" id="v">
+
+     <?php
+                  $new_kkk++;
+                  $new_kkk_css='';
+                  if(!($new_kkk%2)) $new_kkk_css='float:right;margin-right:0.3rem;';// 若($new_kkk%3)为0或者为空执行if后面的语句
+                   $new_kkk_cs='margin-left:0.5rem;';
+                  if(!($new_kkk%2)) $new_kkk_cs='';// 若($new_kkk%3)为0或者为空执行if后面的语句
+                   $new_kkk_c='margin-left:0.5rem;';
+                  if(!($new_kkk%2)) $new_kkk_c='margin-right:0.5rem;';// 若($new_kkk%3)为0或者为空执行if后面的语句
+                   
+              ?>  
+
+  <a href="/index.php/Home/Productshow/index/new/zx/cid/182/id/{$v.id}.html">
+  <div class="cpzs-1" style="{$new_kkk_css};">
+    <div class="cpzs-img"  style="{$new_kkk_cs};width:98%;height:6rem;background-size:cover;background-image:url('{$v.imgurl}');background-repeat:no-repeat;"></div>
+    <div class="cpzs-pic1" style="{$new_kkk_c};">
+      <p>{$v.title|mb_substr=0,6,'utf-8'}...</p>
+    </div>
+  </div>
+  </a>
+</volist>
+  
+  
+</div>
+
+<a href="/index.php/Home/Product/index/cid/182.html"><div class="moer"> + MORE +</div></a>
+
+<!--产品展示 结束-->
+
+
+
+
+
+  
+      

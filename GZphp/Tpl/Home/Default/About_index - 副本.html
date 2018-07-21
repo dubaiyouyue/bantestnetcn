@@ -1,0 +1,72 @@
+
+<link type="text/css" rel="stylesheet" href="/css/about_us.css?7"/>
+
+
+<!------------------------------banner  开始-------------------------------->
+<div class="banner">
+	<div class="bd">
+		<img src="{$blist.img_path}"/> 
+	</div>
+</div>
+
+<!------------------------------banner  结束-------------------------------->
+
+
+<div class="abuot_us">
+	<div class="jz">
+<!------------------------------当前位置 开始--------------------------------------->
+		<div class="location">
+			<p>当前位置：</p>
+			<p><a href="/">首页</a></p>
+			<h3>></h3>
+			<p><a  href="/index.php/Home/About/index/cid/318.html">关于我们</a></p>
+			<h3>></h3>
+			<p class="dd">{$lan.name}</p>
+		</div>
+		<div class="underline"></div>
+
+
+<!------------------------------当前位置 结束--------------------------------------->
+
+<!--------------------------------关于我们 开始------------------------------------->
+	
+		<!------------------------------------标题 开始------------------------------>
+		<div class="headings">
+        	<div class="dot" ></div>
+            <div style="float:right; margin-right:10px; margin-left:0px;" class="dot"></div>
+            <p>关于我们</p>
+        	<span>ABUOT US</span>
+        </div>
+        
+        
+		<div class="second">
+			<ul>
+			<foreach name="lanmu" item="r" key="k" >
+				<li><a href="/index.php/Home/{$r.foldername}/index/cid/{$r.id}.html"><span class="<?php
+        if($k==0) echo 'dd';
+
+      ?>"><img src="{$r.columnimg}"/></span><p>{$r.name}</p><div class="cx <?php
+        if($r['id']==$cid) echo 'xz';
+
+      ?>"><img src="/images/about03.png"/></div></a></li>
+				  </foreach>
+				<!-- <li><a href="#"><span><img src="/images/abuot02_r1_c3.png"/></span><p>企业文化</p><div class="cx"><img src="/images/about03.png"/></div></a></li>
+				<li><a href="#"><span><img src="/images/abuot02_r1_c5.png"/></span><p>发展历程</p><div class="cx"><img src="/images/about03.png"/></div></a></li>
+				<li><a href="#"><span><img src="/images/abuot02_r1_c7.png"/></span><p>员工风采</p><div class="cx"><img src="/images/about03.png"/></div></a></li>
+				<li><a href="#"><span><img src="/images/abuot02_r1_c9.png"/></span><p>公司环境</p><div class="cx"><img src="/images/about03.png"/></div></a></li>
+				<li><a href="#"><span><img src="/images/abuot02_r1_c11.png"/></span><p>公司荣誉</p><div class="cx"><img src="/images/about03.png"/></div></a></li> -->
+			</ul>
+				
+		</div>
+			
+		
+<!--------------------------------关于我们 结束------------------------------------------->
+
+
+		<div class="wz">
+        {$lan.content}
+		</div>
+		
+		
+	</div>
+</div>

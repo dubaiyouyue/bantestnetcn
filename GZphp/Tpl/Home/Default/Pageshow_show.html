@@ -1,0 +1,27 @@
+<style>
+.contentimg img{max-width:100%;}
+</style>
+<!------------------------------------------------ container2开始 ------------------------------------------------>
+<div class="container2">
+  
+  
+<div class="dqweizhi"><span class="zfx"></span>您当前所在位置：<a href="/">首页</a>><foreach name="location_all" item="r" key="ksss" >
+<?php
+	if(!$ksss) echo '<span class="erji"><a href="'.$r['0'].'">'.$r['1'].'</a></span>';
+	if($ksss==1) echo '><span class="sanji"><a href="'.$r['0'].'">'.$r['1'].'</a></span>';
+	if($ksss==2) echo '><span class="sanji"><a href="'.$r['0'].'">'.$r['1'].'</a></span>';
+?>
+</foreach></div>
+  
+  
+    <div class="nydbt">{$newlist.name}</div>
+    
+    <div class="content contentimg">
+       <div class="xinxenxqbt">{$newlist.ctitle}</div>
+     <!--   <div class="fabusm" style="text-align:center; color:#666; margin-bottom:15px;"><span class="fbriqi" style="margin-right:15px;">发布日期：2016-04-01</span><span class="laiyuan" style="margin-right:15px;">来源：莱茵生物</span><span class="liulancishu">浏览次数：101</span></div> -->
+       
+       {$newlist.content}
+    </div>
+</div>
+<!------------------------------------------------ container结束 ------------------------------------------------>
+

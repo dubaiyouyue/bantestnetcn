@@ -1,0 +1,57 @@
+<!--------------------------------------内容 开始--------------------------------------->
+
+<!--二级栏目-->
+<div class="lanmuscend">
+	<div class="lanmuscendtop">{$getinfolamu.enname}</div>
+	<div class="lanmuscendbottom">
+		{$getinfolamu.name}
+		<!--左右线条-->
+		<div class="lxtleft"></div>
+		<div class="lxtright"></div>
+	</div>
+</div>
+
+
+<ul class="sul">
+<foreach name="lanmu" item="r" key="k" >
+	<li class="po"><a href="/index.php/Home/{$r.foldername}/index/cid/{$r.id}.html">
+		<div class="rbgcontent" style="background: url({$r.columnimg});background-repeat: no-repeat;background-size: 35% 100%;background-position: left center;">
+
+			<div class="smain">
+				<p class="stitle">{$r.name}</p>
+				<p class="sjianjie">商标设计/品牌VI设计/推广/物料设计/终端展示设计</p>
+			</div>
+		</div>
+		<div class="righjjtt"></div>
+	</a></li>
+	</foreach>
+	</ul>
+
+
+
+
+	<!-- <div class="servies" style="color:#000">
+		
+		
+		<div class="fenl">
+			<div class="title">
+				<p style="color:#000">服务中心</p>
+			</div>
+			<foreach name="lanmuzx" item="r" key="k" >
+			<div class="mg">
+				<a href="/index.php/Home/{$r.foldername}/index/cid/{$r.id}.html">
+					<div style=" background:url({$r.columnimg}) no-repeat center; background-size: cover;" class="tp"><img src="{$r.columnimg}"></div>
+					<p style="color:#000">{$r.name}</p>
+				</a>
+			</div>
+			
+		</foreach>
+			
+			
+		</div>
+		
+		
+		
+	</div> -->
+
+<!--------------------------------------内容 结束--------------------------------------->

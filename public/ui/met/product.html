@@ -1,0 +1,16 @@
+<!--<?php
+require_once template('head'); 
+require_once template('sidebar');
+$weblist=metlabel_product($gz_pro_boxw,$gz_pro_liw,$gz_pro_num);
+echo <<<EOT
+-->
+        <div class="active" id="productlist">
+			{$weblist}
+		<div class="clear"></div>
+		</div>
+		<div id="flip">{$page_list}</div>
+<!--
+EOT;
+require_once template('gap');
+require_once template('foot'); 
+?>

@@ -1,0 +1,90 @@
+
+<!------------------------------------------------ container2开始 ------------------------------------------------>
+<script src="/js/jquery.Slide.js"></script>
+<div class="container2">
+    <!--上面部分start-->
+    <div class="xinwenbox clearfix">
+       <div class="xinwenzuobian">
+       
+          <div class="slider">
+            <ul>
+			<?php
+				foreach($list as $k=>$v){
+					if($k<5) echo '<li><a href="/index.php/Home/Newsshow/index/new/zx/cid/'.$cid.'/id/'.$v['id'].'.html"><img src="'.$v['imgurl'].'" alt="'.$v['title'].'"></a></li>';
+				}
+			?>
+              
+            </ul>
+          </div>
+          <!--轮播图1 end-->
+          <script type="text/javascript" src="/js/yxMobileSlider.js"></script>
+          <script>
+             $(".slider").yxMobileSlider({width:588,height:296,during:3000})
+          </script>
+       </div>
+       
+      <div class="xinwenyoubian">
+          <div class="bt" style="margin-top:20px;">公司新闻</div>
+          <div class="xwxiaobox clearfix">
+             <div class="lfimg"><a href="/index.php/Home/Newsshow/index/new/zx/cid/{$cid}/id/{$list.5.id}.html"><img src="{$list.5.imgurl}" width="300" height="200"></a></div>
+             <div class="rgwb">
+                <div class="xxwbt"><a href="/index.php/Home/Newsshow/index/new/zx/cid/{$cid}/id/{$list.5.id}.html">{$list.5.title}</a></div>
+                <div class="sj" style="color:#999;font-size:13px;">{$list.5.updatetime}</div>
+                <div class="xiangqing" style="margin-top:35px;"><a href="/index.php/Home/Newsshow/index/new/zx/cid/{$cid}/id/{$list.5.id}.html">详情</a></div>
+             </div>
+          </div>
+      </div>
+       
+    </div>
+    <!--上面部分end-->
+    
+    
+    <div class="shixian" style=" border-bottom:1px solid #ddd; margin-top:40px;"></div>
+    
+    <!--下面部分start-->
+    <div class="newsbox">
+       <ul class="newslist clearfix">			<?php
+				foreach($list as $kss=>$v){
+					if($kss>5){
+						$kssn++;
+						echo '<li ';
+						if($kssn==1){
+							echo 'style="margin-left:0px;"';
+						}
+						echo '><div class="shangimg"><a href="/index.php/Home/Newsshow/index/new/zx/cid/'.$cid.'/id/'.$v['id'].'.html"><img src="'.$v['imgurl'].'" width="300" height="200"></a></div><div class="bt"><a href="/index.php/Home/Newsshow/index/new/zx/cid/'.$cid.'/id/'.$v['id'].'.html">'.$v['title'].'</a></div><div class="sj" style="color:#999; border-top:1px solid #ddd; padding-top:10px; margin-top:10px; font-size:13px;">'.$v['updatetime'].'</div></li>';
+					}
+				}
+			?>
+                      
+          
+       </ul>
+       
+       
+    </div>
+    <!--下面部分end-->
+	
+	 <!--翻页start-->
+	<!-- <link href="/css/Pager.css" rel="stylesheet" type="text/css" /> -->
+    <script src="/js/jquery.pager.js?883" type="text/javascript"></script>
+
+
+<div class="tcdPageCode yema clearfix"></div>
+
+
+<script> 
+ $(".tcdPageCode").createPage({ 
+  pageCount:'{$allpage}', 
+  current:'{$pagenow}', 
+  backFn:function(p){ 
+   var ulrsss='/index.php/Home/{$foldername}/index/cid/{$cid}/p/'+p+'.html';
+    location.href = ulrsss;
+  } 
+ }); 
+</script> 
+
+    <!--翻页end-->
+    
+    
+</div>
+<!------------------------------------------------ container结束 ------------------------------------------------>
+

@@ -1,0 +1,64 @@
+<!---------------------------------datu开始--------------------------------->
+<div class="datu" style="
+    height: 450px;
+    background: url({$blist.img_path});
+    background-repeat: no-repeat;
+    background-position: center;
+"></div>
+<!---------------------------------datu结束--------------------------------->
+
+
+<!---------------------------------container 开始--------------------------------->
+<div class="container clearfix">
+    <div class="leftbox">
+       <div class="lanmu">
+           <div class="lanmu-title">园区动态<span style="font-size:16px;"> / Dynamic</span></div>
+           <div class="lanmu-btm">
+             <ul>
+               <volist name="lanmu" id="v">
+                <a href="/index.php/Home/{$v.foldername}/index/cid/{$v.id}.html"><li  <if condition="($v['id'] eq $cid)">class="a1"</if>>{$v.name}</li></a>
+              </volist>
+             </ul>
+           </div>
+       </div>
+       <div class="lianxibtm">
+           <a href="#"><img src="/images/lianxitu.jpg" width="246" height="93"></a>
+           <div class="btbox">
+              <a href="#"><div class="bt">联系我们<span style="color:#ccc; padding-left:5px;">Contact Us</span></div></a>
+           </div>
+       </div>
+    </div>
+    
+    <div class="rightbox">
+        <div class="btwzbox">
+           <span class="bt"><if condition="($lan['id'] eq $cid)">{$lan.name}</if><span style="font-size:16px;color:#999;"> / <if condition="($lan['id'] eq $cid)">{$lan.enname}</if></span></span>
+           <span class="weizhi">当前位置：<a href="/" style="color:#666;">首页</a> > <a href="#" style="color:#666;">园区动态</a> > <span style="color:#119946;"><a href="#" style="color:#119946;"><if condition="($lan['id'] eq $cid)">{$lan.name}</if></a></span></span>
+        </div>
+        
+        <volist name="news" id="v">
+        <div class="xinwenlist clearfix">
+           <div class="lfimg"><a href="#"><img src="{$v.imgurl}"></a></div>
+           <div class="rgnr">
+              <div class="xwbt"><a href="#">{$v.title}</a></div>
+              <div class="xwsj">发布日期：{$v.addtime}</div>
+             <a href="#">{$v.content|mb_substr=0,115,'utf-8'}...</a>
+              <div class="chakanxiangqing" style="margin-top:40px;"><a href="/index.php/Home/{$lan.foldername}/details/cid/{$v.id}.html">查看详情 →</a></div>
+           </div>
+        </div>
+        
+        </volist>
+      
+        
+        
+        
+        
+       
+        
+        
+        
+    <!--翻页start-->
+     <div class="yema" style="margin-top:35px;"><a class="a1">12条</a><a href="#">第一页</a><a href="#">上一页</a><span>1</span><a href="#">2</a><a href="#">下一页</a><a href="#">最后一页</a></div>
+    <!--翻页end-->
+    </div>
+</div>
+<!---------------------------------container 结束--------------------------------->

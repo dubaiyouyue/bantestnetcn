@@ -1,0 +1,33 @@
+<ul class="pic"><GZ:list catid="148" limit="3" key="k"><!-- posid="1"-->
+						<li>
+							
+							<p class="syn_title">{$r.title|str_cut=###,15}</p>
+							
+							<p class="syn_riqi">{$r.createtime|toDate=###,'Y-m-d'}</p>
+							
+							<div class="syn_con">
+							
+							{$r.description|str_cut=###,84}
+							
+							</div>
+							
+							<div class="syn_tubiao">
+							
+							<a href="{$r.url}"><img src="/images/news_tubiao.fw.png"></a>
+							
+							</div>
+							
+						</li>
+						 </GZ:list>
+						
+					</ul>
+					
+						
+					<ul class="hd">
+						
+						<?php
+							for($i=0;$i<$k;$i++){
+							echo '<li></li>';
+							}?>
+					
+					</ul>

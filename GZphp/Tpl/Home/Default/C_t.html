@@ -1,0 +1,8 @@
+
+<GZ:list sql="select * from gz_slide_data where fid = '11' and  status='1' order by listorder desc,id desc" key='i'>
+
+		<li style="padding-top:<?php
+			if($i==1) echo 25;
+			else echo 8;
+		?>px; display:block;"><a href="{$r.link}"><img src="{$r.pic}" width="328"></a></li>
+		</GZ:list>

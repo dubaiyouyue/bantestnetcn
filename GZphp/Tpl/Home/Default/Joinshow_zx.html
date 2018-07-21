@@ -1,0 +1,31 @@
+<div class="banner2"><img src="{$blist.img_path}" width="100%" height=""></div>
+
+<!---------- 二级导航 开始-----------> 
+<!--<div class="navigation clearfix" style=" padding-left:13%;">
+  <a href="#"><div class="navigation-1">公司新闻</div></a>
+    <a href="#"><div class="navigation-2">通知公告</div></a>
+
+
+   <a href="#"><div class="navigation-4">行业新闻</div></a>
+
+</div>
+--> 
+<!---------- 二级导航 结束-----------> 
+
+<!--园区新闻 开始-->
+
+<div class="news-xqy">
+  <div class="news-xqy-bt"> {$list.title} </div>
+  <div class="news-xqy-rq">发布人：润垦农业     时间：{$list.addtime|mb_substr=0,11,'utf-8'}</div>
+</div>
+<div class="xqy-wenzi">
+  {$list.content}
+  <div class="previous">
+  
+    <div class="previous-1">上一篇： <?php if(!empty($prev['id'])){?><a href="/index.php/Home/Newsshow/index/new/zx/cid/<?php echo $cid;?>/id/<?php echo $prev['id'];?>.html"><?php  echo $prev['title'];?></a><?php }else{echo "没有了";}?></div>
+    <div class="previous-2"> 下一篇： <?php if(!empty($next['id'])){?><a href="/index.php/Home/Newsshow/index/new/zx/cid/<?php echo $cid;?>/id/<?php echo $next['id'];?>.html"><?php echo $next['title'];?></a>
+<?php }else{echo "没有了";}?></div>
+  </div>
+</div>
+
+<!--翻页end-->

@@ -1,0 +1,27 @@
+<style>
+.mmmmicoccomimg img{max-width:100%;}
+</style>
+<!--内容区-->
+<div class="about_content">
+  <div class="about_content_left">
+     <div class="about_content_left_top">
+        <h3>{$Categorys.$parentid.catname}</h3>
+        <ul><include file="A:l"/>
+        	
+        </ul>
+     </div>
+    <include file="C:u"/>
+  </div>
+
+  <div class="about_content_right mmmmicoccomimg">
+      <div class="locate"><include file="Home:catpos"/></div>
+
+      <h4><span style="color:#119947;">▶</span> <span style="color:#000000;">{$Categorys.$catid.catname}</span> <span style="color:#999999;font-size:16px;">/ {$Categorys.$catid.keywords}</span></h4>
+      {$content}<!--翻页start-->
+		
+            <div id="pageGro" class="cb">
+               {$pages}
+            </div>
+             <!--翻页end-->
+  </div>
+</div>

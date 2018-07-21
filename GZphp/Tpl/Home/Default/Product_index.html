@@ -1,0 +1,104 @@
+<!--------------------------------------内容 开始--------------------------------------->
+
+<!--二级栏目-->
+<div class="lanmuscend" style="margin-top:-25px;">
+	<div class="lanmuscendtop">{$getinfolamu.enname}</div>
+	<div class="lanmuscendbottom">
+		{$getinfolamu.name}
+		<!--左右线条-->
+		<div class="lxtleft"></div>
+		<div class="lxtright"></div>
+	</div>
+</div>
+<ul id="menuullidemoli" class="clearUl">
+	<li <?php if(136==$cid) echo 'class="haveli"';?> >
+	<a href="/index.php/Home/Product/index/cid/136.html">全部</a>
+	</li>
+   
+
+  <foreach name="lanmu" item="r" key="k" >
+	<li <?php if($r['id']==$cid) echo 'class="haveli"';?> >
+   
+	<a href="/index.php/Home/{$r.foldername}/index/cid/{$r.id}.html">{$r.name}</a>
+	
+	</li>
+	</foreach>
+	
+</ul>
+
+<script>
+//二级导航自动居中
+(function (d){
+	$(d).css('clear','both');
+	var nw;
+	var t=0;
+	$(d+' li').each(function(){
+		$(this).css('display','inline-block');
+		nw=$(this).width();
+		t=t+nw;
+	});
+	var pw=$(d).width();
+	//console.log(pw);
+	if(pw<t){
+		$(d+' li').each(function(){
+			$(this).css('float','left');
+		});
+	}else{
+		$(d).css('textAlign','center');
+	}
+})("#menuullidemoli"); //ul id
+</script>
+
+
+
+<!--项目列表开始-->
+<ul class="caseeeeulli clearUl" id="sfsdfssssccc">
+      <foreach name="list" item="r" key="k" >
+
+      <li>
+      <a href="/index.php/Home/Newsshow/index/cid/{$cid}/id/{$r.id}.html" style="display:block;width:100%;height:100%">
+		 <div class="casesmain" style="background: url({$r.imgurl});background-repeat: no-repeat;background-size: cover;background-position: center center;">
+	
+			<div class="casesyinying">
+				<p class="casteepo">{$r.title}</p>
+				<p class="casteepot">-MORE-</p>
+			</div>
+		</div>
+	   </a>
+	</li>
+	</foreach>
+	</ul>
+
+<div class="morepffmain po" onclick="sslyss();" id="sfsdfssss">
+	<img src="/images/gengduo02.fw.png" class="morepng" />
+</div>
+
+
+
+	
+						<script>
+					nyyyyn=2;
+function sslyss(){
+$("#sfsdfssss").text('加载中...');
+$.ajax( {
+        url: '/index.php/Home/Product/index/ajax/ok/cid/{$cid}/p/'+nyyyyn+'.html', //这里是静态页的地址
+        type: "GET", //静态页用get方法，否则服务器会抛出405错误
+        success: function(data){
+			if(!data || data=='no data'){
+				$("#sfsdfssss").text('没有了');
+				return false;
+			}
+			//console.log(data);
+            //var result = $(data).find("另一个html页面的指定的一部分").html();
+            $("#sfsdfssssccc").append(data);
+            var html = '';
+                html+='<img src="/images/gengduo02.fw.png" class="morepng" />';
+			$("#sfsdfssss").html(html);
+			nyyyyn=nyyyyn+1;
+        }
+});
+//alert(nyyyyn);
+}
+</script>
+	
+<!--------------------------------------内容 结束--------------------------------------->

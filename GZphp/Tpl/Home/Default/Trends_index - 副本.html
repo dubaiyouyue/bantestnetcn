@@ -1,0 +1,179 @@
+<link type="text/css" rel="stylesheet" href="/css/news.css?6"/>
+<link type="text/css" rel="stylesheet" href="/css/page.css?6"/>
+<!------------------------------banner  开始-------------------------------->
+<div class="banner">
+	<div class="bd">
+		<img src="{$blist.img_path}"/> 
+	</div>
+</div>
+
+<!------------------------------banner  结束-------------------------------->
+
+
+<!----------------------------------新闻 开始------------------------------------------------------>
+<div class="news_redian">
+	<div class="jz">
+		
+		<!------------------------------当前位置 开始--------------------------------------->
+		<div class="location">
+			<p>当前位置：</p>
+			<p><a href="/">首页</a></p>
+			<h3>></h3>
+			<p><a href="/index.php/Home/Trends/index/cid/192.html">新闻资讯</a></p>
+			<h3>></h3>
+			<p class="dd">热点新闻</p>
+		</div>
+		<div class="underline"></div>
+<!------------------------------当前位置 结束--------------------------------------->
+
+<!------------------------------------标题 开始------------------------------>
+		<div class="headings">
+        	<div class="dot" ></div>
+            <div style="float:right; margin-right:10px; margin-left:0px;" class="dot"></div>
+            <p>新闻资讯</p>
+        	<span>NEWS INFORMATION</span>
+        </div>
+
+
+
+
+		
+		
+		<div class="second">
+			<ul>
+			<foreach name="lanmu" item="r" key="k" >
+				<li><a href="/index.php/Home/{$r.foldername}/index/cid/{$r.id}.html"><span class="<?php
+        if($k==0) echo 'dd';
+
+      ?>"><img src="{$r.columnimg}"/></span><p>{$r.name}</p><div class="cx <?php
+        if($r['id']==$cid) echo 'xz';
+
+      ?>"><img src="/images/about03.png"/></div></a></li>
+				<!-- <li><a href="#"><span><img src="/images/news01_r1_c3.png"/></span><p>社会新闻</p><div class="cx"><img src="/images/about03.png"/></div></a></li>
+				 -->
+				  </foreach>
+			</ul>
+				
+		</div>
+			
+				<foreach name="list" item="r" key="k" >
+		
+			<if condition="($k eq 0)">
+			  
+		<div class="above">
+			<a href="/index.php/Home/Newsshow/index/new/zx/cid/{$cid}/id/{$r.id}.html">
+				<div class="tupian"><img src="/images/news02.jpg"/></div>
+				<div class="literals">
+					<img src="/images/news03.png"/>
+					<div class="h"></div>
+					<div class="s"></div>
+					<p>{$r.ctitle}</p>
+					<h3>{$r.title} </h3>
+					<div class="con">{$r.description|htmlspecialchars_decode|mb_substr=0,80,'utf-8'}...</div>
+
+				</div>
+			</a>
+		</div>
+		
+		<else/>
+	
+            <div class="lower">
+               <a href="/index.php/Home/Newsshow/index/new/zx/cid/{$cid}/id/{$r.id}.html">
+                <div class="head">
+                    <img src="/images/news04.jpg"/>
+                    <h3>{$r.title}</h3>
+                    <h6>{$r.addtime|mb_substr=0,11,'utf-8'}</h6>
+                    <div class="underline"></div>
+                </div>
+                <p>{$r.description|htmlspecialchars_decode|mb_substr=0,100,'utf-8'}...</p>
+                <div style=" width:69px; height:28px; border:1px solid #242024; text-align:center; float:right; font-family:'微软雅黑'; font-size:14px; color:#333; line-height:28px;    margin-top: 10px;">MOER</div>
+                <div style=" width:527px; height:1px; background:#666; margin-top:167px; "></div>
+				</a>
+            </div>
+       </if>
+      </foreach>
+        
+            <!-- <div class="lower">
+               <a href="#">
+                <div class="head">
+                    <img src="/images/news04.jpg"/>
+                    <h3>李克强主持召开国务院常务会议</h3>
+                    <h6>2014-9-17</h6>
+                    <div class="underline"></div>
+                </div>
+                <p>会议指出，2013年以来，有关部门和央企按照党中央、国务院部署，着力深化国企改革，推动完成北车与南车、宝钢与武钢等32家央企重组的艰巨任务，取得显著成效... ...</p>
+                <div style=" width:69px; height:28px; border:1px solid #242024; text-align:center; float:right; font-family:'微软雅黑'; font-size:14px; color:#333; line-height:28px;">MOER</div>
+                <div style=" width:527px; height:1px; background:#666; margin-top:157px; "></div>
+                </a>
+            </div>
+        
+        
+        
+            <div class="lower">
+               <a href="#">
+                <div class="head">
+                    <img src="/images/news04.jpg"/>
+                    <h3>美国国务卿蒂勒森9月30日访华</h3>
+                    <h6>2014-9-17</h6>
+                    <div class="underline"></div>
+                </div>
+                <p>近日，武汉一医院发生医生为抢救患者剪坏衣服，事后反遭索赔千元的事件。上海市第一人民医院宝山分院也遭遇了类似情况... ...</p>
+                <div style=" width:69px; height:28px; border:1px solid #242024; text-align:center; float:right; font-family:'微软雅黑'; font-size:14px; color:#333; line-height:28px;">MOER</div>
+                <div style=" width:527px; height:1px; background:#666; margin-top:157px; "></div>
+                </a>
+            </div>
+        
+        
+       
+            <div class="lower">
+               <a href="#">
+                <div class="head">
+                    <img src="/images/news04.jpg"/>
+                    <h3>下月起一大波重磅新规实施</h3>
+                    <h6>2014-9-17</h6>
+                    <div class="underline"></div>
+                </div>
+                <p>会议指出，2013年以来，有关部门和央企按照党中央、国务院部署，着力深化国企改革，推动完成北车与南车、宝钢与武钢等32家央企重组的艰巨任务，取得显著成效... ...</p>
+                <div style=" width:69px; height:28px; border:1px solid #242024; text-align:center; float:right; font-family:'微软雅黑'; font-size:14px; color:#333; line-height:28px;">MOER</div>
+                <div style=" width:527px; height:1px; background:#666; margin-top:157px; "></div>
+                </a>
+            </div> -->
+        
+        
+        
+	</div>
+
+</div>
+
+<!--分页 开始-->
+
+<div id="paging"></div>
+<script src="/laypage/laypage.js"></script>
+<script>//好像很实用的样子，后端的同学再也不用写分页逻辑了。
+laypage({
+  cont: 'paging',
+  pages: '{$allpage}', //可以叫服务端把总页数放在某一个隐藏域，再获取。假设我们获取到的是18
+  curr:'{$p}',
+  jump: function(e, first){ //触发分页后的回调
+    if(!first){ //一定要加此判断，否则初始时会无限刷新
+      
+         var ulrsss='/index.php/Home/{$foldername}/index/cid/{$cid}/p/'+e.curr+'.html';
+          location.href = ulrsss;
+
+
+    }
+  }
+});</script>
+
+<!-- <div class="paging">
+            <a class="hover" href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">下一页</a>
+            <a href="#">末页</a>
+         </div> -->
+<!--分页 结束-->
+
+<!----------------------------------新闻 结束----------------------------------------------------->

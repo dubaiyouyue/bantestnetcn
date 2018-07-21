@@ -1,0 +1,194 @@
+<link type="text/css" rel="stylesheet" href="/css/contact.css?10"/>
+<script src="/layer/layer.js"></script>
+<!------------------------------banner  开始-------------------------------->
+<div class="banner">
+	<div class="bd">
+		<img src="{$blist.img_path}"/> 
+	</div>
+</div>
+
+<!------------------------------banner  结束-------------------------------->
+
+<!---------------------------------核心业务 开始--------------------------------->
+
+<div class="coop">
+	<div class="jz">
+
+<!------------------------------当前位置 开始--------------------------------------->
+		<div class="location">
+			<p>当前位置：</p>
+			<p><a href="/">首页</a></p>
+			<h3>></h3>
+			<p class="dd">联系我们</p>
+		</div>
+		<div class="underline"></div>
+<!------------------------------当前位置 结束--------------------------------------->
+
+
+<!-------------联系方式 开始-------------->
+		<div class="tell">
+			<div class="dh">
+				<div class="dg"><img src="/images/concent01_r1_c1.png"/><span>公司地址</span><p>{$config_info.gz_headeryj}</p></div>
+				<div class="dg"><img src="/images/concent01_r3_c1.png"/><span>电话号码</span><p>{$config_info.gz_footteldianhua}</p></div>
+				<div class="dg"><img src="/images/concent01_r5_c1.png"/><span>邮箱</span><p>{$config_info.gz_foottel}</p></div>
+			</div>
+			<div class="yiny"><img src="/images/centcat.png"/></div>
+			<div id="map" style="font-style:normal;font-size:12px;width: 386px;
+    height: 260px;display:block;float:left;">{$lan.description}</div>
+		</div>
+
+<!-------------联系方式 结束-------------->
+
+
+	<!-------------个人联系方式 开始-------------->
+	<div class="individual">
+		 <form  id="myform" action="" method="post">
+		 <input type="hidden"  name="lang" value="cn" />
+               <input type="hidden"  name="type" value="1" />
+			<div class="wno">
+				<div class="name">
+					<label>姓名：</label>
+					<input type="text" name="xm"  id="xm" />
+				</div>
+				<div class="name">
+					<label>电话：</label>
+					<input name="tel" type="text" id="tel"/>
+				</div>
+				<div class="name">
+					<label>邮箱：</label>
+					<input name="email" type="text" id="email" />
+				</div>
+			</div>
+            <div class="mss">
+                <label>留言：</label>
+                <textarea name="content" cols="" rows="" id="content"></textarea>
+            </div>
+            
+   
+            <div  class="anniu">
+				<input  type="button" value="提交" onclick="xxpd()"/>
+				<input style=" margin-left: 9px;" type="reset" value="清除"/>	
+            </div>
+		</form>
+		
+	</div>
+	
+	
+	
+	
+
+	</div>
+</div>
+
+
+
+
+
+
+
+
+ <script>
+//document.getElementById('biaoti').focus();
+//document.getElementById('email').focus();
+  //$("#name").focus();
+            
+  function  xxpd(){
+   // alert('1223');
+  
+    
+    var xm=$('#xm').val();
+    var tel=$('#tel').val();
+	var email=$('#email').val();
+    var content=$('#content').val();
+    var myreg = /^(((13[0-9]{1})|(14[0-9]{1})|(17[0]{1})|(15[0-3]{1})|(15[5-9]{1})|(18[0-9]{1}))+\d{8})$/; 
+        var reg = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
+    
+
+     if(!xm){
+      layer.msg('请填写您的姓名',{time:1000,shift:6}
+      
+      ,function(){  
+      document.getElementById('xm').focus();   
+      } 
+      );
+      
+      return false;
+    
+    }
+
+    if(!tel||tel.length !=11){
+      layer.msg('请填写您的电话',{time:1000,shift:6}
+      
+      ,function(){  
+      document.getElementById('tel').focus();   
+      } 
+      );
+      
+      return false;
+    
+    }
+	
+	
+	  if(!email||!(reg.test(email))){
+      layer.msg('请填写您的邮箱',{time:1000,shift:6}
+      
+      ,function(){  
+      document.getElementById('email').focus();   
+      } 
+      );
+      
+      return false;
+    
+    }
+	
+	
+	
+	
+	
+     if(!content){
+      layer.msg('请填写留言内容',{time:1000,shift:6}
+      
+      ,function(){  
+      document.getElementById('content').focus();   
+      } 
+      );
+      
+      return false;
+    
+    }
+    
+    
+    
+   
+    document.getElementById('myform').submit();
+  }
+ 
+  
+//  nyyyyn=0;
+//  sslyss();
+//  function sslyss(){
+//  $("#sfsdfssss").text('加载中...');
+//  $.ajax( {
+//      url: '/index.php?g=Home&m=Onlinemessagee&a=index&aid='+nyyyyn, //这里是静态页的地址
+//      type: "GET", //静态页用get方法，否则服务器会抛出405错误
+//      success: function(data){
+//        if(!data){
+//          $("#sfsdfssss").text('没有了');
+//          return false;
+//        }
+//        //var result = $(data).find("另一个html页面的指定的一部分").html();
+//        $("#sfsdfssss").before(data);
+//        $("#sfsdfssss").text('查看更多...');
+//        nyyyyn=nyyyyn+1;
+//      }
+//  });
+//  //alert(nyyyyn);
+//  
+//  
+//    /*var index = layer.load(1, {
+//    shade: [0.2,'#fff'], //0.1透明度的白色背景
+//    //time:2*1000,
+//    });*/
+//  }
+</script>
+<!-------------个人联系方式 结束-------------->

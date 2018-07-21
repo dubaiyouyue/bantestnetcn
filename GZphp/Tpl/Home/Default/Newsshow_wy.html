@@ -1,0 +1,21 @@
+
+
+<!------------------------------------------------ container2开始 ------------------------------------------------>
+<div class="container2">
+<div class="dqweizhi"><span class="zfx"></span>您当前所在位置：<a href="/">首页</a>><foreach name="location_all" item="r" key="ksss" >
+<?php
+	if(!$ksss) echo '<span class="erji"><a href="'.$r['0'].'">'.$r['1'].'</a></span>';
+	if($ksss==1) echo '><span class="sanji"><a href="'.$r['0'].'">'.$r['1'].'</a></span>';
+	if($ksss==2) echo '><span class="sanji"><a href="'.$r['0'].'">'.$r['1'].'</a></span>';
+?>
+</foreach></div>
+    
+    <div class="content2">
+       <div class="cpxqbt">{$list.title}</div>
+       
+     {$list.content}
+       
+  </div>
+    
+</div>
+<!------------------------------------------------ container结束 ------------------------------------------------>

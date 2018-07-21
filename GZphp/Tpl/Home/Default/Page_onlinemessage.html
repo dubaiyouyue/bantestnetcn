@@ -1,0 +1,201 @@
+<style>  /*利用:after伪元素*/  
+.clearUl:after {  
+content:"";
+display: block;  
+clear: both;  
+}  
+</style>  
+<!--内容区-->
+<div class="msg_content clearUl">
+  <div class="msg_content_left">
+     <div class="msg_content_left_top">
+        <h3>{$Categorys.$parentid.catname}</h3>
+        <ul>
+        	<include file="A:l"/>
+        </ul>
+     </div>
+    <include file="C:u"/>
+  </div>
+
+  <div class="msg_content_right">
+      <div class="locate"><include file="Home:catpos"/></div>
+
+      <h4><span style="color:#119947;">▶</span> <span style="color:#000000;">{$Categorys.$catid.catname}</span> <span style="color:#999999;font-size:16px;">/ {$Categorys.$catid.keywords}</span></h4>
+      <p style="color:#F88327;">{$lyts}</p>
+      <p style="color:#119946;font-size:16px;line-height:70px;">发表留言</p>
+      <div class="submit_box clearUl"><form name="myform" id="myform" method="POST" class="clearUl" action="/index.php?g=User&m=Post&a=Message">
+         <p><span>*</span>标题</p><input name="title" id="name" type="text">
+         <p><span>*</span>电子邮箱</p><input name="email" id="email" type="text">
+         <p><span>*</span>手机号码</p><input name="tel" id="tel" type="text">
+         <p><span>*</span>留言内容</p><textarea name="content" id="content" cols="" rows=""></textarea>
+         <p></p><input class="submit_button" name="" type="button" title="提交"  onclick="xxpd();" value="提交"><input class="cancel_button" name="" type="button" title="取消" value="取消"></form>
+      </div>
+    
+	
+<p style="color:#119946;font-size:16px;clear:both; padding-top:30px;">访客留言</p>
+	
+	
+	
+	
+        
+    <p style="
+    text-align: center;
+    background: #119946;
+    padding: 8px 0;
+    cursor: pointer;
+    width: 180px;
+    margin: auto;
+    border: 1px solid #ccc;
+    color:  #fff;
+    margin-top: 28px;
+" class="jiazai" onclick="sslyss();" id="sfsdfssss">加载更多...</p>
+	
+	
+	
+	
+	
+	
+	
+
+  </div>
+</div>
+
+<script>
+	nyyyyn=0;
+	sslyss();
+
+	document.getElementById('name').focus();
+	function  xxpd(){
+	
+		var name=$('#name').val();
+		var email=$('#email').val();
+		var telephone=$('#tel').val();
+		var content=$('#content').val();
+		
+		if(!name){
+			alert('请填写标题');
+			document.getElementById('name').focus();
+			return false;
+			/*layer.msg('请填写标题',{time:1000000,shift:6}
+			
+			,function(){
+			
+			//alert('123');
+			//documnet.getElementById('xm').focus();
+			document.getElementById('name').focus();
+			
+			}
+			
+			
+			);
+			document.getElementById('name').focus();
+			return false;*/
+		
+		}
+		
+		if(!youxiang('email') || !email){
+			alert('请填写电子邮箱');
+			document.getElementById('email').focus();
+			return false;/*
+			layer.msg('请填写电子邮箱',{time:1500,shift:6}
+			
+			,function(){
+			
+			//$('#email').val('');
+			
+			document.getElementById('email').focus();
+			
+			}
+			
+			);
+			
+			return false;*/
+			
+		}
+		
+		if(!telephone || (telephone.length!=7 && telephone.length!=11) || isNaN(telephone)){
+			alert('请填写联系电话');
+			document.getElementById('tel').focus();
+			return false;/*
+			layer.msg('请填写联系电话',{time:1000,shift:6}
+			
+			,function(){
+			
+
+			document.getElementById('tel').focus();
+			
+			}
+			
+			
+			);
+			
+			return false;*/
+		
+		}
+		if(!content){
+			alert('请填写留言内容');
+			document.getElementById('content').focus();
+			return false;/*
+			layer.msg('请填写留言内容',{time:1000,shift:6}
+			
+			,function(){
+			
+
+			document.getElementById('content').focus();
+			
+			}
+			
+			);
+			
+			return false;*/
+		
+		}
+		document.getElementById('myform').submit();
+	}
+	
+		function  youxiang(n){
+		
+		var email = document.getElementById(n).value;
+		
+		//alert(email);
+		
+		//return false;
+		
+            if (email != "") {
+            var reg = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
+                isok= reg.test(email );
+                if (!isok) {
+                    return false;
+                }
+				else return true;
+            }
+		}
+
+	function sslyss(){
+	$("#sfsdfssss").text('加载中...');
+	$.ajax( {
+			url: '/index.php?g=Home&m=Onlinemessagee&a=index&aid='+nyyyyn, //这里是静态页的地址
+			type: "GET", //静态页用get方法，否则服务器会抛出405错误
+			success: function(data){
+				if(!data){
+					$("#sfsdfssss").text('没有了');
+					return false;
+				}
+				//var result = $(data).find("另一个html页面的指定的一部分").html();
+				$("#sfsdfssss").before(data);
+				$("#sfsdfssss").text('查看更多...');
+				nyyyyn=nyyyyn+1;
+			}
+	});
+	//alert(nyyyyn);
+	
+	
+		/*var index = layer.load(1, {
+		shade: [0.2,'#fff'], //0.1透明度的白色背景
+		//time:2*1000,
+		});*/
+	
+	
+	
+	}
+</script>

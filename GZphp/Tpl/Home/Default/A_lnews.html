@@ -1,0 +1,24 @@
+
+							
+                <?php
+				$newcatid=$_GET['newcatid'];
+            $narr=xlcatid($Categorys,$parentid);
+			if($catid==148) $narr=xlcatid($Categorys,148);
+			if($catid==156) $narr=xlcatid($Categorys,156);
+			if($catid==167) $narr=xlcatid($Categorys,167);
+            //dump($narr);
+            $nnnkkkknnn=count($narr);
+            foreach($narr as $k=>$v){
+                $kv++;
+                echo '<li';
+				if($v['id']==$catid || ($newcatid==$v['id'] && ($catid==148 || $catid==156 || $catid==167)) || (!$newcatid && $kv==1 && ($catid==148 || $catid==156 || $catid==167))) echo ' class="navaction-onenav"';
+				echo '><a href="';
+				if($catid!=168 && $catid!=169 && $catid!=167 && (($catid==148 || $catid==156 || $catid==167) || ($parentid==148 || $parentid==156 || $parentid==167))) echo $Categorys[$catid]['url'].'?newcatid='.$v['id'];
+				else echo $v['url'];
+				echo '">'.$v['catname'].'</a>';
+				if($kv>1 || $catid==148 || $catid==156 || $catid==167) echo '<span class="hx"></span>';
+				echo '</li>';
+                }
+                ?>
+				
+				

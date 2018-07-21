@@ -1,0 +1,35 @@
+
+<!--内容区-->
+<div class="job_content">
+  <div class="job_content_left">
+     <div class="job_content_left_top">
+        <h3>{$Categorys.$parentid.catname}</h3>
+        <ul><include file="A:l"/>
+        	
+        </ul>
+     </div>
+      <include file="C:u"/>
+  </div>
+
+  <div class="job_content_right">
+      <div class="locate"><include file="Home:catpos"/></div>
+
+      <h4><span style="color:#119947;">▶</span> <span style="color:#000000;">{$Categorys.$catid.catname}</span> <span style="color:#999999;font-size:16px;">/ {$Categorys.$catid.keywords}</span></h4>
+     
+
+ <volist name="list" id="r" empty="$em" key="k">
+	 <div class="job_box">
+        <h5><a href="{$r.url}">{$r.title|str_cut=###,110}</a></h5>
+        <p><span style="color:#F88326;">概要：</span><a href="{$r.url}">职位描述：{$r.description|str_cut=###,240}</a></p>
+      </div>
+
+       </volist> 
+  </div>
+</div>
+
+<!--翻页start-->
+		
+            <div id="pageGro" class="cb">
+               {$pages}
+            </div>
+             <!--翻页end-->

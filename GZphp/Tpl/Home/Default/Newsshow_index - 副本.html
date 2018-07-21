@@ -1,0 +1,30 @@
+
+<!------------------------------------------------ container2开始 ------------------------------------------------>
+<div class="container2">
+
+
+<div class="dqweizhi"><span class="zfx"></span>您当前所在位置：<a href="/">首页</a>><foreach name="location_all" item="r" key="ksss" >
+<?php
+	if(!$ksss) echo '<span class="erji"><a href="'.$r['0'].'">'.$r['1'].'</a></span>';
+	if($ksss==1) echo '><span class="sanji"><a href="'.$r['0'].'">'.$r['1'].'</a></span>';
+	if($ksss==2) echo '><span class="sanji"><a href="'.$r['0'].'">'.$r['1'].'</a></span>';
+?>
+</foreach></div>
+
+    
+    <div class="content2">
+       <div class="cpxqbt">{$list.title}</div>
+       <div class="xqhz clearfix">
+          <div class="xqlf"><img src="{$list.imgurl}" width="400" height="250"></div>
+          <div class="xqrg">
+             <P>植物学名：{$list.scientific}</P>
+             <P>主要规格：{$list.description}</P>
+          </div>
+       </div>
+       
+       <div class="jsbt">产品介绍</div>
+       {$list.content}
+    </div>
+</div>
+<!------------------------------------------------ container结束 ------------------------------------------------>
+

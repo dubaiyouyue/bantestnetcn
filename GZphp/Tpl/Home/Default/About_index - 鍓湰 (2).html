@@ -1,0 +1,84 @@
+
+
+<div class="bj">
+
+<!-------------------------------banner 开始--------------------------------->
+<div class="ding">
+	
+	<div class="banner">
+		<div class="bd">
+			<img src="{$blist.img_path}"/>
+		</div>
+	</div>
+	
+	
+	
+		<div class="title">
+			<div class="jz">
+
+				<div class="zuo">
+					<!--<div class="tp"><img src="images/services_r2_c2.jpg"/></div>-->
+					<div class="biaoyu" style="    background: #272C3F url(/images/services_r2_c2.jpg); background-repeat: no-repeat;background-position: left top;padding-left: 64px;box-sizing: border-box;">
+						{$config_info.gz_footother}
+					</div>
+				</div>
+
+
+				<div class="you">
+					<h4>{$getinfolamu.name}</h4>
+					<p>{$getinfolamu.enname}</p>
+					<div class="xian"></div>
+					<img src="{$getinfolamu.columnimg}"/>
+				</div>
+				
+			
+			</div>
+		</div>
+	
+		
+		
+</div>
+
+
+
+<!-------------------------------banner 结束--------------------------------->
+
+
+<style>
+.about{color:#fff;}
+</style>
+
+<!-------------------------内容 开始----------------------------->
+<div class="about">
+	<div class="jz">
+		<div class="nav_t">
+			<ul>
+
+				
+						<foreach name="lanmu" item="r" key="k" >
+					<li>
+					<a href="/index.php/Home/{$r.foldername}/index/cid/{$r.id}.html" <?php
+        if($r['id']==$cid) echo 'style="width:128px; height: 43px; background: #24D3B6;"';
+
+      ?>>{$r.name}</a>
+					<div class="xian"></div>
+						<div class="sj" <?php
+        if($r['id']==$cid) echo 'style="display:block;"';
+
+      ?>><img src="/images/about1.fw.png"/></div>
+					</li>
+				  </foreach>
+				
+			</ul>
+		</div>
+		
+	<br />
+		
+		{$lan.content}
+		
+		
+	</div>
+</div>
+<!-------------------------内容 结束----------------------------->
+
+

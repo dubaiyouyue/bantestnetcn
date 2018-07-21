@@ -1,0 +1,38 @@
+<link type="text/css" rel="stylesheet" href="/css/details.css?3"/>
+
+<!------------------------------banner  开始-------------------------------->
+<div class="banner">
+	<div class="bd">
+		<img src="{$blist.img_path}"/> 
+	</div>
+</div>
+
+<!------------------------------banner  结束-------------------------------->
+
+
+<!----------------------------------新闻 开始------------------------------------------------------>
+<div class="news_redian">
+	<div class="jz">
+		
+		<!------------------------------当前位置 开始--------------------------------------->
+		<div class="location">
+			<p>当前位置：</p>
+			<p><a href="/">首页</a></p>
+			<h3>></h3>
+			<p><a href="/index.php/Home/Trends/index/cid/140.html">新闻资讯</a></p>
+			<h3>></h3>
+		
+			<p class="dd">新闻详情</p>
+		</div>
+		<div class="underline"></div>
+<!------------------------------当前位置 结束--------------------------------------->
+		<div class="nie">
+		<h4 style="text-align:center;">{$list.title}</h4>
+		<div class="content">  {$list.content}</div>
+        	
+        </div>
+		 <div class="sxpain"><p class="shangyipian"><?php if(!empty($prev['id'])){?><a href="/index.php/Home/Newsshow/index/new/zx/cid/<?php echo $cid;?>/id/<?php echo $prev['id'];?>.html">上一篇：<?php  echo $prev['title'];?></a><?php }else{echo "上一篇：没有了";}?></p><p class="xiayipian" > <?php if(!empty($next['id'])){?><a href="/index.php/Home/Newsshow/index/new/zx/cid/<?php echo $cid;?>/id/<?php echo $next['id'];?>.html">下一篇：<?php echo $next['title'];?></a><?php }else{echo "下一篇：没有了";}?></p></div>
+  </div>
+  
+  
+  

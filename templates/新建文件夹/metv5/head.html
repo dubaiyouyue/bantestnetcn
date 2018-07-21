@@ -1,0 +1,56 @@
+<!--<?php
+require_once template('config');
+echo <<<EOT
+-->
+{$methtml_head}
+<!--
+EOT;
+if($lang_bgdcolor!=''){
+echo <<<EOT
+-->
+<style type="text/css">
+header{ {$lang_bgdcolor} }
+</style>
+<!--
+EOT;
+}
+echo <<<EOT
+--><body>
+    <header>
+		<div class="inner">
+			<div class="top-logo">
+<!--
+EOT;
+if($gz_logo!=''){
+echo <<<EOT
+-->
+				<a href="{$index_url}" title="{$gz_webname}" id="web_logo">
+					<img src="{$gz_logo}" alt="{$gz_webname}" title="{$gz_webname}" style="margin:{$lang_LogoTop}px 0px 0px {$lang_LogoLeft}px;" />
+				</a>
+<!--
+EOT;
+}
+echo <<<EOT
+-->
+				<ul class="top-nav list-none">
+					<li class="t">{$metlang}</li>
+					<li class="b">{$gz_seo}</li>
+				</ul>
+			</div>
+			<nav>{$gz_nav}</nav>
+		</div>
+	</header>
+<!--
+EOT;
+if($gz_flasharray[$classnow][type]){
+echo <<<EOT
+-->
+	<div class="inner gz_flash">{$methtml_flash}</div>
+<!--
+EOT;
+}
+echo <<<EOT
+-->
+<!--
+EOT;
+?>

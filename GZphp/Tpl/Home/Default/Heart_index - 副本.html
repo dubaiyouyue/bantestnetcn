@@ -1,0 +1,79 @@
+
+<link type="text/css" rel="stylesheet" href="/css/business.css?7"/>
+
+<!------------------------------banner  开始-------------------------------->
+<div class="banner">
+	<div class="bd">
+		<img src="{$blist.img_path}"/> 
+	</div>
+</div>
+
+<!------------------------------banner  结束-------------------------------->
+
+<!---------------------------------核心业务 开始--------------------------------->
+
+<div class="bus">
+	<div class="jz">
+
+<!------------------------------当前位置 开始--------------------------------------->
+		<div class="location">
+			<p>当前位置：</p>
+			<p><a href="/">首页</a></p>
+			<h3>></h3>
+			<p class="dd">核心业务</p>
+		</div>
+		<div class="underline"></div>
+<!------------------------------当前位置 结束--------------------------------------->
+
+<!------------------------------------标题 开始------------------------------>
+		<div class="headings">
+        	<div class="dot" ></div>
+            <div style="float:right; margin-right:10px; margin-left:0px;" class="dot"></div>
+            <p>核心业务</p>
+        	<span>CORE BUSINESS</span>
+        </div>
+<!------------------------------------标题 结束------------------------------>
+
+        <!---------------------------------二级导航 开始------------------------------------------>
+		<div class="second">
+			<ul>
+			<foreach name="lanmu" item="r" key="k" >
+				<li><a href="/index.php/Home/{$r.foldername}/index/cid/{$r.id}.html"><span class="<?php
+        if($k==0) echo 'dd';
+
+      ?>"><img src="{$r.columnimg}"/></span><p>{$r.name}</p><div class="cx <?php
+        if($r['id']==$cid) echo 'xz';
+
+      ?>"><img src="/images/about03.png"/></div></a></li>
+				<!-- <li><a href="#"><span><img src="images/bus_r1_c3.png"/></span><p>检验中心共建服务</p><div class="cx xz"><img src="images/about03.png"/></div></a></li>
+				<li><a href="#"><span><img src="images/bus_r1_c5.png"/></span><p>集约化配送</p><div class="cx"><img src="images/about03.png"/></div></a></li>
+				<li><a href="#"><span><img src="images/bus_r1_c7.png"/></span><p>第三方维修服务</p><div class="cx"><img src="images/about03.png"/></div></a></li>
+				<li><a href="#"><span><img src="images/bus_r1_c9.png"/></span><p>医和你平台</p><div class="cx"><img src="images/about03.png"/></div></a></li>
+				<li><a href="#"><span><img src="images/bus_r1_c11.png"/></span><p>医大睿谷检验中心</p><div class="cx"><img src="images/about03.png"/></div></a></li> -->
+			  </foreach>
+			
+			</ul>
+				
+		</div>
+		
+		
+			
+	</div>		
+
+
+<!----------------------------------------------核心业务内容 开始------------------------------------------------------>
+
+
+
+<!----------------------------------------------核心业务内容 结束------------------------------------------------------>
+	<div class="words">
+		<div class="words_jz">
+			<a href="/index.php/Home/Heartshow/index/new/zx/cid/{$cid}/id/{$introduce.id}.html"><h3>{$introduce.title}</h3>
+			<h4>{$introduce.ctitle}</h4>
+			<div class="content">{$introduce.description|htmlspecialchars_decode|mb_substr=0,100,'utf-8'}......</div>
+			</a>
+		</div>
+
+	</div>
+</div>
+<!----------------------------------核心业务 结束-------------------------------------------------------->

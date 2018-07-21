@@ -1,0 +1,16 @@
+{__NOLAYOUT__}
+
+<foreach name="list" item="r" key="k" >
+			 <li>
+      <a href="/index.php/Home/Newsshow/index/cid/{$cid}/id/{$r.id}.html" style="display:block;width:100%;height:100%">
+		 <div class="casesmain" style="background: url({$r.imgurl});background-repeat: no-repeat;background-size: cover;background-position: center center;">
+	
+			<div class="casesyinying">
+				<p class="casteepo" style="height: 23px;overflow: hidden; margin-top: 44px; padding: 0px 10px;">{$r.title}</p>
+				<p class="casteepot">-MORE-</p>
+			</div>
+		</div>
+	   </a>
+	</li>
+			
+			</foreach>

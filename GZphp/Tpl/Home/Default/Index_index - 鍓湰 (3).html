@@ -1,0 +1,581 @@
+{__NOLAYOUT__}
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" /><!--IE7、8强制同步-->
+<title>{$seo_title}</title>
+<meta name="keywords" content="{$seo_title}">
+<meta name="description" content="{$seo_title}">
+<link type="text/css" rel="stylesheet" href="/css/public.css"/>
+<link type="text/css" rel="stylesheet" href="/css/style.css?2"/>
+
+<script src="/js/jquery-1.4.4.min.js"></script>
+<link rel="stylesheet" href="/css/swiper.min.css">
+
+</head>
+
+<body>
+<!-----------------------头部 开始---------------------->
+<div class="top">
+	<div class="jz">
+		<div class="logo"><img src="{$config_info.gz_logo}"/></div>
+		<div class="nav">
+			<ul>
+				<li class="<?php
+        if($cid==0){echo 'dd';}
+
+      ?>"><a href="/" class="tub <?php
+        if($cid==0) echo 'dandu';
+
+      ?>">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
+				<foreach name="new_column_list_top" item="r" key="k" >
+               <li class="<?php
+        if($foldername==$r['foldername']) echo 'dd';
+
+      ?>" ><a href="/index.php/Home/{$r.foldername}/index/cid/{$r.id}.html" class="tub <?php
+        if($foldername==$r['foldername']) echo 'dandu';
+
+      ?>">{$r.name}</a></li>
+			    </foreach>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<!-----------------------头部 结束---------------------->
+
+
+<!-- 轮播 styles -->
+  <style>
+    html, body {
+      position: relative;
+    }
+    body {
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color:#000;
+      margin: 0;
+      padding: 0;
+    }
+    .swiper-container {
+      width: 100%;
+      height:100%;
+    }
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+  </style>
+
+
+<!-----banner 开始------>
+
+
+
+
+ <!-- Swiper -->
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+     
+	 
+		<foreach name="blist" item="r" key="k" >
+			 
+            	 <div class="swiper-slide" ><img src="{$r.img_path}" style="width: 100%; "></div>
+				
+				</foreach>
+	 
+	 
+     
+    
+    
+     
+   
+    </div>
+	<div class="swiper-pagination"></div>
+    <!-- Add Arrows -->
+    <div  style="    width: 1200px;
+    height: 60px;
+   
+    position: absolute;
+    top:79%;
+    left: 50%;
+    margin-left: -600px;
+    overflow: hidden;
+   
+    z-index: 9;">
+   <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+
+
+
+<!-- Swiper JS -->
+  <script src="/js/swiper.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+		
+		autoplay: {
+    delay: 1000,
+    stopOnLastSlide: false,
+    disableOnInteraction: true,
+    },
+      /*navigation: {
+        nextEl: '.swiper-button-next',width: window.innerWidth,/*全屏参数 width: window.innerWidth,*/
+        /*prevEl: '.swiper-button-prev',
+      },*/
+  pagination: {
+    el: '.swiper-pagination',
+    bulletElement : 'li',
+  },clickable :true,
+    });
+  </script>
+
+
+<!-----banner 结束------>
+<!--------------------------------轮播下面的线 开始--------------------------------->
+<div class="banner_xian"></div>
+<!--------------------------------轮播下面的线 开始--------------------------------->
+
+
+
+<div class="bj">
+<!-----------------------服务范围 开始------------------------->
+
+
+
+
+<div class="in_service">
+	<div class="jz">
+		<div class="tittle">
+			<img src="/images/index_r17_c12.png"/>
+			<div class="xian"></div>
+		</div>
+		<div class="meig">
+			<div class="zuo" style="z-index: 9999;position: relative;"></div>
+				<ul style="/*margin-left: -61px;*/overflow:hidden;">
+				
+
+				
+				<div class="swiper-container2">
+				
+				
+				  <div class="swiper-wrapper">
+				  
+				  
+				<foreach name="sso" item="r" key="k" >
+	
+					<div class="swiper-slide" style="background: none;">
+						<li>
+							<a href="/index.php/Home/Newsshow/index/pagesss/1/cid/{$r.id}.html">
+								<div class="tp" style="background: url({$r.columnimg}) no-repeat center;"></div>
+								<div class="wz">
+									<h4>{$r.name}</h4>
+									<h5>{$r.enname}</h5>
+									<div class="xian"></div>
+									<p>{$r.description}</p>
+								</div>
+							</a>
+						</li>
+					</div>
+				</foreach>
+					
+					
+					
+					
+					
+					
+				  </div>
+				  
+				  
+				  
+				  
+				</div>
+
+				
+				
+				
+
+					
+					
+					
+					
+				</ul>
+			<div class="you" style="z-index: 9999;position: relative;"></div>
+		</div>
+	</div>
+</div>
+				<script>
+				var mySwipers = new Swiper('.swiper-container2', {
+					//autoplay: true,//可选选项，自动滑动
+  navigation: {
+    nextEl: '.you',
+    prevEl: '.zuo',
+  },
+
+					spaceBetween: 0,
+					slidesPerView: 3
+				})
+				</script>
+<!-----------------------服务范围 结束------------------------->
+
+<!-----------------------案例展示 开始------------------------->
+<div class="in_case">
+
+	<div class="jz">
+		<div class="tittle">
+			<div class="zuobian">
+				<div class="anniu">
+					<div class="shang" onclick="geannll('s');" style="
+    position: absolute;
+    left: 0px;
+    top: -70px;
+    z-index: 999;
+    background: #fff;
+"><img src="images/index_r9_c5.png"/></div>
+					<div class="xia" onclick="geannll('x');" style="
+    position: absolute;
+    left: 0px;
+    top: 6px;
+"><img src="images/index_r13_c3.png"/></div>
+				</div>
+			</div>
+			<div class="wz">
+				<div class="tp"><img src="images/index_r6_c14.png"/></div>
+				<div class="xian"></div>
+				<div class="biaoyu">
+					<h4>为客户打造所在行业顶级品牌</h4>
+					<p>For customers to cteate the dustry`s top brands</p>
+				</div>
+			</div>
+		</div>
+		
+		<div class="fenl" id="aaalllajsjjs">
+		
+		
+		
+		
+		
+		<?php
+			$anluuum=count($newssal);
+		?>
+		<foreach name="newssal" item="r" key="k" >
+		
+		
+		
+		<?php
+			$k++;
+			if($k==1) echo '<div class="first_column">';
+			if($k<4){
+		?>
+			
+				<div class="anli" style="background: url({$r.imgurl}) no-repeat center;">
+					<a href="/index.php/Home/Newsshow/index/cid/{$r.class1}/id/{$r.id}.html">
+						<div class="xiaog">
+							<h3>{$r.title}</h3>
+							<p>- MORE -</p>
+						</div>
+					</a>
+				</div>
+				
+				
+				
+					<?php
+					if($k==$anluuum || $k==3) echo '</div>';
+					}else{
+					if($k==4) echo '<div class="first_two">';
+		?>
+			
+			
+				<div class="<?php
+					if($k==5) echo 'anli_z';
+					else echo 'anli';
+				?>" style="background: url({$r.imgurl}) no-repeat center;">
+					<a href="/index.php/Home/Newsshow/index/cid/{$r.class1}/id/{$r.id}.html">
+						<div class="xiaog">
+							<h3>{$r.title}</h3>
+							<p>- MORE -</p>
+						</div>
+					</a>
+				</div>
+			
+		
+		<?php
+			if($k==$anluuum || $k==6) echo '</div>';
+			}
+		?>
+		
+		</foreach>
+		
+		
+
+		
+		
+		
+		
+		
+		</div>
+		
+	</div>
+	
+</div>
+<!-----------------------案例展示 结束------------------------->
+
+<script>
+var nnnpppp=2;
+function geannll(m){
+	if(nnnpppp<1){
+		nnnpppp=1;
+		if(m=='x') nnnpppp=2;
+	}
+	$.ajax( {
+		url: '/index.php/Home/Trendsajax/index/p/'+nnnpppp+'.html', //这里是静态页的地址
+		type: "GET", //静态页用get方法，否则服务器会抛出405错误
+		//dataType: "json",
+		//cache: false,
+		//async: false,
+		beforeSend: function(){
+		 // Handle the beforeSend event
+		},
+		success: function(data){
+			//alert(data.length);
+			if(data.length<40){
+				nnnpppp=1;
+				return false;
+			}
+			if(m=='x') nnnpppp=nnnpppp+1;
+			else nnnpppp=nnnpppp-1;
+			$('#aaalllajsjjs').html(data);
+			//var result = $(data).find("另一个html页面的指定的一部分").html();
+		}
+	});
+}
+</script>
+<!-----------------------新闻资讯 开始------------------------->
+
+<div class="in_news">
+	<div class="neih">
+	
+		<div class="in_nav">
+			<div class="tittle">
+				<div class="tp"><img src="/images/index_r22_c14.png"/></div>
+				<div class="xian"></div>
+			</div>
+			<div class="notice ju">
+				<a href="javascript:;" onclick="gghhh('gggggggssss');">
+					<p>公告&动态</p>
+					<span>Announcement & dynamic</span>
+				</a>
+			</div>
+			<div class="notice">
+				<a href="javascript:;" onclick="gghhh('gggggggsssszx');">
+					<p>行业资讯</p>
+					<span>Industry information</span>
+				</a>
+			</div>
+			<div class="biaoyu">
+				<p>共振邀您，共振未来！</p>
+				<span>Resonance invites you, resonance of the future</span>
+			</div>
+		</div>
+		
+		
+		<div class="xinw" id="gghhhhxxoo">
+		<foreach name="newssalgg" item="r" key="k" >
+		
+		
+		
+			<a href="/index.php/Home/Newsshow/index/cid/{$r.class1}/id/{$r.id}.html">
+				<div class="meige">
+					<div class="rq">
+						<h2><?php
+						echo date('d', strtotime($r['addtime']));
+					?></h2>
+						<p><?php
+						echo date('Y-m', strtotime($r['addtime']));
+					?></p>
+					</div>
+					<div class="ner">
+						<h3>{$r.title}</h3>
+						<p>{$r.description}</p>
+					</div>
+					<div class="more"><img src="/images/index_r10_c13.jpg"/></div>
+				</div>
+			</a>
+			
+			
+			
+			</foreach>
+			
+			
+			
+		</div>
+		
+		<div id="gggggggssss" style="display:none;"><foreach name="newssalgg" item="r" key="k" >
+		
+		
+		
+			<a href="/index.php/Home/Newsshow/index/cid/{$r.class1}/id/{$r.id}.html">
+				<div class="meige">
+					<div class="rq">
+						<h2><?php
+						echo date('d', strtotime($r['addtime']));
+					?></h2>
+						<p><?php
+						echo date('Y-m', strtotime($r['addtime']));
+					?></p>
+					</div>
+					<div class="ner">
+						<h3>{$r.title}</h3>
+						<p>{$r.description}</p>
+					</div>
+					<div class="more"><img src="/images/index_r10_c13.jpg"/></div>
+				</div>
+			</a>
+			
+			
+			
+			</foreach></div>
+		<div id="gggggggsssszx" style="display:none;"><foreach name="newssalggzx" item="r" key="k" >
+		
+		
+		
+			<a href="/index.php/Home/Newsshow/index/cid/{$r.class1}/id/{$r.id}.html">
+				<div class="meige">
+					<div class="rq">
+						<h2><?php
+						echo date('d', strtotime($r['addtime']));
+					?></h2>
+						<p><?php
+						echo date('Y-m', strtotime($r['addtime']));
+					?></p>
+					</div>
+					<div class="ner">
+						<h3>{$r.title}</h3>
+						<p>{$r.description}</p>
+					</div>
+					<div class="more"><img src="/images/index_r10_c13.jpg"/></div>
+				</div>
+			</a>
+			
+			
+			
+			</foreach></div>
+		
+		
+		
+		
+	</div>
+</div>
+
+<!-----------------------新闻资讯 结束------------------------->
+<script>
+function gghhh(d){
+	$('#gghhhhxxoo').html($('#'+d).html());
+}
+</script>
+<!-------------------关于我们 开始------------------------>
+
+<div class="in_about">
+	<a href="/index.php/Home/About/index/cid/314.html">
+	<div class="tp" style="background: url({$config_info.gz_ewmdhzbtp}) no-repeat right;">
+	</div>
+	<div class="you">
+		<div class="jies">
+			<div class="biaot"><img src="/images/index_r4_c2.png"/></div>
+			<div class="xian"></div>
+			<p>{$introduce.description}</p>
+		</div>
+	</div>
+	</a>
+</div>
+
+
+<!-------------------关于我们 结束------------------------>
+
+
+
+
+
+
+
+<style>
+						.ullllls  li a{font-family: "微软雅黑";
+    color: #A3A3A3;
+    font-size: 14px;
+    padding-top: 15px;
+    padding-left: 28px;}.ullllls li{float: left;
+    width: 120px;}
+				</style>
+<?php
+	//dump($getlink);exit;
+?>
+<!----------------------------------底部 开始-------------------------------->
+	<div class="bottom">
+		<div class="jz">
+			<div class="bo_about">
+				<h4><a href="/index.php/Home/About/index/cid/314.html">关于我们</a></h4>
+				<foreach name="lanmugywm" item="r" key="k" >
+				<p><a href="/index.php/Home/About/index/cid/{$r.id}.html">{$r.name}</a></p></foreach> 
+			</div>
+			<div class="bo_about">
+				<h4><a href="/index.php/Home/Service/index/cid/445.html">服务范围</a></h4>
+				<foreach name="lanmuffwz" item="r" key="k" >
+				<p><a href="/index.php/Home/Newsshow/index/pagesss/1/cid/{$r.id}.html">{$r.name}</a></p></foreach> 
+			</div>
+			<div class="bo_link">
+				<h4><a href="javascript:;">友情链接</a></h4>
+				<ul class="ullllls">
+				
+				
+					<foreach name="getlink" item="r" key="k" >
+						<li><a href="{$r.weburl}" target="_blank">{$r.webname}</a></li>
+					</foreach> 
+				</ul>
+				
+				
+			</div>
+			
+			<div class="lianxi">
+				<div class="dianhau"><img src="{$config_info.gz_ewmdh}"/></div>
+				<div class="erwm"><img src="{$config_info.gz_ewm}"/></div>
+				<p>微信公众号</p>
+			</div>
+		</div>
+		
+		<div class="bottom_b">
+			<div class="jz">
+				<p class="zuo">{$config_info.gz_footright}</p>
+				<p class="you">地址：{$config_info.gz_headeryj}</p>
+			</div>
+		</div>
+	</div>
+<!----------------------------------底部 结束-------------------------------->
+
+</div>
+
+
+
+</head>
+
+<body>
+</body>
+</html>

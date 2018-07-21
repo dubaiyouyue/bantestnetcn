@@ -1,0 +1,145 @@
+
+
+<!---------------------------------content8开始--------------------------------->
+<div class="content8">
+     <div class="lichengbox">
+       <div class="listbg"></div>
+       <div class="v_licheng">
+          <div class="licheng_list" id="licheng_listlicheng_list" style="position:relative;">
+		  <volist name="list" id="r" empty="$em" key="k">
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+             {if $k==1}<div class="fazhan1">
+                <a href="{$r.url}"><span class="nianfen">{$r.title}</span></a>
+                <span class="shijian">{$r.sjjjjjj}</span>
+                
+             </div>{/if}
+             
+             {if $k==2}<div class="fazhan2">
+                <a href="{$r.url}"><span class="nianfen">{$r.title}</span></a>
+                <span class="shijian">{$r.sjjjjjj}</span>
+             </div>{/if}
+          
+             {if $k==3}<div class="fazhan3">
+                <a href="{$r.url}"><span class="nianfen">{$r.title}</span></a>
+                <span class="shijian">{$r.sjjjjjj}</span>
+             </div>{/if}
+          
+             {if $k==4}<div class="fazhan4">
+                <a href="{$r.url}"><span class="nianfen">{$r.title}</span></a>
+                <span class="shijian">{$r.sjjjjjj}</span>
+             </div>{/if}
+          
+             {if $k==5}<div class="fazhan5">
+                <a href="{$r.url}"><span class="nianfen">{$r.title}</span></a>
+                <span class="shijian">{$r.sjjjjjj}</span>
+             </div>{/if}
+          
+          
+          </volist>
+          </div>
+       </div>
+       <div class="arrow_left" style="cursor: pointer;" onclick="sslyss('s');"></div>
+       <div class="arrow_right" style="cursor: pointer;" onclick="sslyss('a');"></div>
+     </div>
+</div>
+
+
+<div class="clearfix"></div>
+<!---------------------------------content8开始--------------------------------->
+<script>
+//获取高度
+var fazhan1=$('.fazhan1').height();
+var fazhan2=$('.fazhan2').height();
+var fazhan3=$('.fazhan3').height();
+var fazhan4=$('.fazhan4').height();
+var fazhan5=$('.fazhan5').height();
+
+var fazhana=[fazhan1,fazhan2,fazhan3,fazhan4,fazhan5];
+//最大值
+var fazhamax=Math.max.apply(null, fazhana);//+100;
+$('.licheng_list').height(fazhamax);
+
+
+
+
+
+
+
+
+
+
+	nyyyyn=0;
+	//dddidnn=0;
+	function sslyss(newsa){
+	/*dddidnn=nyyyyn;
+if(dddidnn<1 && newsa=='s'){
+layer.msg('没有了',{time:1000,shift:6});
+return false;
+}*/
+	
+	
+if(newsa=='a') nyyyyn=nyyyyn+1;
+if(newsa=='s' && nyyyyn>0) nyyyyn=nyyyyn-1;
+
+		layer.closeAll();
+		//layer.load(0, {shade: false});
+		layer.msg('加载中...',{time:2000});
+		//$("#sfsdfssss").text('加载中...');
+		$.ajax( {
+				url: '/index.php?g=Home&m=Onlinemessageeff&a=index&aid='+nyyyyn, //这里是静态页的地址
+				type: "GET", //静态页用get方法，否则服务器会抛出405错误
+				success: function(data){
+
+
+				
+				
+					if(!data){
+						layer.closeAll();
+						//layer.msg('没有了',{time:1000,shift:6});
+						//$("#sfsdfssss").text('没有了');
+						nyyyyn=nyyyyn-2;	
+					
+						//alert(nyyyyn);
+						return false;
+					}
+					layer.closeAll();
+					$('#licheng_listlicheng_list').html(data);
+					//if(nyyyyn<1) layer.msg('没有了',{time:1000,shift:6});
+					//var result = $(data).find("另一个html页面的指定的一部分").html();
+					//$("#sfsdfssss").before(data);
+					//$("#sfsdfssss").text('查看更多...');
+//获取高度
+var fazhan1=$('.fazhan1').height();
+var fazhan2=$('.fazhan2').height();
+var fazhan3=$('.fazhan3').height();
+var fazhan4=$('.fazhan4').height();
+var fazhan5=$('.fazhan5').height();
+
+var fazhana=[fazhan1,fazhan2,fazhan3,fazhan4,fazhan5];
+//最大值
+var fazhamax=Math.max.apply(null, fazhana);//+100;
+$('.licheng_list').height(fazhamax);
+					//alert(nyyyyn);
+				}
+		});
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

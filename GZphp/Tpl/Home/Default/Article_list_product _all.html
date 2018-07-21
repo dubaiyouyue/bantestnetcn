@@ -1,0 +1,61 @@
+
+
+<!---------------------------------content4开始--------------------------------->
+<div class="content4">
+  <div class="lfbox1">
+     <!--奇数第1组-->
+     <div class="xzllist1">
+        <div class="xzlfimg1"><a href="{$list['0'].url}"><img src="{$list['0'].thumb}" width="398" height="249"></a></div>
+     <div class="zxrgbox1">
+           <div class="xiezilou1">{$list['0'].title|str_cut=###,32}</div>
+           <div class="xiezilousj">{$list['0'].createtime|toDate=###,'Y-m-d'}</div>
+           <P class="gaik1">概况：{$list['0'].description}</P>
+           <div class="xiangqing"><a href="{$list['0'].url}">查看更多>></a></div>
+        </div>
+     </div>
+
+   <div class="clearfix"></div>
+
+     
+     <!--偶数第2组-->
+    <div class="xzllist2" style=" margin-top:25px;">
+        <div class="xzlfimg2"><a href="{$list['1'].url}"><img src="{$list['1'].thumb}" width="398" height="249"></a></div>
+        <div class="zxrgbox2">
+           <div class="xiezilou1">{$list['1'].title|str_cut=###,32}</div>
+           <div class="xiezilousj">{$list['1'].createtime|toDate=###,'Y-m-d'}</div>
+           <P class="gaik1">概况：{$list['1'].description}</P>
+           <div class="xiangqing"><a href="{$list['1'].url}">查看更多>></a></div>
+        </div>
+     </div>
+     
+   <div class="clearfix"></div>
+     
+     <!--奇数第3组-->
+     <div class="xzllist1" style=" margin-top:25px;">
+        <div class="xzlfimg1"><a href="{$list['2'].url}"><img src="{$list['2'].thumb}" width="398" height="249"></a></div>
+     <div class="zxrgbox1">
+           <div class="xiezilou1">{$list['2'].title|str_cut=###,32}</div>
+           <div class="xiezilousj">{$list['2'].createtime|toDate=###,'Y-m-d'}</div>
+           <P class="gaik1">概况：{$list['2'].description}</P>
+           <div class="xiangqing"><a href="{$list['2'].url}">查看更多>></a></div>
+        </div>
+     </div>
+     
+   <div class="clearfix"></div>
+     
+     <div class="listgengduo1"><a href="{$Categorys.$newcatidnew.url}" class="hvr-sweep-to-right button">更多案例</a></div>
+  </div>
+   
+   
+      
+   <div class="rgbox1">
+      <ul class="rgimg">
+         <include file="C:t"/>
+      </ul>
+   </div>
+</div>
+
+
+<div class="clearfix"></div>
+<!---------------------------------content4开始--------------------------------->
+

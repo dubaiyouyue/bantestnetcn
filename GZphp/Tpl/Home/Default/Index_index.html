@@ -1,0 +1,363 @@
+{__NOLAYOUT__}
+<!doctype html>
+<html>
+<head>
+
+
+<title>{$seo_title}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+
+<meta name="keywords" content="{$seo_title}">
+<meta name="description" content="{$seo_title}">
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<link type="text/css" rel="stylesheet" href="css/css.css"/>
+
+<link type="text/css" rel="stylesheet" href="/css/Public1.css?13"/><!--公共样式-->
+<link type="text/css" rel="stylesheet" href="/css/style.css"/>
+
+<link type="text/css" rel="stylesheet" href="/css/swiper.min.css"/><!--bannerCSS-->
+
+
+<script src="/js/nav.js"></script><!--导航的JS-->
+
+
+<script>
+        ;(function(designWidth, maxWidth) {
+	var doc = document,
+	win = window,
+	docEl = doc.documentElement,
+	remStyle = document.createElement("style"),
+	tid;
+
+	function refreshRem() {
+		var width = docEl.getBoundingClientRect().width;
+		maxWidth = maxWidth || 540;
+		width>maxWidth && (width=maxWidth);
+		var rem = width * 100 / designWidth;
+		remStyle.innerHTML = 'html{font-size:' + rem + 'px;}';
+	}
+
+	if (docEl.firstElementChild) {
+		docEl.firstElementChild.appendChild(remStyle);
+	} else {
+		var wrap = doc.createElement("div");
+		wrap.appendChild(remStyle);
+		doc.write(wrap.innerHTML);
+		wrap = null;
+	}
+	//要等 wiewport 设置好后才能执行 refreshRem，不然 refreshRem 会执行2次；
+	refreshRem();
+
+	win.addEventListener("resize", function() {
+		clearTimeout(tid); //防止执行两次
+		tid = setTimeout(refreshRem, 300);
+	}, false);
+
+	win.addEventListener("pageshow", function(e) {
+		if (e.persisted) { // 浏览器后退的时候重新计算
+			clearTimeout(tid);
+			tid = setTimeout(refreshRem, 300);
+		}
+	}, false);
+
+	if (doc.readyState === "complete") {
+		doc.body.style.fontSize = "16px";
+	} else {
+		doc.addEventListener("DOMContentLoaded", function(e) {
+			doc.body.style.fontSize = "16px";
+		}, false);
+	}
+})(640, 750);
+</script>
+	
+	
+	
+</head>
+
+
+
+
+
+<body>
+<!----------------------------------头部 开始--------------------------------------->
+<!--新头部-->
+
+<div class="mtoplogo">
+	<a href="/"><img class="imgblock" src="{$config_info.gz_logo}" height="45" /></a>
+	<div class="mtoplogoright" onclick="oocaidan();"><img class="imgblock" src="images/honganniu.jpg" height="45" /></div>
+</div>
+
+<!--end-->
+
+<div class="caidanmain" id="caidanmain">
+	<img src="images/celanbg.jpg" width="100%" /> 
+		 <ul>
+		   <li style="position:relative;">
+                <img src="images/heiyuan.fw.png" class="caidanmainimgl" />
+			<a href="/">首  页</a><div class="xian"></div>
+			<img style="position:relative;top:-35px;" src="images/indexbutton.fw.png" class="caidanmainimgr" />
+              </li>
+
+				<foreach name="new_column_list_top" item="r" key="k" >
+               <li style="position:relative;">
+                <img src="images/heiyuan.fw.png" class="caidanmainimgl" />
+			<a href="/index.php/Home/{$r.foldername}/index/cid/{$r.id}.html">{$r.name}</a><div class="xian"></div>
+			<img style="position:relative;top:-35px;" src="images/indexbutton.fw.png" class="caidanmainimgr" />
+              </li>
+
+			    </foreach>
+		  
+		</ul>
+	</div>
+<div id="caidnnnnsss" onclick="oocaidan();"></div>
+<script>
+function oocaidan(){
+	$('#caidanmain,#caidnnnnsss').toggle();
+}
+</script>
+
+
+
+<!--js--> 
+    <script>
+$(document).ready(function() {
+  
+    $('#open').click(function() {
+		
+		//修改滚动条
+			$('body').css('overflow','hidden');
+		//end
+		
+        $('.ppptcdiv').animate({right:'0px'},800);
+    $('#ppptcdiv-ddd').css('display','block');
+    });
+});
+function cloos(){
+	
+			//修改滚动条
+				$('body').css('overflow','');
+			//end
+	
+  $('.ppptcdiv').animate({right:'-225px'},800);
+  $('#ppptcdiv-ddd').css('display','none');
+}
+</script> 
+
+
+
+<!-------------------------------导航 结束----------------------------------->
+
+<!----------------------------------头部 结束--------------------------------------->
+
+
+
+<!--轮播-->
+<link type="text/css" rel="stylesheet" href="css/swiper.min.css"/>
+<script src="js/swiper.min.js"></script>
+
+<style>
+.swiper-pagination-bullet{
+    background: #fff;
+    width: 24px;
+    border: none;
+    border-radius: 0px;
+    opacity: 1;
+    height: 6px;
+}
+.swiper-pagination-bullet-active{
+	background: #db231b;
+    width: 24px;
+    border: none;
+    border-radius: 0px;
+    opacity: 1;
+    height: 6px;
+}
+
+}
+</style>
+
+
+
+<!------------------------------------banner 开始 ----------------------------------------->
+<div id="banner" style=" height:auto; overflow:auto;">
+
+
+
+<!-- Swiper -->
+ <div class="swiper-container">
+	<div class="swiper-wrapper">
+		
+		
+		
+		<foreach name="blist" item="r" key="k" >
+			 
+            	 <div class="swiper-slide" ><img src="{$r.img_path}" style="width: 100%; "></div>
+				
+				</foreach>
+		
+		
+      
+         
+        </div>
+		<div class="swiper-pagination"></div>
+        
+    </div>
+
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        slidesPerView: 1,
+        paginationClickable: true, 
+		autoplay:3000,
+        spaceBetween: 30,
+        loop: true
+    });
+    </script>
+
+
+
+
+<div class="lanmuscend">
+	<div class="lanmuscendtop">OUR SERVICES</div>
+	<div class="lanmuscendbottom">
+		服务范围
+		<!--左右线条-->
+		<div class="lxtleft"></div>
+		<div class="lxtright"></div>
+	</div>
+</div>
+ <ul class="caseeeeulli clearUl" style="width:95%;margin:auto;">
+  <foreach name="sso" item="r" key="k" >
+  	
+<li style="height: 100px;margin-top: 20px; box-sizing: border-box;padding-right: 2%;/*奇数*/"><a href="/index.php/Home/Service/index/pagesss/1/cid/{$r.id}.html">
+		<div class="casesmain" style="height: 100px;background: url({$r.columnimg});background-repeat: no-repeat;background-size: cover;background-position: center center;">
+			<div class="casesyinying" style="height: 100px;">
+				<p class="casteepo">{$r.name}</p>
+				<p class="casteepot" style="margin-top: 0px;">{$r.description}</p>
+			</div>
+		</div>
+	</a></li>
+
+  	</foreach>
+  	<!--查看更多-->
+	<li style="height: 100px;margin-top: 20px; box-sizing: border-box;padding-right: 2%;/*奇数*/">
+	<a href="/index.php/Home/Service/index/cid/445.html">
+		<div class="casesmain casesmainindex"></div>
+	</a></li>
+  </ul>
+
+
+<!--案例中心-->
+<div class="lanmuscend" style="background: #b20000;margin-top: 60px;color: #fff;">
+	<div class="lanmuscendtop" style="color: #fff;padding-top: 36px;">OUR CASES</div>
+	<div class="lanmuscendbottom">
+		案例中心
+		<!--左右线条-->
+		<div class="lxtleft"></div>
+		<div class="lxtright"></div>
+	</div>
+</div>
+
+
+<ul class="caseeeeulli clearUl">
+	<foreach name="newssal" item="r" key="k" >
+	
+<li>
+   <a href="/index.php/Home/Newsshow/index/cid/{$r.class1}/id/{$r.id}.html"  style="display:block;width:100%;height:100%;">
+		<div class="casesmain" style="background: url({$r.imgurl});background-repeat: no-repeat;background-size: cover;background-position: center center;">
+			<div class="casesyinying">
+				<p class="casteepo">{$r.title}</p>
+				<p class="casteepot" style="margin-top:10px;">-MORE-</p>
+			</div>
+		</div>
+   </a>
+</li>
+
+
+		</foreach>
+	</ul>
+		
+<!--查看更多-->
+<div class="morepffmain po indesmooo">
+<a href="/index.php/Home/Product/index/cid/136.html">
+	<img src="images/gengduo2202.fw.png" class="morepng" style="margin-top: 36px;" />
+	</a>
+</div>
+
+
+
+
+<div class="lanmuscend" style="background: none;">
+	<div class="lanmuscendtop">News Center</div>
+	<div class="lanmuscendbottom">
+		新闻中心
+		<!--左右线条-->
+		<div class="lxtleft"></div>
+		<div class="lxtright"></div>
+	</div>
+</div>
+
+<ul class="newsul">
+	<foreach name="newssalgg" item="r" key="k" >
+		
+
+
+		<li><a href="/index.php/Home/Newsshow/index/cid/{$r.class1}/id/{$r.id}.html">
+		<p class="ponet">{$r.title}</p>
+		<p class="pontwo">2018.01.10</p>
+		<p class="pofrrr">{$r.description}</p>
+		<span class="redsjx"><img src="images/zuojiantou.fw.png" height="13" width="7" /></span>
+	</a></li>
+
+		</foreach>
+	</ul>
+		
+	
+<div class="morepffmain po">
+<a href="index.php/Home/Trends/index/cid/140.html">
+	<img src="images/gengduo02.fw.png" class="morepng" />
+	</a>
+</div>
+
+
+
+
+
+<!--底部-->
+<div class="foot">
+	<a href="javascript:scroll(0,0)"><div class="gettop">
+		<img src="images/fanhui.fw.png" />
+	</div></a>
+
+	<div class="fwrx">
+		<p class="rexo">服务热线 <span class="rexto">0771-</span></p>
+		<p class="rext">5508889</p>
+	</div>
+	<div class="ewm">
+		<img src="images/index_r77_c16.jpg" width="80" height="80" />
+	</div>
+	<div class="bqdb">{$config_info.gz_footright}ALL Rights Resonance</div>
+</div>
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+

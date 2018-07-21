@@ -1,0 +1,35 @@
+
+<!------------------------------------------------ container2开始 ------------------------------------------------>
+<div class="container2">
+    <div class="nydbt">{$now_lanmu.name}</div>
+    
+    <div class="zhaopinbbox" style="margin-top:25px;"><foreach name="list" item="r" key="kc" >
+       <ul class="zhaopinlist clearfix">
+          <li><div class="zhaopinbt"><a href="/index.php/Home/Newsshow/index/new/zx/cid/{$cid}/id/{$r.id}.html">{$r.title}</a></div></li> 
+          <li><P><a href="/index.php/Home/Newsshow/index/new/zx/cid/{$cid}/id/{$r.id}.html">任职要求：{$r.description}</a></P></li>      
+       </ul></foreach>
+
+    </div>
+    
+     <!--翻页start-->
+	<!-- <link href="/css/Pager.css" rel="stylesheet" type="text/css" /> -->
+    <script src="/js/jquery.pager.js?883" type="text/javascript"></script>
+
+
+<div class="tcdPageCode yema clearfix"></div>
+
+
+<script> 
+ $(".tcdPageCode").createPage({ 
+  pageCount:'{$allpage}', 
+  current:'{$pagenow}', 
+  backFn:function(p){ 
+   var ulrsss='/index.php/Home/{$foldername}/index/cid/{$cid}/p/'+p+'.html';
+    location.href = ulrsss;
+  } 
+ }); 
+</script> 
+
+    <!--翻页end-->
+</div>
+<!------------------------------------------------ container结束 ------------------------------------------------>

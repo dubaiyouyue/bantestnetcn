@@ -1,0 +1,284 @@
+<!---------------------------------datu开始--------------------------------->
+<div class="datu" style="
+    height: 450px;
+    background: url({$blist.img_path});
+    background-repeat: no-repeat;
+    background-position: center;
+"></div>
+<!---------------------------------datu结束--------------------------------->
+
+
+
+<!---------------------------------container 开始--------------------------------->
+<div class="container clearfix">
+    <div class="leftbox">
+       <div class="lanmu">
+           <div class="lanmu-title">招商营销<span style="font-size:16px;"> / Investment</span></div>
+           <div class="lanmu-btm">
+             <ul>
+                <volist name="lanmu" id="v">
+                <a href="/index.php/Home/{$v.foldername}/index/cid/{$v.id}.html"><li  <if condition="($v['id'] eq $cid)">class="a1"</if>>{$v.name}</li></a>
+              </volist>
+                
+             </ul>
+           </div>
+       </div>
+       <div class="lianxibtm">
+           <a href="#"><img src="/images/lianxitu.jpg" width="246" height="93"></a>
+           <div class="btbox">
+              <a href="#"><div class="bt">联系我们<span style="color:#ccc; padding-left:5px;">Contact Us</span></div></a>
+           </div>
+       </div>
+    </div>
+    
+    <div class="rightbox">
+        <div class="btwzbox">
+           <span class="bt"><if condition="($lan['id'] eq $cid)">{$lan.name}</if><span style="font-size:16px;color:#999;"> / <if condition="($lan['id'] eq $cid)">{$lan.enname}</if></span></span>
+           <span class="weizhi">当前位置：<a href="/" style="color:#666;">首页</a> > <a href="#" style="color:#666;">招商营销</a> > <span style="color:#119946;"><a href="#" style="color:#119946;"><if condition="($lan['id'] eq $cid)">{$lan.name}</if></a></span></span>
+        </div>
+        
+
+        <volist name="list" id="v">
+        <div class="dongtailiat">
+            <div class="dtbt"><a href="#">{$v.title}</a></div>
+            <div class="huibg"><span class="fbsj">发布时间：{$v.addtime|mb_substr=0,11,'utf-8'}</span><span class="fbz">桂北农产品电商园</span></div>
+            <P class="dtdl"><a href="#">{$v.content}</a></P>
+            <div class="line"></div>
+        </div>
+
+       </volist>
+<if condition="$cid eq 199">
+<P class="huanyingyu" style="margin-bottom:25px;">感谢您对桂北农产品电商园的关注，请在下方填写预约需要的信息，我们的工作人员会尽快与您取得联系！</P>
+        <form name="myform2" id="myform2" method="POST" action="">
+                        <div id="content_form">
+                            <table cellpadding=0 cellspacing=0 class="table_form"  >
+                                <input type="hidden"  name="catid" value="19" />
+                                <input type="hidden"  name="moduleid" value="8" />
+                                <input type="hidden"  name="lang" value="1" />
+                                <input type="hidden"  name="forward" value="/message/" />
+                                <tr id="liuyan" height="45px">
+                                            <td width="100" align="right" id="liuyan_wz" style="font-size:14px;"><font color="red">*</font> 标题：</td>
+                                            <td id="table" class="box_title">
+                                                <input type="text"   class="input-text " name="biaoti"  id="biaoti" value="" size="40"  validate=" minlength:2, maxlength:50, required:true" />                                     </td>
+                                        </tr>
+        
+                                        </tr><tr id="liuyan" height="45px">
+                                            <td width="100" align="right" id="liuyan_wz" style="font-size:14px;"><font color="red">*</font> 内容：</td>
+                                            <td id="table" class="box_content">
+                                                <textarea  class="" name="content"  rows="10" cols="60"  id="content" style="border:1px solid #ccc;"   validate=" minlength:2, maxlength:200, required:true" /></textarea>                                    </td>
+                                        </tr>               
+                                        <tr id="liuyan" height="45px">
+                                            <td width="100" align="right" id="liuyan_wz" style="font-size:14px;"><font color="red">*</font>联系人：</td>
+                                            <td id="table" class="box_telephone">
+                                                <input class="input-text"  name="xm" type="text" maxlength="5" id="xm" value="" onFocus="if(this.value == this.defaultValue) this.value = ''" onBlur="if(this.value == '') this.value = this.defaultValue">
+                                    </td>
+                                        </tr>
+                                        <tr id="liuyan" height="45px">
+                                            <td width="100" align="right" id="liuyan_wz" style="font-size:14px;"><font color="red">*</font>联系电话：</td>
+                                            <td id="table" class="box_telephone">
+                                                <input type="text"   class="input-text " name="tel"  id="tel" value="" size="20"  validate=" mobile:true" />                                     </td>
+                                        </tr>
+                                        <tr id="liuyan" height="45px">
+                                            <td width="100" align="right" id="liuyan_wz" style="font-size:14px;"><font color="red">*</font> 电子邮箱：</td>
+                                            <td id="table" class="box_email">
+                                                <input type="text"   class="input-text " name="email"  id="email" value="" size="20"  validate=" maxlength:40, required:true, email:true" />                                     </td>
+                                        </tr>         <tr>
+                                    <td width="100">&nbsp;</td>
+                                    <td>&nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="100"></td>
+                                    <td>
+                                        <input TYPE="button"  onclick="xxpd();"  value="提 交" class="button_submit" />
+                                        <input TYPE="reset"  value="取消预约" class="button_reset" />
+                                    </td>
+                                </tr>
+                            </table>
+        
+                        </div>
+                    </form>
+        
+        <div class="qtyuyue" style="width:228px;margin-top:30px;">
+          <span style="font-weight:bold; color:#666;line-height:29px; display:inline-block; float:left;">其他预约方式：</span>
+          <span style="float:right;"><a href="http://wpa.qq.com/msgrd?v=3&uin=2212326423&site=http://www.yifangvisa.com/&menu=yes"><img src="/images/yuyue.jpg" width="118" height="29"></a></span>
+        </div>
+  </if>
+        
+
+  
+      <if condition="$cid neq 199">
+    <!--翻页start-->
+    <script src="/js/jquery.pager.js?883" type="text/javascript"></script>
+
+    <if condition="$allpage neq 1">
+     <div class="yema" style="margin-top:35px;"></div>
+   </if>
+
+     <script> 
+ $(".yema").createPage({ 
+  pageCount:'{$allpage}', 
+  current:'{$pagenow}', 
+  backFn:function(p){ 
+   var ulrsss='/index.php/Home/{$foldername}/index/cid/{$cid}/p/'+p+'.html';
+    location.href = ulrsss;
+  } 
+ }); 
+</script> 
+    <!--翻页end-->
+   </if>
+    </div>
+</div>
+<!---------------------------------container 结束--------------------------------->
+
+
+
+<!--留言js start-->
+<script>
+  document.getElementById('name').focus();
+  function  xxpd(){
+  
+    var biaoti=$('#biaoti').val();
+    var xm=$('#xm').val();
+    var email=$('#email').val();
+    var tel=$('#tel').val();
+    var content=$('#content').val();
+    
+    
+    if(!xm){
+    
+      layer.msg('请填写联系人',{time:1000,shift:6}
+      
+      ,function(){
+      
+      document.getElementById('xm').focus();
+      
+      }
+      
+      
+      );
+      
+      return false;
+    
+    }
+
+    
+    
+    if(!biaoti){
+    
+      layer.msg('请填写标题',{time:1000,shift:6}
+      
+      ,function(){
+      
+      //alert('123');
+      //documnet.getElementById('xm').focus();
+      document.getElementById('biaoti').focus();
+      
+      }
+      
+      
+      );
+      
+      return false;
+    
+    }
+    
+    if(!youxiang('email') || !email){
+    
+      layer.msg('请填写电子邮箱',{time:1500,shift:6}
+      
+      ,function(){
+      
+      //$('#email').val('');
+      
+      document.getElementById('email').focus();
+      
+      }
+      
+      );
+      
+      return false;
+      
+    }
+    
+    if(!telephone || (telephone.length!=7 && telephone.length!=11) || isNaN(tel)){
+    
+      layer.msg('请填写联系电话',{time:1000,shift:6}
+      
+      ,function(){
+      
+
+      document.getElementById('tel').focus();
+      
+      }
+      
+      
+      );
+      
+      return false;
+    
+    }
+    if(!content){
+    
+      layer.msg('请填写预约内容',{time:1000,shift:6}
+      
+      ,function(){
+      
+
+      document.getElementById('content').focus();
+      
+      }
+      
+      );
+      
+      return false;
+    
+    }
+    document.getElementById('myform2').submit();
+  }
+  
+    function  youxiang(n){
+    
+    var email = document.getElementById(n).value;
+    
+    //alert(email);
+    
+    //return false;
+    
+            if (email != "") {
+            var reg = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
+                isok= reg.test(email );
+                if (!isok) {
+                    return false;
+                }
+        else return true;
+            }
+    }
+//  nyyyyn=0;
+//  sslyss();
+//  function sslyss(){
+//  $("#sfsdfssss").text('加载中...');
+//  $.ajax( {
+//      url: '/index.php?g=Home&m=Onlinemessagee&a=index&aid='+nyyyyn, //这里是静态页的地址
+//      type: "GET", //静态页用get方法，否则服务器会抛出405错误
+//      success: function(data){
+//        if(!data){
+//          $("#sfsdfssss").text('没有了');
+//          return false;
+//        }
+//        //var result = $(data).find("另一个html页面的指定的一部分").html();
+//        $("#sfsdfssss").before(data);
+//        $("#sfsdfssss").text('查看更多...');
+//        nyyyyn=nyyyyn+1;
+//      }
+//  });
+//  //alert(nyyyyn);
+//  
+//  
+//    /*var index = layer.load(1, {
+//    shade: [0.2,'#fff'], //0.1透明度的白色背景
+//    //time:2*1000,
+//    });*/
+//  }
+</script>
+<!--留言js end-->

@@ -1,0 +1,131 @@
+
+<!------------------------------------------container2开始------------------------------------------>
+<div class="container6 container2 container5">
+    <div class="leftbox">
+        <div class="lanmu">
+          <div class="lanmu-tp"></div>
+          <div class="lanmu-md"></div>
+          <div class="lanmu-btm"></div>
+             <div class="zbt">{$Categorys.$parentid.catname}<span class="hz">{$Categorys.$parentid.keywords}</span></div>
+             <div class="lbwz">
+                <ul>
+				<include file="A:l"/>
+                   
+                </ul>
+             </div>
+       </div>
+        <div class="lxfs">
+          <include file="C:u"/>
+        </div>
+    </div>
+    
+    <div class="rightbox">
+      <div class="dqwzbg">
+         <include file="Home:catpos"/>
+      </div>
+      <div class="bottombox">
+         <div class="ejlmbt">{$catname}<span class="bybg"></span></div>
+         <div class="changmojixian"></div><div class="nrq" style="padding-top:20px;">
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+      <div class="ryzzhz"><volist name="list" id="r" empty="$em" key="k">
+					<?php
+						$kpppccc++;
+						if($kpppccc==4) $kpppccc=1;
+						$newcconnkk=count($list);
+		
+				if($kpppccc==1) {
+				echo ' <div class="zizhi">';
+				}
+			   ?>
+           
+               <a href="{$r.url}"><li class="zizhi_li1"<?php
+				if($kpppccc>1) echo '   style="margin-left:16px;"';
+			   ?>>
+                 <div class="zz_img1"><img src="{$r.thumb}" width="269" height="190"></div>
+                 <div class="zz_mc1"><span class="zzmc">{$r.title|str_cut=###,20}</span></div>
+               </li></a>
+               
+               
+             <?php
+				if($kpppccc==3 || $k==$newcconnkk) {
+				echo ' </div>';
+				}
+			   ?>
+               </volist>
+       
+           
+            
+         </div>
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+           
+       							
+       
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+         
+         
+          <div class="clearfix"></div>
+          <!--翻页start-->
+			 <style>
+			 .rightbox .bottombox .nrq .yema .a1,.rightbox .bottombox .nrq .yema span {
+    padding: 5px 10px;
+    margin: 3px;
+    color: #fff;
+    background-color: #000;
+}
+			 </style>
+            <div class="yema">
+               {$pages}
+            </div>
+             <!--翻页end-->
+         </div>
+		 
+		 
+		 
+         <div class="xiamojixian">
+             <div class="chahu"><img src="/images/chahu.png" width="121" height="85"></div>
+         </div>
+      </div>
+    </div>
+</div>
+<div class="clearfix"></div>
+<!------------------------------------------container2结束------------------------------------------>
+

@@ -1,0 +1,62 @@
+<!--banner-->
+<div class="about_banner2" style="background-repeat: no-repeat;
+  background-position:center center;background-image:url('{$blist.img_path}');"></div>
+
+<!----------二级导航 开始------------->
+<div class="nov">
+  <div class="nov-1">
+    <div class="pagesNav">
+      <ul class="w1180">
+         <volist name="lanmu" id="v">
+        <li <if condition="($v['id'] eq $cid)">class="hover"</if>><a href="/index.php/Home/{$v.foldername}/index/cid/{$v.id}.html">{$v.name}</a></li>
+       </volist>
+      </ul>
+    </div>
+    <div class="niv-right clearfix">
+      <div class="detu"></div>
+      <div class="mbx">当前位置：<a href="/">首页 </a> &nbsp; / &nbsp;<a href="/index.php/Home/Service/index/cid/183.html"> 服务领域 </a> &nbsp; / &nbsp; <b>{$lan.name}</b></div>
+    </div>
+  </div>
+</div>
+
+<!----------二级导航 结束-------------> 
+
+<!----------内容 开始------------->
+
+<div class="gywm">
+<!---------新闻情详情 页开始------------->
+  
+<div class="content newsList44">
+       <div class="contentTit44">
+          <h2 style=" text-align:center; font-style: normal;">{$lan.name}</h2>
+          <div class="times" style="text-align:center; font-style: normal; font-family: Arial; font-size:30px; color:#999;">{$lan.enname}</div>
+          <!--<span style=" text-align:center; font-style: normal; margin: 0 auto;">news</span>-->
+       </div>
+       <div class="newsDetails44">
+          <div class="detailsTop44">
+             <h2>{$list.title}</h2>
+             <div class="times" style=" margin-top:20px; color:#999;"><font>来源：{$list.scientific}</font><font>   日期：{$list.addtime|mb_substr=0,11,'utf-8'}</font></div>
+          </div>
+          <div class="detailsTxt44">
+<style type="text/css">  
+.detailsTxt44 p{font-style: normal; color:#999; line-height:35px;}
+.detailsTxt44 img{max-width:1200px; }
+</style>
+
+          {$list.content}
+            
+           
+         </div>
+         
+       </div>
+   </div>  
+  
+  
+   <div class="sxpain"><span class="shangyipian"><?php if(!empty($prev['id'])){?><a href="/index.php/Home/Serviceshow/index/new/zx/cid/<?php echo $cid;?>/id/<?php echo $prev['id'];?>.html">上一篇：<?php  echo $prev['title'];?></a><?php }else{echo "上一篇：没有了";}?></span><span class="xiayipian" style="margin-left:20px;"> <?php if(!empty($next['id'])){?><a href="/index.php/Home/Serviceshow/index/new/zx/cid/<?php echo $cid;?>/id/<?php echo $next['id'];?>.html">下一篇：<?php echo $next['title'];?></a><?php }else{echo "下一篇：没有了";}?></span></div>
+<!----------新闻详情页 结束------------->
+
+  
+
+  
+</div>
+<!----------内容 结束------------->

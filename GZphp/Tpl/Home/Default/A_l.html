@@ -1,0 +1,16 @@
+
+							
+                    <?php
+            $narr=xlcatid($Categorys,$parentid);
+		
+            //dump($narr);
+            $nnnkkkknnn=count($narr);
+            foreach($narr as $k=>$v){
+                $kv++;
+                echo '<a href="'.$v['url'].'"><li ';
+				if($v['id']==$catid) echo ' class="currt"';
+				echo '>'.$v['catname'].'</li></a>';
+				
+				
+                }
+                ?>

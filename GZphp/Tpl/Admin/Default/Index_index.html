@@ -1,0 +1,202 @@
+{__NOLAYOUT__}<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="./Public/Js/jquery.min.js"></script> 
+<script type="text/javascript" src="./Public/Js/jquery.artDialog.js?skin=default"></script> 
+<script type="text/javascript" src="./Public/Js/iframeTools.js"></script>
+<link rel='stylesheet' type='text/css' href='./Public/Css/style.css'>
+<title>{:L('welcome')} Powered by resonance.com.cn</title>
+<script>
+	var URL = '__URL__';
+	var SELF = '__SELF__';
+	var ROOT_PATH = '__ROOT__';
+	var APP	 =	 '__APP__';
+	//语言项目
+	var lang = new Object();
+	<volist name=":L('js_lang')" id="val">
+		lang.{$key} = "{$val}";
+	</volist>
+	</script>
+</head>
+<body style="background:#E2E9EA">
+<div id="header" class="header">
+	<div class="logo"><a href="http://www.resonance.com.cn" target="_blank"><img src="./Public/Images/admin_logo.gif" width="180"></a></div>
+	<!--<div class="nav f_r"> <a href="javascript:void(0);" onclick="gocacheurl();">{:L('UPDATE_CACHE')}</a> <i>|</i> <a href="http://www.resonance.com.cn" target="_blank">{:L('org_url')}</a> <i>|</i>  &nbsp;&nbsp;</div>-->
+
+	<div class="nav">&nbsp;&nbsp;&nbsp;&nbsp;{:L('welcome_user')}{$Think.session.username}  <i>|</i> [{$usergroup}]  <i>|</i> [<a href="{:U('Login/logout')}" target="_top">{:L('logout')}</a>]  <i>|</i> <a href="{$site_url}" target="_blank">{:L('home_index')}</a> <i>|</i> <a href="http://newtest.test2.resonance.net.cn/resonancehelpview.php?n=<?php echo RESONANCEHELPVIEW;?>" target="_blank">帮助文档</a></div>
+
+	<div class="topmenu">
+		<ul>
+		<volist name="menuGroupList" id="tag">	 
+		<li id="menu_{$tag.id}"><span><a href="javascript:void(0);" onClick="sethighlight({$tag.id});">{$tag.name}</a></span></li>		 
+		</volist>
+		</ul>
+	</div>
+	<div class="header_footer"></div>
+</div>
+
+
+<div id="Main_content">
+
+	<div id="MainBox" >
+	    <div class="main_box">
+                <div class="crumbs">
+        	<div class="options">
+				<a href="javascript:;" title="刷新页面" id="J_refresh" class="refresh" hidefocus="true">刷新页面</a>
+            	<a href="javascript:;" title="全屏" id="J_full_screen" class="admin_full" hidefocus="true">全屏</a>
+                <!--onclick="gocacheurl();"--><a href="javascript:void(0);"  title="{:L('UPDATE_CACHE')}" id="J_flush_cache" class="flush_cache" data-uri="{:U('Admin/Index/cache')}" hidefocus="true">{:L('UPDATE_CACHE')}</a>
+            	<a href="http://www.resonance.com.cn" target="_blank" title="{:L('org_url')}" id="J_admin_map" class="admin_map"  hidefocus="true">{:L('org_url')}</a>
+			</div>
+    		<div id="J_mtab" class="mtab">
+            	<a href="javascript:;" id="J_prev" class="mtab_pre fl" title="上一页">上一页</a>
+                <a href="javascript:;" id="J_next" class="mtab_next fr" title="下一页">下一页</a>
+                <div class="mtab_p">
+                    <div class="mtab_b">
+                        <ul id="J_mtab_h" class="mtab_h"><li class="current" data-id="42"><span><a>后台首页</a></span></li></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <div id="J_rframe">
+                    <iframe name="main" id="Main_42" class="Main" src='{:U("Admin/Index/main")}' frameborder="0" scrolling="auto"  width="100%" height="100%" allowtransparency="true"></iframe>
+                </div>
+		</div>
+    </div>
+
+	<div id="leftMenuBox">
+    	<div id="leftMenu" class="left_menu1">
+            <div id="J_lmenu" class="J_lmenu" >
+            <volist name="menu" id="r" >
+                <dl id="nav_{$r['bnav']['id']}">
+                 <dt>{$r['bnav']['name']}</dt>
+<ul>
+	<volist name="r['nav']" id="item" ><?php //dump($item);?>
+            <li id="nav_{$item['id']}" class="sub_menu" ><a href="javascript:;" data-uri="{:U($item['model'].'/'.$item['action'], $item['data'])}" data-id="{$item.id}" hidefocus="true"><span>{$item.name}</span></a></li>
+	</volist>
+</ul>
+                </dl>
+            </volist>
+            </div>
+            <?php
+		/*	<div style="padding-left:12px;_padding-left:10px;">				
+				<volist name="menu" id="r">
+					<dl id="nav_{$r['bnav']['id']}">
+						<dt>{$r['bnav']['name']}</dt>
+						<volist name="r[nav]" id="item">
+						<dd id="nav_{$item['id']}"><span  onclick="javascript:gourl('{$item['id']}','{:U($item['model'].'/'.$item['action'],$item['data'])}')"><a href="{:U($item['model'].'/'.$item['action'],$item['data'])}" target="main">{$item['name']}</a>{if $r[bnav]['model']=='Category'}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{:U($item['model'].'/add',$item['data'])}" id="{$i}" target="main">{:L(add)}</a>{/if}</span></dd>
+						</volist>
+					</dl>
+				</volist>
+			</div>*/
+                        ?>
+		</div>
+
+		<div id="Main_drop">
+			<a  href="javascript:toggleMenu(1);" class="on"><img src="./Public/Images/admin_barclose.gif" width="11" height="60" border="0"  /></a>   
+			<a  href="javascript:toggleMenu(0);" class="off" style="display:none;"><img src="./Public/Images/admin_baropen.gif" width="11" height="60" border="0"  /></a>  
+		</div>
+    </div>
+
+</div>
+
+<div id="footer" class="footer" >Powered by <a href="http://www.resonance.com.cn" target="_blank">resonance.com.cn</a>&nbsp;{:VERSION}&nbsp;{:UPDATETIME} Copyright 2008-{:date('Y')} <span id="run"></span></div>
+<script language="JavaScript">
+if(!Array.prototype.map)
+Array.prototype.map = function(fn,scope) {
+  var result = [],ri = 0;
+  for (var i = 0,n = this.length; i < n; i++){
+	if(i in this){
+	  result[ri++]  = fn.call(scope ,this[i],i,this);
+	}
+  }
+return result;
+};
+var getWindowWH = function(){
+	  return ["Height","Width"].map(function(name){
+	  return window["inner"+name] ||
+		document.compatMode === "CSS1Compat" && document.documentElement[ "client" + name ] || document.body[ "client" + name ]
+	});
+}
+window.onload = function (){
+	if(!+"\v1" && !document.querySelector) { //IE6 IE7
+	 document.body.onresize = resize;
+	} else { 
+	  window.onresize = resize;
+	}
+	function resize() {
+		wSize();
+		return false;
+	}
+        //window.main.location.href= {:U('Index/main')};
+}
+function wSize(){
+	var str=getWindowWH();
+	var strs= new Array();
+	strs=str.toString().split(","); //字符串分割
+	var h = strs[0] - 95-30;
+	$('#leftMenu').height(h);
+	$('#J_rframe').height(h - 26); 
+        
+}
+wSize();
+
+
+function sethighlight(n) {
+	 $('.topmenu li span').removeClass('current');
+	 $('#menu_'+n+' span').addClass('current');
+	 $('#leftMenu dl').hide();
+	 $('#nav_'+n).show();
+	 $('#leftMenu dl dd').removeClass('on');
+	 $('#nav_'+n+' dd').eq(0).addClass('on');
+	 url = $('#nav_'+n+' dd a').eq(0).attr('href');//alert(url)
+	 //window.main.location.href= url;
+}
+sethighlight(1);
+/*function gourl(n,url){
+	$('#leftMenu ul li').removeClass('on');
+	$('#nav_'+n).addClass('on');
+	window.main.location.href=url;
+}*/
+
+function gocacheurl(){        
+	mainurl = $('#leftMenu li.on a').eq(0).attr('data-uri');alert(mainurl);//window.main.location.href;
+        //mainmid = $('#leftMenu li.on a').eq(0).attr('data-id');//alert(mainmid);
+	window.main.location.href= "{:U('Admin/Index/cache')}&forward="+encodeURIComponent(mainurl);
+}
+
+function toggleMenu(doit){
+	if(doit==1){
+		$('#Main_drop a.on').hide();
+		$('#Main_drop a.off').show();
+		$('#MainBox .main_box').css('margin-left','24px');
+		$('#leftMenu').hide();
+	}else{
+		$('#Main_drop a.off').hide();
+		$('#Main_drop a.on').show();
+		$('#leftMenu').show();
+		$('#MainBox .main_box').css('margin-left','224px');
+	}
+}	
+</script>
+<if condition="$_SESSION['userid'] gt 1">
+<script language='javascript' type='text/javascript'>
+$('#nav_60').attr('style', ' display:none');
+$('#nav_39').attr('style', ' display:none'); 
+$('#nav_16').attr('style', ' display:none'); 
+$('#nav_87').attr('style', ' display:none'); 
+$('#nav_51').attr('style', ' display:none'); 
+</script>
+</if>
+
+<script>
+//初始化弹窗
+(function (d) {
+    d['okValue'] = lang.dialog_ok;
+    d['cancelValue'] = lang.dialog_cancel;
+    d['title'] = lang.dialog_title;
+})($.dialog.defaults);
+</script>
+<script type="text/javascript" src="./Public/Js/admin_index.js"></script>
+</body>
+</html> 

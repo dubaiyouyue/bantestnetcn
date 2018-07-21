@@ -1,0 +1,52 @@
+{__NOLAYOUT__}
+
+		<?php
+			$anluuum=count($newssal);
+		?>
+		<foreach name="newssal" item="r" key="k" >
+		
+		
+		
+		<?php
+			$k++;
+			if($k==1) echo '<div class="first_column">';
+			if($k<4){
+		?>
+			
+				<div class="anli" style="background: url({$r.imgurl}) no-repeat center;">
+					<a href="/index.php/Home/Newsshow/index/cid/{$r.class1}/id/{$r.id}.html">
+						<div class="xiaog">
+							<h3>{$r.title}</h3>
+							<p>- MORE -</p>
+						</div>
+					</a>
+				</div>
+				
+				
+				
+					<?php
+					if($k==$anluuum || $k==3) echo '</div>';
+					}else{
+					if($k==4) echo '<div class="first_two">';
+		?>
+			
+			
+				<div class="<?php
+					if($k==5) echo 'anli_z';
+					else echo 'anli';
+				?>" style="background: url({$r.imgurl}) no-repeat center;">
+					<a href="/index.php/Home/Newsshow/index/cid/{$r.class1}/id/{$r.id}.html">
+						<div class="xiaog">
+							<h3>{$r.title}</h3>
+							<p>- MORE -</p>
+						</div>
+					</a>
+				</div>
+			
+		
+		<?php
+			if($k==$anluuum || $k==6) echo '</div>';
+			}
+		?>
+		
+		</foreach>

@@ -1,0 +1,258 @@
+<link type="text/css" rel="stylesheet" href="/css/products.css?12"/>
+<script type="text/javascript" src="/js/products.js?2"></script>
+<link type="text/css" rel="stylesheet" href="/css/page.css?6"/>
+<!----------------------------------banner 开始------------------------------------------------------>
+<div class="banner">
+	<div class="bd">
+    	<img src="{$blist.img_path}"/>
+    </div>
+    
+	
+    <div class="bj">
+
+	
+	
+	
+	<style>
+		.jsssszn{display:none;}
+	</style>	
+	<div class="menu"  style="position:relative;width:850px;height:399px;margin: auto;z-index:900;left:-50px;padding-left:80px;" >
+	<div class="up"  onclick="sss(1);"></div>
+	<div class="dowm"  onclick="sss(2);"></div>
+	
+	
+	
+	
+	<div id="mmm" d="0" n="1" m="3"></div>
+
+			</div>
+	</div>
+	
+	
+	
+	
+	
+</div>
+
+		
+		<foreach name="lanmu" item="r" key="k" >
+			<div class="jssssznjz jsssszn"><div class="jz">
+				<div></div>
+				
+				<div  class="xiantiao"></div>
+				
+				<div class="yt">
+					<div class="yuan"></div>
+					 <a href="/index.php/Home/Product/index/cid/{$r.id}.html" pid="{$r.id}"> <h4>{$r.name}</h4></a>
+					 <h3>></h3>
+					 <div class="lb">
+					 <foreach name="news" item="rr" key="kk" >
+					 
+					 <a href="/index.php/Home/Product/index/cid/{$r.id}/id/{$rr.id}.html" pid="{$r.id}"><?php if($rr['class2']==$r['id']){echo $rr['title'];};?></a>
+					 </foreach>
+				  
+					 </div>
+					 
+				 </div> 
+
+			</div>
+			</div>
+			</foreach>
+
+
+
+<!----------------------------------banner 结束----------------------------------------------------->
+<script>
+	var jsshtml=[];
+  $(".jssssznjz").each(function(){
+    //var i++;
+	//var htmls=htmls+$(this).html();
+	//if(i==4){
+		//alert(htmls);
+	//}
+	jsshtml.push($(this).html());
+	
+  });
+
+
+sss(2);
+function sss(n){
+	var m=$('#mmm').attr('m');//最大
+	var dn=$('#mmm').attr('n');//最小
+	
+	if(n==1){
+		var hd=parseInt($('#mmm').attr('d'))-1;
+		//if($('#mmm'+hd).length==0) hd=m;
+	}
+	else if(n==2){
+		var hd=parseInt($('#mmm').attr('d'))+1;
+		//if($('#mmm'+hd).length==0) hd=dn;
+	}
+	//alert(hd);
+	//var h=$('#mmm'+hd).html();
+	var h=gentnnhtml(hd,4); //4个一组
+	//console.log(hd);
+	if(h){
+		$('#mmm').attr('d',hd);
+		$('#mmm').html(h+'<div class="jz"><div class="xiantiao"></div></div>');
+	}
+}
+//获取html内容
+function gentnnhtml(j,n){
+	var htmls='';
+	var j=j-1;
+	for (i=j*n;i<(j+1)*n;i++){
+		if(jsshtml[i]) htmls=htmls+jsshtml[i];
+	}
+	return htmls;
+}
+</script>
+
+
+<!----------------------------------下拉菜单 开始------------------------------------------------------>
+
+
+<!----------------------------------下拉菜单 结束------------------------------------------------------>
+
+
+
+<div class="por">
+	<div class="jz">
+<!----------------------------------当前位置  开始----------------------------------------------------->
+		<div class="current">
+        	<p>当前位置：</p>
+            <p><a href="/">首页</a></p>
+            <span>></span>
+            <p class="dd">产品展示</p>
+        </div>
+
+<!----------------------------------当前位置 结束----------------------------------------------------->
+
+
+<!---------------------------------------产品展示 开始------------------------------------------------------->
+		<div class="headings">
+        	<div class="dot" ></div>
+            <div style="float:right; margin-right:10px; margin-left:0px;" class="dot"></div>
+            <p>产品中心</p>
+        	<span>PRODUCT CENTER</span>
+        </div>
+
+		
+        
+        <div class="zs">	
+        	<div class="left">
+            	<h4>{$lan.name} </h4>
+            	<p>BIOCHEMICAL ANALYSIS SYSTEM</p>
+                <img style=" margin-left:48px;" src="/images/por01.png"/>
+            </div>
+        	<div class="cpan">
+            	<ul>
+                	<li>
+                        <div class="four">
+						
+							<foreach name="list" item="r" key="k" >
+							<if condition="($k neq 4)">
+                        	<a href="/index.php/Home/Productshow/index/new/zx/cid/{$cid}/id/{$r.id}.html" class="<?php echo $cid?>"  cid="{$k+1}">
+                            	<!-- <img src='{$r.imgurl}'/>-->
+								<div class="proimg" style="width:300px;height:300px; background-size:cover;background-repeat: no-repeat;
+                                background-position:center center;background-image:url('{$r.imgurl}');"></div>
+								
+                                <div class="sk"><h5>{$r.title}</h5><h5>{$r.ctitle}</h5></div>
+                            </a>
+							
+                           <!--  <a href="#">
+                            	<img src='/images/pro02_r1_c3.jpg'/>
+                                <div class="sk"><h5>医用诊断</h5><h5>Medical Diagnosis</h5></div>
+                            </a>
+                            
+                            <a href="#">
+                            	<img src='/images/pro02_r1_c3.jpg'/>
+                                <div class="sk"><h5>医用诊断</h5><h5>Medical Diagnosis</h5></div>
+                            </a>
+                            
+                            <a href="#">
+                            	<img src='/images/pro02_r1_c3.jpg'/>
+                                <div class="sk"><h5>医用诊断</h5><h5>Medical Diagnosis</h5></div>
+                            </a>  -->
+							
+							<else/>
+							
+							    <a href="/index.php/Home/Productshow/index/new/zx/cid/{$cid}/id/{$list.4.id}.html" class="yo <?php echo $cid?>" cid="{$k+1}">
+                        	 <div class="proimg" style="width:321px;height:606px; background-size:cover;background-repeat: no-repeat;
+                                background-position:center center;background-image:url('{$r.imgurl}');"></div>
+                               <div class="cx"><h5><?php
+                            echo $list['4']['title'];
+                             ?></h5><h5><?php
+                            echo $list['4']['ctitle'];
+                             ?></h5></div>
+                              </a>
+                             </if>							  
+							  
+							  
+							  
+							  
+							  
+							  </foreach>
+							  
+							  
+                        </div>
+						
+						
+						
+						
+               
+						
+						
+						
+                	</li>
+                </ul>
+            </div>
+        </div>
+
+	</div>
+</div>
+
+<!---------------------------------------产品展示 结束------------------------------------------------------->
+
+
+<!--底部分页 开始-->
+
+<div id="paging"></div>
+<script src="/laypage/laypage.js"></script>
+<script>//好像很实用的样子，后端的同学再也不用写分页逻辑了。
+laypage({
+  cont: 'paging',
+  pages: '{$allpage}', //可以叫服务端把总页数放在某一个隐藏域，再获取。假设我们获取到的是18
+  curr:'{$p}',
+  jump: function(e, first){ //触发分页后的回调
+    if(!first){ //一定要加此判断，否则初始时会无限刷新
+      
+         var ulrsss='/index.php/Home/{$foldername}/index/cid/{$cid}/p/'+e.curr+'.html';
+          location.href = ulrsss;
+
+
+    }
+  }
+});</script>
+
+<!--底部分页 结束-->
+
+<!----------------------------------新闻 结束----------------------------------------------------->
+
+ <script>
+
+                   $(document).ready(function(){
+				   
+				 
+				
+				  var cid=$('.yo').attr('cid');
+				 
+				
+				  if(cid!=5){
+				 
+					$('.four').css("margin-left","150px");
+					$('.left').css("left","150px");
+				  }
+				
+                       });
+                      </script>

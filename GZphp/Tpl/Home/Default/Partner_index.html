@@ -1,0 +1,72 @@
+
+<link type="text/css" rel="stylesheet" href="/css/cooperation.css?4"/>
+<!------------------------------banner  开始-------------------------------->
+<div class="banner">
+	<div class="bd">
+		<img src="{$blist.img_path}"/> 
+	</div>
+</div>
+
+<!------------------------------banner  结束-------------------------------->
+
+<!---------------------------------核心业务 开始--------------------------------->
+
+<div class="coop">
+	<div class="jz">
+
+<!------------------------------当前位置 开始--------------------------------------->
+		<div class="location">
+			<p>当前位置：</p>
+			<p><a href="/">首页</a></p>
+			<h3>></h3>
+			<p class="dd">合作伙伴</p>
+		</div>
+		<div class="underline"></div>
+<!------------------------------当前位置 结束--------------------------------------->
+
+
+<!-------------加入我们 开始-------------->
+<!------------------------------------标题 开始------------------------------>
+
+	<foreach name="lanmu" item="r" key="k" >
+		<div class="headings">
+        	<div class="dot" ></div>
+            <div style="float:right; margin-right:10px; margin-left:0px;" class="dot"></div>
+            <p>{$r.name}</p>
+        	<span>{$r.filename}</span>
+        </div>
+<!------------------------------------标题 结束------------------------------>
+       <div class="join">
+       	<p>{$r.content}</p>
+     
+       </div>
+<!-------------加入我们 结束-------------->
+	
+		</foreach>
+	
+<!-------------合作伙伴 开始-------------->	
+
+	<!------------------------------------标题 开始------------------------------>
+		<!-- <div class="headings">
+        	<div class="dot" ></div>
+            <div style="float:right; margin-right:10px; margin-left:0px;" class="dot"></div>
+            <p>合作伙伴</p>
+        	<span>PARTNERS</span>
+        </div>
+	<!------------------------------------标题 结束------------------------------>
+		<!--<div class="merchant">
+			<ul>
+				<li class="dd"><img src="/images/coo02_r1_c1.jpg"/></li>
+				<li><img src="/images/coo02_r1_c3.jpg"/></li>
+				<li><img src="/images/coo02_r1_c5.jpg"/></li>
+				<li class="dd"><img src="/images/coo02_r3_c1.jpg"/></li>
+				<li><img src="/images/coo02_r3_c3.jpg"/></li>
+				<li><img src="/images/coo02_r3_c5.jpg"/></li>
+			</ul>
+		</div> -->
+
+<!-------------合作伙伴 开始-------------->		
+	</div>   
+</div>
+
+

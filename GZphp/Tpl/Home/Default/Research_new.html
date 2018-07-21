@@ -1,0 +1,30 @@
+
+<!------------------------------------------------ 栏目start ------------------------------------------------>
+<div class="lanmu">
+    <ul><foreach name="new_column_list" item="rc" key="kc" >
+				<if condition="($rc['bigclass'] eq $now_cid_first)">
+					<a href="/index.php/Home/{$rc.foldername}/index/cid/{$rc.id}.html"><li <if condition="($rc['id'] eq $cid)">class="lvsekuai" style="color:#0A7034;"</if>>{$rc.name}</li></a>
+				</if>
+			</foreach>
+    </ul>
+</div>
+<!------------------------------------------------ 栏目end  ------------------------------------------------>
+
+
+
+<!------------------------------------------------ container3开始 ------------------------------------------------>
+<div class="container3 clearfix">
+    <div class="yfschanbt">{$newlist.ctitle}</div>
+    <div class="scnlihezi clearfix">
+       <div class="scnlzuo"><img src="{$limg.1.img_path}" width="472" height="594"></div>
+       <div class="scnlyou">{$newlist.description}</div>
+    </div>
+    
+    <div class="scnlihezi2">
+    <div class="yfschanbt" style="display:inline-block; margin-right:25px;">生产设备</div>
+        <div class="xiangqing" style="display:inline-block;"><a href="/index.php/Home/Pageshow/index/cid/{$cid}.html">详情</a></div>
+    </div>
+    
+    <div class="scnlimg"><a href="/index.php/Home/Pageshow/index/cid/{$cid}.html"><img src="{$limg.0.img_path}" width="1073" height="235"></a></div>
+</div>
+<!------------------------------------------------ container3结束 ------------------------------------------------>

@@ -1,0 +1,37 @@
+
+<!--内容区-->
+<div class="serv_content">
+  <div class="serv_content_left">
+     <div class="serv_content_left_top">
+        <h3>{$Categorys.$parentid.catname}</h3>
+        <ul><include file="A:l"/>
+        	
+        </ul>
+     </div>
+    <include file="C:u"/>
+  </div>
+
+  <div class="serv_content_right">
+      <div class="locate"><include file="Home:catpos"/></div>
+
+      <h4><span style="color:#119947;">▶</span> <span style="color:#000000;">{$Categorys.$catid.catname}</span> <span style="color:#999999;font-size:16px;">/ {$Categorys.$catid.keywords}</span></h4>
+      <ul class="serv-Img"><volist name="list" id="r" empty="$em" key="k">
+       	 <li>
+       	 	<a href="{$r.url}">
+	       	 	<img src="{$r.thumb}" >
+<h3>{$r.title|str_cut=###,30}</h3>
+       	 	</a>
+       	 </li></volist> 
+       	 
+		 
+      </ul>
+    </div>
+    
+<!--翻页start-->
+		
+            <div id="pageGro" class="cb">
+               {$pages}
+            </div>
+             <!--翻页end-->
+
+

@@ -1,0 +1,29 @@
+<?php
+		//dump($Categorys);
+		//一级栏目 xlcatid($Categorys)
+		//2级栏目 xlcatid($Categorys,$parentid)
+		//3级栏目 xlcatid($Categorys,$parentid,3)
+		//4级栏目 xlcatid($Categorys,$parentid,4)
+		function xlcatid($Categorys,$parentid='0',$c='2'){
+			$narr=array();
+			$s=$c-1;
+			$e=$c;
+			foreach($Categorys as $k=>$v){
+if(!$parentid){
+if(!$v['parentid'] && $v['ismenu']) $narr[$v['id']]=$v;
+}
+else{
+$c_arr=explode(',',$v['arrparentid']);
+$sid=$c_arr[$s];
+$eid=$c_arr[$e];
+if($sid==$parentid && $v['ismenu'] && !$eid) $narr[$v['id']]=$v;
+}
+}
+return $narr;
+}
+//dump(xlcatid($Categorys,103,4));
+?>
+
+<include file="Home:header"/>
+		{__CONTENT__}
+<include file="Home:footer"/>

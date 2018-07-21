@@ -1,0 +1,34 @@
+<div class="nr_con_l">
+    <div class="nr_con_l2">
+        <div class="nr_con_l_top"><p>{$Categorys.$parentid.catname} / {$Categorys.$parentid.keywords}</p></div>
+        <div class="nr_con_l_bott">
+            <ul>
+
+                <?php
+            $narr=xlcatid($Categorys,$parentid);
+            //dump($narr);
+            //echo count($narr);
+            foreach($narr as $k=>$v){
+                $kv++;
+                echo '<li class="';
+                if($v['id']==$catid) echo 'action3';
+                if($kv==(count($narr))) echo ' action2';
+                echo '"><a href="'.$v['url'].'">'.$v['catname'].'</a></li>';
+                }
+                ?>
+
+
+
+
+            </ul>
+        </div>
+    </div>
+    <div class="nr_con_l3">
+        <a href="/index.php/onlinemessage/"><img src="/demo/images/zxbmrenwu.png" width="81" height="70" /></a>
+        <p class="xx_bm"><a href="/index.php/onlinemessage/">在线留言</a></p>
+    </div>
+    <div class="nr_con_l3">
+        <a href="/index.php/contact/"><img class="img2" src="/demo/images/lxwmtu.png" width="80" height="59" /></a>
+        <p class="xx_bm"><a href="/index.php/contact/">联系我们</a></p>
+    </div>
+</div>

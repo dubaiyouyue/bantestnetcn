@@ -1,0 +1,95 @@
+<div class="clearfix"></div>
+<!----------foom 开始------------->
+<div class="foom">
+  <div class="foom-1">
+    <div class="foom-2">
+      <div class="foom-2-left">
+        <div class="foom-2-wenzi">联系我们<span style=" color:#fff; font-size:12px; margin-left:10px;">/ Contact Us</span></div>
+        <div class="foom-2-x"></div>
+        <div class="foom-2-gsmc">{$config_info.gz_headquartersaddress}</div>
+        <div class="foom-2-lxfs">
+          <ul>
+            <li>地       址：{$config_info.gz_headeryj}</li>
+            <li>邮       编：{$config_info.gz_footteldianhua2}</li>
+            <li>电       话：{$config_info.gz_footteldianhua}</li>
+            <li>E - MAIL：{$config_info.gz_foottel}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="foom-2-right">
+        <div class="foom-2-erwenma1">
+           <?php
+                 
+                 $new_kkk_css='width:140px;
+  height:140px;
+  display:block;';// 若($new_kkk%3)为0或者为空执行if后面的语句
+                 
+              ?>  
+          <div class="foom-2-erwenma" style="{$new_kkk_css};background-size:cover;background-image:url('{$config_info.gz_ewm}');background-repeat:no-repeat;"></div>
+          <div class="foom-2-erwwenma-wenzi">微网站</div>
+        </div>
+        <div class="foom-2-erwenma1" style=" float:right;">
+          <div class="foom-2-erwenma" style="{$new_kkk_css};background-size:cover;background-image:url('{$config_info.gz_description}');background-repeat:no-repeat;"></div>
+          <div class="foom-2-erwwenma-wenzi">手机站</div>
+        </div>
+      </div>
+    </div>
+     <div class="foom-3"></div>
+     <div class="foom-4"></div>
+     <div class="foom-wenzi" style="font-size:14px;">{$config_info.gz_footright} {$config_info.gz_footerbeianhao} 技术支持：：<a href="http://www.resonance.com.cn/index.html">广西共振广告</a></div>
+  </div>
+ 
+  
+</div>
+
+<!----------foom 结束------------->
+
+</body>
+</html>
+
+
+
+
+<script>  /*异步加载 - 在线交流 - 站长统计 */
+  var gz_weburl='/';
+  var lang='cn';
+  var classnow='{$cid}';
+  var id='<?php echo $_GET['id'];?>';
+  
+  var url=gz_weburl+'include/interface/uidata.php?lang='+lang,h = '<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];?>';
+  
+  if(h.indexOf("preview=1")!=-1)url = url + '&theme_preview=1';
+  $.ajax({
+    type: "POST",
+    url: url,
+    dataType:"json",
+    success: function(msg){
+      var c = msg.config;
+      
+      if(c.gz_stat==1){       //站长统计
+        var navurl=classnow==10001?'':'../';
+        var stat_d=classnow+'-'+id+'-'+lang;
+        var url = gz_weburl+'include/stat/stat.php?type=para&u='+navurl+'&d='+stat_d;
+        $.getScript(url);
+      }
+    }
+  });
+    //var metClicks = $(".metClicks");//点击次数
+    var ClicksListnow='<?php echo $_GET['id'];?>';
+    var weburl='/';
+    if(ClicksListnow){
+      //var DataClicks = metClicks.data("metclicks");
+      //ClicksStr=DataClicks.split("|"); 
+      var ClicksModule = 'news';//ClicksStr[0],ClicksListnow = ClicksStr[1];
+      var urlw = weburl+'include/hits.php?type='+ClicksModule+'&id='+ClicksListnow;
+      $.ajax({
+        type: "POST",
+        url: urlw,
+        dataType:"text",
+        success: function(msg){
+          //var t = msg.split('"');
+          //metClicks.html(t[1]);
+        }
+      });
+    }
+</script>

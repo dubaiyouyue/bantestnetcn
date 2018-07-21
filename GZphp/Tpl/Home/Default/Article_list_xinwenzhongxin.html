@@ -1,0 +1,52 @@
+<!---------------------------------content2开始--------------------------------->
+<div class="content2">
+  <div class="lfbox1">
+     <div class="gsxw" style="margin-bottom: 20px;">
+      <a href="{$list['0'].url}"> <div class="biglogo" style="background: #F9F9F9 url({$list['0'].thumb}) no-repeat center;background-size:cover;"></div></a>
+       <div class="gsxinwenone">
+          <div class="oneshijian">{$list['0'].createtime|toDate=###,'Y-m-d'}</div>
+          <a href="{$list['0'].url}"> <div class="onebiaoti">{$list['0'].title}</div></a>
+         <a href="{$list['0'].url}">  <p>{$list['0'].description}</p></a>
+          <span class="onechakan"><a href="{$list['0'].url}" class="hvr-sweep-to-bottom button">查看更多</a></span>
+       </div>       
+     </div>
+     
+     <div class="gslistbox">
+        <div class="gslist1" style="border-top:1px solid #ddd;">
+           <a href="{$list['1'].url}">
+           <div class="xwsj">{$list['1'].createtime|toDate=###,'Y-m-d'}</div>
+           <div class="xwbt">{$list['1'].title}</div>
+           <P class="duanluo">{$list['1'].description}</P>
+           </a>
+        </div>
+        
+        <div class="gslist1">
+           <a href="{$list['2'].url}">
+           <div class="xwsj">{$list['2'].createtime|toDate=###,'Y-m-d'}</div>
+           <div class="xwbt">{$list['2'].title}</div>
+           <P class="duanluo">{$list['2'].description}</P>
+           </a>
+        </div>
+        
+        <div class="gslist1">
+           <a href="{$list['3'].url}">
+           <div class="xwsj">{$list['3'].createtime|toDate=###,'Y-m-d'}</div>
+           <div class="xwbt">{$list['3'].title}</div>
+           <P class="duanluo">{$list['3'].description}</P>
+           </a>
+        </div>
+        <div class="listgengduo1"><a href="{$Categorys.$newcatidnew.url}" class="hvr-sweep-to-right button">更多资讯</a></div>
+     </div>
+  </div>
+   
+   <div class="rgbox1">
+      <ul class="rgimg">
+        <include file="C:t"/>
+      </ul>
+   </div>
+</div>
+
+
+<div class="clearfix"></div>
+<!---------------------------------content2开始--------------------------------->
+

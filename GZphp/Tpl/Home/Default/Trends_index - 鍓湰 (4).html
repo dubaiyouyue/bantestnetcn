@@ -1,0 +1,94 @@
+<!--------------------------------------内容 开始--------------------------------------->
+	<div class="news">
+		<div class="title">
+			<div style="width: 100%;">
+			<p style="width:48%; float:left; text-align: right; margin-right:4%;">{$getinfolamu.enname}</p> 
+			<p style="width: 48%; float: left;font-weight: bold;">{$getinfolamu.name}</p>
+			</div>
+			<div style="width: 100%;padding-top:50px;"><div style="width: 50px; height: 5px; background:#24D3B6; margin: auto; "></div></div>
+		</div>
+		
+		
+				<style>
+		.nav_2 p a{color:#fff;}
+		.about img{max-width:100%;}
+		.about{font-size:12px;color:#fff;    width: 90%;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 60px;}
+	.pagemore{font-size: 14px;
+    color: #fff;
+    background: #24d3b6;
+    text-align: center;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 40px;
+    height: 36px;
+    line-height: 36px;
+    border-radius: 5px;
+    border-bottom: 1px solid #444;cursor: pointer;}
+		</style>
+		
+		<div class="nav_2" style="width:90%;">
+<p <?php
+        if(140==$cid) echo 'class="dq"';
+
+      ?>><a href="/index.php/Home/Trends/index/cid/140.html">全部</a></p>
+<foreach name="lanmu" item="r" key="k" >
+					<p <?php
+        if($r['id']==$cid) echo 'class="dq"';
+
+      ?>><a href="/index.php/Home/{$r.foldername}/index/cid/{$r.id}.html">{$r.name}</a></p>
+				  </foreach>
+		</div>
+		
+		<div class="nw_hz" id="sfsdfssssccc">
+			<foreach name="list" item="r" key="k" >
+			<div class="fenk">
+				<a href="/index.php/Home/Newsshow/index/cid/{$cid}/id/{$r.id}.html">
+					<h3 style="
+        height: 22px;
+    line-height: 22px;
+    overflow: hidden;
+">{$r.title}</h3>
+					<p style="
+    height: 64px;
+    line-height: 21px;
+    overflow: hidden;
+">{$r.description}</p>
+				</a>
+			</div>
+			</foreach>
+			
+			
+		</div>
+		
+		
+		
+		
+	</div>
+<div class="pagemore" onclick="sslyss();" id="sfsdfssss" >查看更多</div>
+
+
+						<script>
+					nyyyyn=2;
+function sslyss(){
+$("#sfsdfssss").text('加载中...');
+$.ajax( {
+        url: '/index.php/Home/Product/index/ajax/ok/cid/{$cid}/p/'+nyyyyn+'.html', //这里是静态页的地址
+        type: "GET", //静态页用get方法，否则服务器会抛出405错误
+        success: function(data){
+			if(!data || data=='no data'){
+				$("#sfsdfssss").text('没有了');
+				return false;
+			}
+            //var result = $(data).find("另一个html页面的指定的一部分").html();
+            $("#sfsdfssssccc").append(data);
+			$("#sfsdfssss").text('查看更多');
+			nyyyyn=nyyyyn+1;
+        }
+});
+//alert(nyyyyn);
+}
+</script>
+<!--------------------------------------内容 结束--------------------------------------->

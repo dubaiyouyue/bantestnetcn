@@ -1,0 +1,141 @@
+
+
+<div class="bj">
+
+<!-------------------------------banner 开始--------------------------------->
+<div class="ding">
+
+	<div class="banner">
+		<div class="bd">
+			<img src="{$blist.img_path}"/>
+		</div>
+	</div>
+	
+	<div class="title">
+		<div class="jz">
+		
+			<div class="zuo">
+				<!--<div class="tp"><img src="images/services_r2_c2.jpg"/></div>-->
+				<div class="biaoyu" style="    background: #272C3F url(/images/services_r2_c2.jpg); background-repeat: no-repeat;background-position: left top;padding-left: 64px;box-sizing: border-box;">
+					{$config_info.gz_footother}
+				</div>
+			</div>
+			
+			
+			<div class="you">
+				<h4>{$getinfolamu.name}</h4>
+					<p>{$getinfolamu.enname}</p>
+					<div class="xian"></div>
+					<img src="{$getinfolamu.columnimg}"/>
+			</div>
+			
+		</div>
+	</div>
+</div>
+<!-------------------------------banner 开始--------------------------------->
+
+
+
+<!-----------------------------项目 开始----------------------------->
+<div class="service">
+	<div class="jz">
+		<!--服务项目 开始-->
+			<div class="timu">
+				<p>OUR SERVICES</p>
+				<div class="language">
+					<div class="le"><span></span></div>
+					<div class="wz">
+						<h2>服务范围</h2>
+					</div>
+					<div class="ri"><span></span></div>
+				</div>
+			</div>
+			
+			<div class="fenk">
+				<ul><foreach name="lanmu" item="r" key="k" >
+					<li>
+						<a href="/index.php/Home/Newsshow/index/pagesss/1/cid/{$r.id}.html">
+							<div class="tp" style=" background: url({$r.columnimg});"></div>
+							<div class="biaot"><p>{$r.name}</p></div>
+						</a>
+					</li>
+					
+									
+									</foreach>
+					
+					
+				</ul>
+			</div>
+			
+			
+			
+		
+		<!--服务项目 结束-->
+		
+		
+		
+	   <!------服务中心 开始-------->
+	   <div class="timu">
+			<p>OUR SERVICES</p>
+			<div class="language">
+				<div class="le"><span></span></div>
+				<div class="wz">
+					<h2>服务中心</h2>
+				</div>
+				<div class="ri"><span></span></div>
+			</div>
+		</div>
+   
+   
+	   <div class="fenk">
+			<ul>
+				<foreach name="lanmuzx" item="r" key="k" >
+					<li>
+						<a href="/index.php/Home/Newsshow/index/pagesss/1/cid/{$r.id}.html">
+							<div class="tp" style=" background: url({$r.columnimg});"></div>
+							<div class="biaot"><p>{$r.name}</p></div>
+						</a>
+					</li>
+					
+									
+									</foreach>
+
+
+			</ul>
+			</div>
+	   
+	   
+	   
+	   <!------服务中心 开始-------->
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-----------------------------项目 结束----------------------------->
+

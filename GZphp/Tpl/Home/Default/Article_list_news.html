@@ -1,0 +1,59 @@
+
+<!---------------------------------content2开始--------------------------------->
+<div class="content2">
+  <div class="lfbox1">
+     
+     <div class="gslistbox">
+	 
+	 
+	 
+	 
+	 <volist name="list" id="r" empty="$em" key="k">
+	 
+	 
+        <div class="gslist1" <?php 
+		if($k<2) echo 'style="border-top:1px solid #ddd;"';?>>
+           <a href="{$r.url}">
+           <div class="xwsj">{$r.createtime|toDate=###,'Y-m-d'}</div>
+           <div class="xwbt">{$r.title}</div>
+           <P class="duanluo">{$r.description}</P>
+           </a>
+        </div>
+        
+        </volist>
+		
+		
+		
+		
+		
+		
+		
+		
+     </div>
+     
+           <!--翻页start-->
+			 <style>
+			 .yema span {
+    padding: 5px 10px;
+    margin: 3px;
+    color: #fff;
+    background-color: #009BCE;
+}
+			 </style>
+            <div class="yema">
+               {$pages}
+            </div>
+             <!--翻页end-->
+
+  </div>
+   
+   <div class="rgbox1">
+      <ul class="rgimg">
+         <include file="C:t"/>
+      </ul>
+   </div>
+</div>
+
+
+<div class="clearfix"></div>
+<!---------------------------------content2开始--------------------------------->

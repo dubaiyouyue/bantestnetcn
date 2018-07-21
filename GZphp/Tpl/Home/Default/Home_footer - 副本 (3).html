@@ -1,0 +1,62 @@
+<style>
+						.ullllls  li a{font-family: "微软雅黑";
+    color: #A3A3A3;
+    font-size: 14px;
+    padding-top: 15px;
+    padding-left: 28px;}.ullllls li{float: left;
+    width: 120px;}
+				</style>
+<?php
+	//dump($getlink);exit;
+?>
+<!----------------------------------底部 开始-------------------------------->
+	<div class="bottom">
+		<div class="jz">
+			<div class="bo_about">
+				<h4><a href="/index.php/Home/About/index/cid/314.html">关于我们</a></h4>
+				<foreach name="lanmugywm" item="r" key="k" >
+				<p><a href="/index.php/Home/About/index/cid/{$r.id}.html">{$r.name}</a></p></foreach> 
+			</div>
+			<div class="bo_about">
+				<h4><a href="/index.php/Home/Service/index/cid/445.html">服务范围</a></h4>
+				<foreach name="lanmuffwz" item="r" key="k" >
+				<p><a href="/index.php/Home/Newsshow/index/pagesss/1/cid/{$r.id}.html">{$r.name}</a></p></foreach> 
+			</div>
+			<div class="bo_link">
+				<h4><a href="javascript:;">友情链接</a></h4>
+				<ul class="ullllls">
+				
+				
+					<foreach name="getlink" item="r" key="k" >
+						<li><a href="{$r.weburl}" target="_blank">{$r.webname}</a></li>
+					</foreach> 
+				</ul>
+				
+				
+			</div>
+			
+			<div class="lianxi">
+				<div class="dianhau"><img src="{$config_info.gz_ewmdh}"/></div>
+				<div class="erwm"><img src="{$config_info.gz_ewm}"/></div>
+				<p>微信公众号</p>
+			</div>
+		</div>
+		
+		<div class="bottom_b">
+			<div class="jz">
+				<p class="zuo">{$config_info.gz_footright}</p>
+				<p class="you">地址：{$config_info.gz_headeryj}</p>
+			</div>
+		</div>
+	</div>
+<!----------------------------------底部 结束-------------------------------->
+
+</div>
+
+
+
+</head>
+
+<body>
+</body>
+</html>

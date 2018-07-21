@@ -1,0 +1,215 @@
+{__NOLAYOUT__}
+<!doctype html>
+<html>
+<head>
+
+
+<title>{$seo_title}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+
+<meta name="keywords" content="{$seo_title}">
+<meta name="description" content="{$seo_title}">
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<link type="text/css" rel="stylesheet" href="/css/css.css"/>
+
+<link type="text/css" rel="stylesheet" href="/css/Public1.css?13"/><!--公共样式-->
+<link type="text/css" rel="stylesheet" href="/css/style.css"/>
+
+<link type="text/css" rel="stylesheet" href="/css/swiper.min.css"/><!--bannerCSS-->
+
+
+<script src="/js/nav.js"></script><!--导航的JS-->
+
+
+<script>
+        ;(function(designWidth, maxWidth) {
+    var doc = document,
+    win = window,
+    docEl = doc.documentElement,
+    remStyle = document.createElement("style"),
+    tid;
+
+    function refreshRem() {
+        var width = docEl.getBoundingClientRect().width;
+        maxWidth = maxWidth || 540;
+        width>maxWidth && (width=maxWidth);
+        var rem = width * 100 / designWidth;
+        remStyle.innerHTML = 'html{font-size:' + rem + 'px;}';
+    }
+
+    if (docEl.firstElementChild) {
+        docEl.firstElementChild.appendChild(remStyle);
+    } else {
+        var wrap = doc.createElement("div");
+        wrap.appendChild(remStyle);
+        doc.write(wrap.innerHTML);
+        wrap = null;
+    }
+    //要等 wiewport 设置好后才能执行 refreshRem，不然 refreshRem 会执行2次；
+    refreshRem();
+
+    win.addEventListener("resize", function() {
+        clearTimeout(tid); //防止执行两次
+        tid = setTimeout(refreshRem, 300);
+    }, false);
+
+    win.addEventListener("pageshow", function(e) {
+        if (e.persisted) { // 浏览器后退的时候重新计算
+            clearTimeout(tid);
+            tid = setTimeout(refreshRem, 300);
+        }
+    }, false);
+
+    if (doc.readyState === "complete") {
+        doc.body.style.fontSize = "16px";
+    } else {
+        doc.addEventListener("DOMContentLoaded", function(e) {
+            doc.body.style.fontSize = "16px";
+        }, false);
+    }
+})(640, 750);
+</script>
+    
+    
+    
+</head>
+
+<body>
+<!----------------------------------头部 开始--------------------------------------->
+<!--新头部-->
+
+<div class="mtoplogo">
+    <a href="/"><img class="imgblock" src="{$config_info.gz_logo}" height="45" /></a>
+    <div class="mtoplogoright" onclick="oocaidan();"><img class="imgblock" src="/images/honganniu.jpg" height="45" /></div>
+</div>
+
+<div class="caidanmain" id="caidanmain">
+    <img src="/images/celanbg.jpg" width="100%" /> 
+         <ul>
+
+                 <li style="position:relative;">
+                <img src="/images/heiyuan.fw.png" class="caidanmainimgl" />
+            <a href="/">首 页</a><div class="xian"></div>
+            <img style="position:relative;top:-35px;" src="/images/indexbutton.fw.png" class="caidanmainimgr" />
+              </li>
+
+                <foreach name="new_column_list_top" item="r" key="k" >
+               <li style="position:relative;">
+                <img src="/images/heiyuan.fw.png" class="caidanmainimgl" />
+            <a href="/index.php/Home/{$r.foldername}/index/cid/{$r.id}.html">{$r.name}</a><div class="xian"></div>
+            <img style="position:relative;top:-35px;" src="/images/indexbutton.fw.png" class="caidanmainimgr" />
+              </li>
+
+                </foreach>
+          
+        </ul>
+    </div>
+
+<div id="caidnnnnsss" onclick="oocaidan();"></div>
+<script>
+function oocaidan(){
+    $('#caidanmain,#caidnnnnsss').toggle();
+}
+</script>
+
+<!--js--> 
+    <script>
+$(document).ready(function() {
+  
+    $('#open').click(function() {
+        
+        //修改滚动条
+            $('body').css('overflow','hidden');
+        //end
+        
+        $('.ppptcdiv').animate({right:'0px'},800);
+    $('#ppptcdiv-ddd').css('display','block');
+    });
+});
+function cloos(){
+    
+            //修改滚动条
+                $('body').css('overflow','');
+            //end
+    
+  $('.ppptcdiv').animate({right:'-225px'},800);
+  $('#ppptcdiv-ddd').css('display','none');
+}
+</script> 
+
+
+
+
+
+<!--滚动条颜色--><style>
+	#scroll-1{overflow: auto;}
+    #scroll-1::-webkit-scrollbar {
+        width:2px;    }
+    #scroll-1::-webkit-scrollbar-track     {
+        background:#fff;
+    }
+    #scroll-1::-webkit-scrollbar-thumb{
+        background:#fff;
+        border-radius:3px;
+    }
+</style><!--end-->
+
+<!--js--> 
+    <script>
+$(document).ready(function() {
+  
+    $('#open').click(function() {
+		
+		//修改滚动条
+			$('body').css('overflow','hidden');
+		//end
+		
+        $('.ppptcdiv').animate({right:'0px'},800);
+    $('#ppptcdiv-ddd').css('display','block');
+    });
+});
+
+function cloos(){
+	
+			//修改滚动条
+				$('body').css('overflow','');
+			//end
+	
+  $('.ppptcdiv').animate({right:'-225px'},800);
+  $('#ppptcdiv-ddd').css('display','none');
+}
+</script> 
+
+
+
+<!-------------------------------导航 结束----------------------------------->
+
+<!----------------------------------头部 结束--------------------------------------->
+
+
+
+
+
+<!------------------------------------banner 开始 ----------------------------------------->
+
+<div class="banner">
+	<img style=" width: 100%;" src="{$blist.img_path}"/>
+</div>
+
+<!------------------------------------banner 结束 ----------------------------------------->
+
+
+<div style="background:url(/images/index1.jpg) repeat top; width:100%;"></div>
+
+
+
+
+
+
+
+<div class="bj" style=" width:100%; overflow: hidden;">

@@ -1,0 +1,220 @@
+
+<!---------------------------------datu开始--------------------------------->
+<div class="datu" style="
+    height: 450px;
+    background: url({$blist.img_path});
+    background-repeat: no-repeat;
+    background-position: center;
+"></div>
+<!---------------------------------datu结束--------------------------------->
+
+
+<!---------------------------------container 开始--------------------------------->
+<div class="container clearfix">
+    <div class="leftbox">
+       <div class="lanmu">
+           <div class="lanmu-title">联系我们<span style="font-size:16px;"> / Contact Us</span></div>
+           <div class="lanmu-btm">
+             <ul>
+                <a href="/index.php/Home/Contact/index/cid/188.html"><li>联系方式</li></a>
+                <a href="/index.php/Home/Contact/location/cid/187.html"><li class="a1">在线留言</li></a>
+             </ul>
+           </div>
+       </div>
+       <div class="lianxibtm">
+           <a href="#"><img src="/images/lianxitu.jpg" width="246" height="93"></a>
+           <div class="btbox">
+              <a href="#"><div class="bt">联系我们<span style="color:#ccc; padding-left:5px;">Contact Us</span></div></a>
+           </div>
+       </div>
+    </div>
+    
+    <div class="rightbox">
+        <div class="btwzbox">
+           <span class="bt"><if condition="($lan['id'] eq $cid)">{$lan.name}</if><span style="font-size:16px;color:#999;"> / <if condition="($lan['id'] eq $cid)">{$lan.enname}</if></span></span>
+           <span class="weizhi">当前位置：<a href="#" style="color:#666;">首页</a> > <a href="#" style="color:#666;">联系我们</a> > <span style="color:#119946;"><a href="#" style="color:#119946;"><if condition="($lan['id'] eq $cid)">{$lan.name}</if></a></span></span>
+        </div>
+        <P class="huanyingyu">感谢您对桂北农产品电商园的关注，请在下方留下您需要咨询的问题，我们的工作人员会尽快与您取得联系！</P>
+        <div class="fbly">发表留言</div>
+        <form name="myform" id="myform" method="POST" action="">
+                        <div id="content_form">
+                            <table cellpadding=0 cellspacing=0 class="table_form"  >
+                                <input type="hidden"  name="catid" value="19" />
+                                <input type="hidden"  name="moduleid" value="8" />
+                                <input type="hidden"  name="lang" value="1" />
+                                <input type="hidden"  name="forward" value="/message/" />
+                                <tr id="liuyan" height="45px">
+                                            <td width="100" align="right" id="liuyan_wz" style="font-size:14px;"><font color="red">*</font> 标题：</td>
+                                            <td id="table" class="box_title">
+                                                <input type="text"   class="input-text " name="biaoti"  id="biaoti" value="" size="40"  validate=" minlength:2, maxlength:50, required:true" />                                     </td>
+                                        </tr>
+        
+                                        </tr><tr id="liuyan" height="45px">
+                                            <td width="100" align="right" id="liuyan_wz" style="font-size:14px;"><font color="red">*</font> 电子邮箱：</td>
+                                            <td id="table" class="box_email">
+                                                <input type="text"   class="input-text " name="email"  id="email" value="" size="20"  validate=" maxlength:40, required:true, email:true" />                                     </td>
+                                        </tr><tr id="liuyan" height="45px">
+                                            <td width="100" align="right" id="liuyan_wz" style="font-size:14px;"> 手机号码：</td>
+                                            <td id="table" class="box_telephone">
+                                                <input type="text"   class="input-text " name="tel"  id="tel" value="" size="20"  validate=" mobile:true" />                                     </td>
+                                        </tr><tr id="liuyan" height="45px">
+                                            <td width="100" align="right" id="liuyan_wz" style="font-size:14px;"><font color="red">*</font> 我要留言：</td>
+                                            <td id="table" class="box_content">
+                                                <textarea  class="" name="content"  rows="10" cols="60"  id="content" style="border:1px solid #ccc;"   validate=" minlength:2, maxlength:200, required:true" /></textarea>                                    </td>
+                                        </tr>                        <tr>
+                                    <td width="100">&nbsp;</td>
+                                    <td>&nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="100"></td>
+                                    <td>
+                                        <input TYPE="button"  onclick="xxpd();"  value="发表留言" class="button_submit" />
+                                        <input TYPE="reset"  value="取消留言" class="button_reset" />
+                                    </td>
+                                </tr>
+                            </table>
+        
+                        </div>
+                    </form>
+           <div class="fbly" style="margin-top:25px;">访客留言</div>
+           <div class="zxzt">咨询主题：<span class="lynr">求职财务经理</span></div>
+           <div class="zxzt">咨询时间：<span class="lynr">2016-08-08 09:30:35</span></div>
+           <div class="zxzt">咨询内容：<span class="lynr">您好！请问贵公司还招聘财务经理吗？</span></div>
+           <div class="zxzt">咨询回复：<span class="lynr">感谢你的留言，您可以来面试！</span></div>
+           <div class="xbkxx"></div>
+                    
+           <div class="zxzt">咨询主题：<span class="lynr">求职财务经理</span></div>
+           <div class="zxzt">咨询时间：<span class="lynr">2016-08-08 09:30:35</span></div>
+           <div class="zxzt">咨询内容：<span class="lynr">您好！请问贵公司还招聘财务经理吗？</span></div>
+           <div class="zxzt">咨询回复：<span class="lynr">感谢你的留言，您可以来面试！</span></div>
+           <div class="xbkxx"></div>
+    </div>
+</div>
+<!--留言js start-->
+<script>
+  document.getElementById('name').focus();
+  function  xxpd(){
+  
+    var biaoti=$('#biaoti').val();
+    var email=$('#email').val();
+    var telephone=$('#tel').val();
+    var content=$('#content').val();
+    
+    if(!biaoti){
+    
+      layer.msg('请填写标题',{time:1000,shift:6}
+      
+      ,function(){
+      
+      document.getElementById('biaoti').focus();
+      
+      }
+      
+      
+      );
+      
+      return false;
+    
+    }
+    
+    if(!youxiang('email') || !email){
+    
+      layer.msg('请填写电子邮箱',{time:1500,shift:6}
+      
+      ,function(){
+      
+      //$('#email').val('');
+      
+      document.getElementById('email').focus();
+      
+      }
+      
+      );
+      
+      return false;
+      
+    }
+    
+    if(!telephone || (telephone.length!=7 && telephone.length!=11) || isNaN(tel)){
+    
+      layer.msg('请填写联系电话',{time:1000,shift:6}
+      
+      ,function(){
+      
+
+      document.getElementById('tel').focus();
+      
+      }
+      
+      
+      );
+      
+      return false;
+    
+    }
+    if(!content){
+    
+      layer.msg('请填写留言内容',{time:1000,shift:6}
+      
+      ,function(){
+      
+
+      document.getElementById('content').focus();
+      
+      }
+      
+      );
+      
+      return false;
+    
+    }
+    document.getElementById('myform').submit();
+  }
+  
+    function  youxiang(n){
+    
+    var email = document.getElementById(n).value;
+    
+    //alert(email);
+    
+    //return false;
+    
+            if (email != "") {
+            var reg = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
+                isok= reg.test(email );
+                if (!isok) {
+                    return false;
+                }
+        else return true;
+            }
+    }
+//  nyyyyn=0;
+//  sslyss();
+//  function sslyss(){
+//  $("#sfsdfssss").text('加载中...');
+//  $.ajax( {
+//      url: '/index.php?g=Home&m=Onlinemessagee&a=index&aid='+nyyyyn, //这里是静态页的地址
+//      type: "GET", //静态页用get方法，否则服务器会抛出405错误
+//      success: function(data){
+//        if(!data){
+//          $("#sfsdfssss").text('没有了');
+//          return false;
+//        }
+//        //var result = $(data).find("另一个html页面的指定的一部分").html();
+//        $("#sfsdfssss").before(data);
+//        $("#sfsdfssss").text('查看更多...');
+//        nyyyyn=nyyyyn+1;
+//      }
+//  });
+//  //alert(nyyyyn);
+//  
+//  
+//    /*var index = layer.load(1, {
+//    shade: [0.2,'#fff'], //0.1透明度的白色背景
+//    //time:2*1000,
+//    });*/
+//  }
+</script>
+<!--留言js end-->
+<!---------------------------------container 结束--------------------------------->

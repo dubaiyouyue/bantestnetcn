@@ -1,0 +1,237 @@
+<link type="text/css" rel="stylesheet" href="/css/recruit.css?6"/>
+<link type="text/css" rel="stylesheet" href="/css/pagejoin.css?18"/>
+
+
+<style>
+
+
+</style>
+
+<!------------------------------banner  开始-------------------------------->
+<div class="banner">
+	<div class="bd">
+		<img src="{$blist.img_path}"/> 
+	</div>
+</div>
+
+<!------------------------------banner  结束-------------------------------->
+
+
+<div class="recruit">
+	<div class="jz">
+<!------------------------------当前位置 开始--------------------------------------->
+		<div class="location">
+			<p>当前位置：</p>
+			<p><a href="#">首页</a></p>
+			<h3>></h3>
+			<p class="dd">招贤纳士</p>
+		</div>
+		<div class="underline"></div>
+
+
+<!------------------------------当前位置 结束--------------------------------------->
+
+<!--------------------------------关于我们 开始------------------------------------->
+	
+		<!------------------------------------标题 开始------------------------------>
+		<div class="headings">
+        	<div class="dot" ></div>
+            <div style="float:right; margin-right:10px; margin-left:0px;" class="dot"></div>
+            <p>招贤纳士</p>
+        	<span>Recruit And Recruit</span>
+        	<div class="xhx"></div>
+        </div>
+        
+        
+        <!-------------------------------------招聘职位 开始-------------------------------------->
+        <div class="position">
+		<!--分页 开始-->
+
+<div id="paging"></div>
+<script src="/laypage/laypage.js"></script>
+<script>//好像很实用的样子，后端的同学再也不用写分页逻辑了。
+laypage({
+  cont: 'paging',
+  pages: '{$allpage}', //可以叫服务端把总页数放在某一个隐藏域，再获取。假设我们获取到的是18
+  curr:'{$p}',
+  jump: function(e, first){ //触发分页后的回调
+    if(!first){ //一定要加此判断，否则初始时会无限刷新
+      
+         var ulrsss='/index.php/Home/{$foldername}/index/cid/{$cid}/p/'+e.curr+'.html';
+          location.href = ulrsss;
+
+
+    }
+  }
+});</script>
+
+
+<!--分页 结束-->
+<!--         	<div class="lunbo">
+        		<div class="left" id="prev"><img src="/images/recruit10_r1_c1.png"/></div>
+        		<dl id="dl">
+					<dd class="curt"><img src="/images/indxe18_r1_c11.png"/></dd>
+					<dd><img src="/images/indxe18_r1_c11.png"/></dd>
+				</dl>
+        		<ul id="dl">
+        			<li  class="curt"><img src="/images/indxe18_r1_c11.png"/></li>
+        			<li><img src="/images/indxe18_r1_c11.png"/></li>
+        		</ul>
+        		<div class="right"><img src="/images/recruit10_r1_c3.png"/></div>
+        	</div> -->
+        	<!----------------------------------- 职位 --------------------------------------->
+        	<div class="zhiw id="next"">
+				<ul>
+				<foreach name="list" item="r" key="k" >
+				
+				<if condition="($id)">
+					<li>
+						<a href="/index.php/Home/Join/index/cid/{$r.class1}/p/{$p}/id/{$r.id}.html">
+							<div class=" <?php
+                            if($r['id']==$id){ echo 'dd';};
+                             ?>">
+								<img class="cx" src="/images/recruit_r3_c6.png"/>
+								<img class="yc" src="/images/recruit_r4_c2.png"/>
+								<h3>{$r.title}</h3>
+								<p>{$r.ctitle}</p>
+								<div class="hx" style=" width: 15px; height: 2px; background: #BFBFBF; margin: auto; margin-top: 10px;"></div>
+								<span>{$r.description}</span>
+								<img style=" top:163px; left:98px;" class="cx" src="/images/recruit_r7_c7.png"/><img class="yc" src="/images/recruit_r9_c3.png"/>
+							</div>
+						</a>
+						
+					</li>
+					<else/>
+					<li>
+						<a href="/index.php/Home/Join/index/cid/{$r.class1}/p/{$p}/id/{$r.id}.html">
+							<div class=" <?php
+                            if($k==0){ echo 'dd';};
+                             ?>">
+								<img class="cx" src="/images/recruit_r3_c6.png"/>
+								<img class="yc" src="/images/recruit_r4_c2.png"/>
+								<h3>{$r.title}</h3>
+								<p>{$r.ctitle}</p>
+								<div class="hx" style=" width: 15px; height: 2px; background: #BFBFBF; margin: auto; margin-top: 10px;"></div>
+								<span>{$r.description}</span>
+								<img style=" top:163px; left:98px;" class="cx" src="/images/recruit_r7_c7.png?1"/><img class="yc" src="/images/recruit_r9_c3.png"/>
+							</div>
+						</a>
+						
+					</li>
+					 </if>
+					  </foreach>
+					<!-- <li>
+						<a href="#">
+							<img class="cx" src="/images/recruit_r3_c6.png"/>
+							<img class="yc" src="/images/recruit_r4_c2.png"/>
+							<h3>行政总监</h3>
+							<p>Executive Director</p>
+							<div class="hx" style=" width: 15px; height: 2px; background: #BFBFBF; margin: auto; margin-top: 10px;"></div>
+							<span>受总经理的委托，行使对公司行政人事日常工作监督、管理的权力...
+							受总经理的委托，行使对公司行政人事日常工作监督、管理的权力...</span>
+							<img style=" top:163px; left:98px;" class="cx" src="/images/recruit_r7_c7.png"/><img class="yc" src="/images/recruit_r9_c3.png"/>
+						</a>
+					</li>
+					
+					<li>
+						<a href="#">
+							<img class="cx" src="/images/recruit_r3_c6.png"/>
+							<img class="yc" src="/images/recruit_r4_c2.png"/>
+							<h3>行政总监</h3>
+							<p>Executive Director</p>
+							<div class="hx" style=" width: 15px; height: 2px; background: #BFBFBF; margin: auto; margin-top: 10px;"></div>
+							<span>受总经理的委托，行使对公司行政人事日常工作监督、管理的权力...
+							受总经理的委托，行使对公司行政人事日常工作监督、管理的权力...</span>
+							<img style=" top:163px; left:98px;" class="cx" src="/images/recruit_r7_c7.png"/><img class="yc" src="/images/recruit_r9_c3.png"/>
+						</a>
+					</li>
+					
+					<li>
+						<a href="#">
+							<img class="cx" src="/images/recruit_r3_c6.png"/>
+							<img class="yc" src="/images/recruit_r4_c2.png"/>
+							<h3>行政总监</h3>
+							<p>Executive Director</p>
+							<div class="hx" style=" width: 15px; height: 2px; background: #BFBFBF; margin: auto; margin-top: 10px;"></div>
+							<span>受总经理的委托，行使对公司行政人事日常工作监督、管理的权力...
+							受总经理的委托，行使对公司行政人事日常工作监督、管理的权力...</span>
+							<img style=" top:163px; left:98px;" class="cx" src="/images/recruit_r7_c7.png"/><img class="yc" src="/images/recruit_r9_c3.png"/>
+						</a>
+					</li> -->
+				</ul>
+        	</div>
+        	<!------------------------------- 职位介绍 开始----------------------------------->
+        	<div  class="introduce">
+		
+				
+				<if condition="($id)">
+					{$new.content}
+					<else/>
+					<?php
+                            echo $list['0']['content'];
+                             ?>
+					
+					 </if>
+					
+        		<!-- <div class="jop">职位描述 /Job Description</div>
+        		<div class="wz">
+					<p>任职资格：</p>
+					<p>1、年龄25-35岁</p>
+      			<p>2、2年以上销售行业工作经验，有家居建材销售管理工作经历者优先，能力优秀可放宽要求。</p>
+      			<p>3、具有丰富的客户资源和客户关系，业绩优秀。</p>
+       			</div>
+   			  <div class="wz_1">
+       				<p>职位描述：</p>
+       				<div style=" margin-right: 40px;" class="column">
+					  <p>1、负责市场调研和需求分析；</p>
+					  <p>2、负责年度销售的预测，目标的制定及分解；</p>
+					  <p>3、确定销售部门目标体系和销售配额；</p>
+					  <p>4、制定销售计划和销售预算；</p>
+       			  </div>
+       			  <div  class="column">
+					  <p>5、负责销售渠道和客户的管理；</p>
+					  <p>6、组建销售队伍，培训销售人员；</p>
+					  <p>7、评估销售业绩，建设销售团队。</p>
+					  
+       			  </div>
+   			  </div> -->
+   			  <span style="
+    margin-left: 660px;
+    font-family: '微软雅黑';
+    font-size: 12px;
+    color: #CCCCCC;">* 如果您有意向 请投递简历至beichuang@163.com</span>
+        	</div>
+        	<!------------------------------- 职位介绍 结束----------------------------------->
+        </div>
+        
+      
+       
+	</div>
+</div> 
+  <!-------------------------------------招聘职位 结束-------------------------------------->
+ <script>
+$(document).ready(function(){
+  //$(".laypage_prev").addClass("pageprev");
+ // $(".laypage_next").addClass("pagenext");
+ 
+   $(".laypage_curr").text("");
+   $("#laypage_0 a").text("");
+   $(".laypage_prev").text("");
+   $(".laypage_next").text("");
+   
+  // $(".laypage_prev").html("<img src='/images/recruit10_r1_c1.png'/>");
+   //$(".laypage_next").html("<img src='/images/recruit10_r1_c3.png'/>");
+  
+  
+  $("#laypage_0 a").click(function(){
+  $(".laypage_curr").text("");
+   $("#laypage_0 a").text("");
+   $(".laypage_prev").text("");
+   $(".laypage_next").text("");
+ 
+  //$(".laypage_prev").html("<img src='/images/recruit10_r1_c1.png'/>");
+  //  $(".laypage_next").html("<img src='/images/recruit10_r1_c3.png'/>");
+});
+   
+});
+</script>

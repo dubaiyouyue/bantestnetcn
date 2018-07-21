@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<!--IE7、8强制同步-->
+
+<title>{$seo_title}</title>
+
+<!--js -->
+<script src="/js/jquery-123.min.js"></script>
+<script src="/js/banner-15.js"></script>
+<script src="/layer/layer.js"></script>
+<!--end js-->
+<link href="/css/style.css?70" rel="stylesheet" type="text/css">
+
+<!----- 导航文字js 开始 ----->
+<script src="/js/jquery.min.js"></script>
+<script>
+$(function(){
+  $('.nav li').hover(function(){
+    $('.hx',this).stop().css('height','3px');
+    $('.hx',this).animate({
+      left:'0',
+      width:'100%',
+      right:'0'
+    },200);
+  },function(){
+    $('.hx',this).stop().animate({
+      left:'50%',
+      width:'0'
+    },200);
+  });
+});
+</script>
+<!----- 导航文字js 结束 ----->
+<link href="/css/base.css?59" rel="stylesheet" type="text/css">
+<head>
+<body>
+
+
+
+<!---------------------------------- logo、导航start ---------------------------------->
+<div class="header">
+  <div class="logo"><a href="/"><img src="{$config_info.gz_logo}" width="105" height="85"></a></div>
+  <div class="nav">
+    <ul>
+       <li><a href="/">网站首页<span class="yw">HOME</span></a>
+        <div class="dina">·</div>
+      </li>
+      <foreach name="new_column_list_top" item="r" key="k" >
+      <li class="<?php
+        if($foldername==$r['foldername']) echo 'navaction-onenav';
+
+      ?>" ><a href="/index.php/Home/{$r.foldername}/index/cid/{$r.id}.html">{$r.name}<span class="yw">{$r.enname}</span></a><span class="hx"></span><div class="dina">·</div>
+      </li>
+      </foreach>
+     <!--  <li><a href="/index.php/Home/About/index/cid/318.html">关于我们<span class="yw">ABOUT US</span></a><span class="hx"></span><div class="dina">·</div></li>
+      <li><a href="/index.php/Home/Trends/index/cid/192.html">新闻动态<span class="yw">NEWS</span></a><span class="hx"></span><div class="dina">·</div></li>
+      <li><a href="/index.php/Home/Service/index/cid/200.html">服务领域<span class="yw">SERVICE AREA</span></a><span class="hx"></span><div class="dina">·</div></li>
+      <li><a href="/index.php/Home/Product/index/cid/183.html">合作案例<span class="yw">CASE</span></a><span class="hx"></span><div class="dina">·</div></li>
+      <li><a href="/index.php/Home/Contact/index/cid/321.html">联系我们<span class="yw">CONTACT US</span></a><span class="hx"></span><div class="dina">·</div></li>
+    </ul> -->
+  </div>
+</div>
+
+<!---------------------------------- logo、导航end ----------------------------------> 

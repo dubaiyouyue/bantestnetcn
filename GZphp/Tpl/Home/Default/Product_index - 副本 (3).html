@@ -1,0 +1,200 @@
+<?php
+							$snid=$cid;
+							$snname=$lan['name'];
+							if($snid==136) $snname='所有分类';
+							
+							
+							
+							$hhyy=explode("\r\n",$config_info['gz_headeryjhhyy']);
+							$hyid=$_GET['hyid']+0;
+							$hyname=$hhyy[($hyid-1)];
+							if(!$hyid) $hyname='所有行业';
+							
+							
+						?>
+
+<style>
+/*------------------------------案例 开始--------------------------*/
+
+
+.case{width:100%;}
+.case>.jz{width:1200px; margin: auto;overflow: hidden;margin-top: 100px; margin-bottom:118px;}
+.case>.jz>ul>li{width:300px; height:300px;float: left;}
+.case>.jz>ul>li>a>.tp{width:300px; height: 300px;}
+.case>.jz>ul>li>a>.tp>.xg{width:300px; height: 300px; background: url(../images/index_r1_c19.png);text-align: center; display: none;}
+.case>.jz>ul>li>a>.tp>.xg>h2{font-family: "微软雅黑"; color: #fff; font-size:22px; font-weight: bold;padding-top:120px;}
+.case>.jz>ul>li>a>.tp>.xg>p{font-family: "微软雅黑"; color: #fff; font-size:14px; margin-top:100px;}
+.case>.jz>ul>li:hover>a>.tp>.xg{display: block;}
+
+.case>.jz>ul>.first>.zs{width:78px; height: 78px;background: #272C3F; float: right;}
+
+.case>.jz>ul>.last>a{ width: 300px; height: 300px; background: #24D3B6; display: flex; align-items: center;}
+.case>.jz>ul>.last>a>.more{float: left; width: 153px; height: 93px; margin-left:50px;}
+.case>.jz>ul>.last>a>.more>h1{font-family: "微软雅黑"; color: #fff; font-size:50px; font-weight: bold}
+.case>.jz>ul>.last>a>.more>p{font-family: "微软雅黑"; color: #fff; font-size:25px; margin-left: 3px;}
+.case>.jz>ul>.last>a>img{width:28px; height: 52px; margin-left: 20px; }
+
+.case>.jz>ul>.last_s>a{ width: 300px; height: 300px; background: #24D3B6; display: flex; align-items: center;}
+.case>.jz>ul>.last_s>a>.more{float: left; width: 153px; height: 93px; margin-left:34px;text-align: right;}
+.case>.jz>ul>.last_s>a>.more>h1{font-family: "微软雅黑"; color: #fff; font-size:50px; font-weight: bold}
+.case>.jz>ul>.last_s>a>.more>p{font-family: "微软雅黑"; color: #fff; font-size:25px; margin-left: 3px;}
+.case>.jz>ul>.last_s>a>img{width:28px; height: 52px; margin-left:42px; }
+
+/*------------------------------案例 结束--------------------------*/</style>
+
+<div class="bj">
+
+<!-------------------------------banner 开始--------------------------------->
+<div class="ding">
+
+	<div class="banner">
+		<div class="bd">
+			<img src="{$blist.img_path}"/>
+		</div>
+	</div>
+	
+	<div class="title">
+		<div class="jz">
+		
+			<div class="zuo">
+				<!--<div class="tp"><img src="images/services_r2_c2.jpg"/></div>-->
+				<div class="biaoyu" style="    background: #272C3F url(/images/services_r2_c2.jpg); background-repeat: no-repeat;background-position: left top;padding-left: 64px;box-sizing: border-box;">
+					{$config_info.gz_footother}
+				</div>
+			</div>
+			
+			
+			<div class="you">
+				<h4>{$getinfolamu.name}</h4>
+					<p>{$getinfolamu.enname}</p>
+					<div class="xian"></div>
+					<img src="{$getinfolamu.columnimg}"/>
+			</div>
+			<!-------------------------搜索框 开始------------------------------->
+			<link type="text/css" href="/css/selectpick.css" rel="stylesheet" />
+<script type="text/javascript" src="/js/selectpick.js?2"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#syou1").selectpick({
+			container: '.test_1',//模拟select生成的DIV存放的父容器
+			disabled: false, // 是否禁用,默认false不禁用
+			onSelect: function(value,text){
+				//alert("这是回调函数，选中的值："+value+" \n选中的下拉框文本："+text);
+				location.href = '/index.php/Home/Product/index/cid/'+value+'/hyid/{$hyid}/.html';
+			},
+			height: 38, // 下拉框的高度
+			width:240, // 下拉框的宽度
+			//margin:'19px'
+			borderRight:'10px solid #fff'
+		});
+		$("#syou2").selectpick({
+			container: '.test_2',//模拟select生成的DIV存放的父容器
+			disabled: false, // 是否禁用,默认false不禁用
+			onSelect: function(value,text){
+				//alert("这是回调函数，选中的值："+value+" \n选中的下拉框文本："+text);
+				location.href = '/index.php/Home/Product/index/hyid/'+value+'/cid/{$cid}/.html';
+			},
+			height: 38, // 下拉框的高度
+			width:240, // 下拉框的宽度
+			borderRight:'10px solid #fff'
+		});
+	});
+</script>
+<!--end-->
+			<div class="ssk">
+				<form>
+				<div class="test_1" style="float:left;width:240px;">
+					<select class="syou" id="syou1">
+						<option value="{$snid}">{$snname}<img src="/images/case.fw.png"/></option>
+									<foreach name="lanmu" item="r" key="k" >
+									<?php
+									if($snid!=136 && !$k) echo '<option value="136">所有分类</option>';
+									if($r['id']!=$snid) echo '<option value="'.$r['id'].'">'.$r['name'].'</option>';
+									?>
+									</foreach>
+					</select>
+					</div>
+					<div class="test_2" style="float:left;width:240px;margin-left: 29px;">
+					<select class="syou" id="syou2">
+						<option value="{$hyid}">{$hyname}<img src="/images/case.fw.png"/></option>
+									<foreach name="hhyy" item="r" key="k" >
+									<?php
+									if($hyid && !$k) echo '<option value="0">所有行业</option>';
+									if(($k+1)!=$hyid) echo '<option value="'.($k+1).'">'.$r.'</option>';
+									?>
+									</foreach>
+						
+					</select>
+					</div>
+				</form>
+			</div>
+			<!-------------------------搜索框 结束------------------------------->
+			
+			
+		</div>
+	</div>
+</div>
+<!-------------------------------banner 开始--------------------------------->
+
+
+
+
+
+<!-------------------------案例 开始------------------------------->
+<div class="case">
+	
+	
+	
+	
+	
+	<div class="jz">
+		<ul>
+			<li class="first"><div class="zs"></div></li>
+			
+			<foreach name="list" item="r" key="k" >
+			<li>
+				<a href="/index.php/Home/Newsshow/index/cid/{$cid}/id/{$r.id}.html">
+					<div class="tp" style="background:url({$r.imgurl}) no-repeat center; background-size: 100%;">
+						<div class="xg">
+							<h2 style="
+    height: 27px;
+    overflow: hidden;
+    line-height: 27px;
+">{$r.title}</h2>
+							<p>- MORE -</p>
+						</div>
+					</div>
+				</a>
+			</li>
+			</foreach>
+			
+			<li class="last_s" <?php
+	if($allpage<2 || $p<2) echo 'style="display:none;"';
+?>>
+				<a href="/index.php/Home/Product/index/hyid/{$hyid}/cid/{$cid}/p/{$sp}.html">
+					<img src="/images/1.fw.png"/>
+					<div class="more">
+						<h1>TEXT</h1>
+						<p>上一页</p>
+					</div>
+					
+				</a>
+			</li>
+			<li class="last" <?php
+	if($allpage<2) echo 'style="display:none;"';
+?>>
+				<a href="/index.php/Home/Product/index/hyid/{$hyid}/cid/{$cid}/p/{$np}.html">
+					<div class="more">
+						<h1>TEXT</h1>
+						<p>下一页</p>
+					</div>
+					<img src="/images/ca_a.fw.png"/>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+<!-------------------------案例 结束------------------------------->
+
+
+

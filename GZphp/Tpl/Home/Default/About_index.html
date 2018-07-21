@@ -1,0 +1,68 @@
+
+
+<!--------------------------------------内容 开始--------------------------------------->
+
+
+<!--二级栏目-->
+
+
+
+
+
+
+
+
+
+<div class="lanmuscend">
+	<div class="lanmuscendtop">{$getinfolamu.enname}</div>
+	<div class="lanmuscendbottom">
+		{$getinfolamu.name}
+		<!--左右线条-->
+		<div class="lxtleft"></div>
+		<div class="lxtright"></div>
+	</div>
+</div>
+<ul id="menuullidemoli" class="clearUl">
+<foreach name="lanmu" item="r" key="k" >
+	<li  <?php if($r['id']==$cid) echo 'class="haveli"';?>>
+
+	<a href="/index.php/Home/{$r.foldername}/index/cid/{$r.id}.html">{$r.name}</a>
+	
+	</li>
+</foreach>
+	
+</ul>
+<script>
+//二级导航自动居中
+(function (d){
+	$(d).css('clear','both');
+	var nw;
+	var t=0;
+	$(d+' li').each(function(){
+		$(this).css('display','inline-block');
+		nw=$(this).width();
+		t=t+nw;
+	});
+	var pw=$(d).width();
+	//console.log(pw);
+	if(pw<t){
+		$(d+' li').each(function(){
+			$(this).css('float','left');
+		});
+	}else{
+		$(d).css('textAlign','center');
+	}
+})("#menuullidemoli"); //ul id
+</script>
+
+<div class="pagecontent">{$lan.content}</div>
+
+
+
+<!--------------------------------------内容 结束--------------------------------------->
+
+
+
+
+
+

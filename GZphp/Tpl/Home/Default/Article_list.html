@@ -1,0 +1,40 @@
+
+<!--内容区-->
+<div class="news_content">
+  <div class="news_content_left">
+     <div class="news_content_left_top">
+        <h3>{$Categorys.$parentid.catname}</h3>
+        <ul><include file="A:l"/>
+        	
+        </ul>
+     </div>
+    <include file="C:u"/>
+  </div>
+
+  <div class="news_content_right">
+      <div class="locate"><include file="Home:catpos"/></div>
+
+      <h4><span style="color:#119947;">▶</span> <span style="color:#000000;">{$Categorys.$catid.catname}</span> <span style="color:#999999;font-size:16px;">/ {$Categorys.$catid.keywords}</span></h4>
+     
+
+
+
+<volist name="list" id="r" empty="$em" key="k">
+	 <div class="news_box"> <a href="{$r.url}"><img src="{$r.thumb}" width="350" height="200" /></a>
+        <div class="news_box_right">
+          <h5><a href="{$r.url}">{$r.title|str_cut=###,60}</a></h5>
+          <div class="time">发布日期：{$r.createtime|toDate=###,'Y-m-d'}</div>
+          <p><a href="{$r.url}">{$r.description|str_cut=###,220}</a></p>
+          <a class="read_more" href="{$r.url}">READ MORE▶</a>
+        </div>
+        
+      </div>  
+
+       </volist> 
+  </div>
+<!--翻页start-->
+		
+            <div id="pageGro" class="cb">
+               {$pages}
+            </div>
+             <!--翻页end-->

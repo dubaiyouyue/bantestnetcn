@@ -1,0 +1,113 @@
+
+<link type="text/css" rel="stylesheet" href="/css/service.css?6"/>
+<style>
+.show{
+display:black;
+}
+
+
+</style>
+<!------------------------------banner  开始-------------------------------->
+<div class="banner">
+	<div class="bd">
+		<img src="/images/ser.jpg"/> 
+	</div>
+</div>
+
+<!------------------------------banner  结束-------------------------------->
+
+
+<div class="service">
+	<div class="jz">
+<!------------------------------当前位置 开始--------------------------------------->
+		<div class="location">
+			<p>当前位置：</p>
+			<p><a href="/">首页</a></p>
+			<h3>></h3>
+			<p class="dd">用户服务</p>
+		</div>
+		<div class="underline"></div>
+
+
+<!------------------------------当前位置 结束--------------------------------------->
+
+<!--------------------------------用户服务 开始------------------------------------->
+	
+		<!------------------------------------标题 开始------------------------------>
+		<div class="headings">
+        	<div class="dot" ></div>
+            <div style="float:right; margin-right:10px; margin-left:0px;" class="dot"></div>
+            <p>用户服务</p>
+        	<span>CUSTOMER SERVICE</span>
+        </div>
+        
+        
+		<div class="second">
+			<ul>
+			<foreach name="lanmu" item="r" key="k" >
+				<li>
+				<a href="/index.php/Home/{$r.foldername}/index/cid/{$r.id}.html"   >
+					
+					<span>
+						<div class="cx" mid="{$r.id}"><img style="width: 96px; height: 96px;" src="{$r.columnimg}"/></div><div class="yc"><img src="/images/sre{$k+1}.png"/></div>
+					</span>
+					<p>{$r.name}</p>
+				</a>
+				</li>
+				  </foreach>
+				<!-- <li>
+				<a href="#">
+					<div style=" width: 1px; height: 96px; background: #666666; float:left;"></div>
+					<span>
+						<div class="cx"><img style="width: 96px; height: 96px;" src="/images/sre06_r1_c3.png"/></div><div class="yc"><img src="/images/sre02_r1_c3.png"/></div>
+					</span>
+					<p>服务产品</p>
+				</a>
+				</li>
+				
+				<li>
+				<a href="#">
+					<div style=" width: 1px; height: 96px; background: #666666; float:left;"></div>
+					<span>
+						<div class="cx"><img style="width: 96px; height: 96px;" src="/images/sre06_r1_c5.png"/></div><div class="yc"><img src="/images/sre02_r1_c5.png"/></div>
+					</span>
+					<p>服务渠道</p>
+				</a>
+				</li> -->
+				
+				
+				
+		</div>
+			
+
+		<div class="wz">
+			{$lan.content}
+			
+		</div>
+
+		
+	</div>
+</div>
+
+<script>
+
+$(document).ready(function(){
+  
+    $('.cx').each(function(){
+	  var cid={$cid};
+      var mid=$(this).attr('mid');
+	
+     // console.log(mid)
+	  if(cid==mid){
+	   $(this).hide();
+	   $(this).next().show();
+	
+	  }
+   
+  });
+});
+
+</script>
+
+		
+<!--------------------------------用户服务 结束------------------------------------------->

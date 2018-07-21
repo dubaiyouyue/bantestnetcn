@@ -1,0 +1,32 @@
+
+<!---------------------------------content7开始--------------------------------->
+<div class="content7">
+  <div class="nrbox1">
+  </div>
+   <volist name="list" id="r" empty="$em" key="k">
+<li>
+						
+							<div class="join_tit clearfloat">
+							<span class="sp1">职位：</span>{$r.title|str_cut=###,15}<span class="sp2">{$r.createtime|toDate=###,'Y-m-d'}</span>
+							</div>
+							
+							<div class="join_con">
+								
+								<span>要求：</span>{$r.description|str_cut=###,84}
+								
+							
+							</div>
+							
+							<div class="join_but">
+							<a href="{$r.url}" style="font-size:14px;">
+							查看详情>>
+							</a>
+							</div>
+						
+						</li>
+   </volist>
+
+<div class="clearfix"></div>
+</div>
+<!---------------------------------content7开始--------------------------------->
+
